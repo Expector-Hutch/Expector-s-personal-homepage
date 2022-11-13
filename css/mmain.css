@@ -6,6 +6,7 @@ html, body {
     display: flex;
     flex-direction: column;
     width: calc(100% - 6px);
+    box-shadow: none;
 }
 .left {
     height: calc(100vw - 22px);
