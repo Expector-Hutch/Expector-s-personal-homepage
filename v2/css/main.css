@@ -15,7 +15,8 @@ body::-webkit-scrollbar-track {
     background: #6cf;
 }
 
-html, body {
+html,
+body {
     background-color: #6cf;
     background-image: url(https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png);
     background-position: center center;
@@ -33,12 +34,43 @@ html, body {
 h1 {
     font-size: 24px;
     color: #6cf;
+    text-shadow:
+        0 0 7px #6cf,
+        0 0 10px #6cf,
+        0 0 21px #6cf,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
 }
 
 p {
     font-size: 15px;
     word-wrap: break-word;
     color: aqua;
+}
+
+p.words:hover {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
+    border-radius: 30px;
+    transition: 0.5s;
+    backdrop-filter: blur(20px);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+    user-select: text;
+}
+
+p.words {
+    transition: 0.5s;
 }
 
 a {
@@ -96,7 +128,7 @@ footer a:hover {
     background-color: rgb(36 36 36 / 8%);
     box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
     border: 2px rgb(0 0 0 / 40%) solid;
-    border-bottom: 2px rgba(40,40,40,0.35) solid;
+    border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
     border-right: none;
 }
 
@@ -112,8 +144,8 @@ footer a:hover {
     background-color: rgb(36 36 36 / 55%);
     /* box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px; */
     border: 2px rgb(0 0 0 / 40%) solid;
-    border-bottom: 2px rgba(40,40,40,0.35) solid;
-    border-right: 2px rgba(40,40,40,0.35) solid;
+    border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
+    border-right: 2px rgba(40, 40, 40, 0.35) solid;
     border-left: none;
 }
 
@@ -122,13 +154,14 @@ footer a:hover {
     height: 50px;
 }
 
-.btn{
+.btn {
     position: relative;
     width: 150px;
     height: 33px;
     margin: 0px 20px;
 }
-.btn a{
+
+.btn a {
     text-decoration: none;
     position: absolute;
     top: 0;
@@ -138,10 +171,10 @@ footer a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     color: #fff;
     z-index: 1;
@@ -151,59 +184,61 @@ footer a:hover {
     transition: 0.5s;
     backdrop-filter: blur(20px);
 }
-.btn:hover a{
+
+.btn:hover a {
     letter-spacing: 3px;
 }
-.btn a::before{
-    content:'';
+
+.btn a::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(to left,rgba(255,255,255,0.15),transparent);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
     transform: skew(45deg) translateX(0);
     transition: 0.5s;
 }
 
-.btn:hover a::before{
+.btn:hover a::before {
     transform: skew(45deg) translateX(100px);
 }
 
-.btn::before{
+.btn::before {
     content: '';
     position: absolute;
     left: 50%;
     width: 30px;
     height: 10px;
     bottom: -5px;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     background-color: #00f;
     border-radius: 10px;
     transition: 0.5s;
 }
 
-.btn:hover:before{
+.btn:hover:before {
     bottom: 0px;
     width: 80%;
     height: 50%;
     border-radius: 30px;
 }
 
-.btn::after{
+.btn::after {
     content: '';
     position: absolute;
     left: 50%;
     width: 30px;
     height: 10px;
     top: -5px;
-    transform:translateX(-50%);
+    transform: translateX(-50%);
     background-color: #00f;
     border-radius: 10px;
     transition: 0.5s;
 }
 
-.btn:hover:after{
+.btn:hover:after {
     top: 0px;
     width: 80%;
     height: 50%;
@@ -211,30 +246,30 @@ footer a:hover {
 }
 
 .btn:nth-child(1)::before,
-.btn:nth-child(1)::after{
+.btn:nth-child(1)::after {
     background-color: #ff1f71;
     box-shadow: 0 0 5px #ff1f71,
-                0 0 15px #ff1f71,
-                0 0 30px #ff1f71,
-                0 0 60px #ff1f71;
+        0 0 15px #ff1f71,
+        0 0 30px #ff1f71,
+        0 0 60px #ff1f71;
 }
 
 .btn:nth-child(2)::before,
-.btn:nth-child(2)::after{
+.btn:nth-child(2)::after {
     background-color: #2bd2ff;
     box-shadow: 0 0 5px #2bd2ff,
-                0 0 15px #2bd2ff,
-                0 0 30px #2bd2ff,
-                0 0 60px #2bd2ff;
+        0 0 15px #2bd2ff,
+        0 0 30px #2bd2ff,
+        0 0 60px #2bd2ff;
 }
 
 .btn:nth-child(3)::before,
-.btn:nth-child(3)::after{
+.btn:nth-child(3)::after {
     background-color: #11ff45;
     box-shadow: 0 0 5px #11ff45,
-                0 0 15px #11ff45,
-                0 0 30px #11ff45,
-                0 0 60px #11ff45;
+        0 0 15px #11ff45,
+        0 0 30px #11ff45,
+        0 0 60px #11ff45;
 }
 
 
