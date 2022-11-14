@@ -97,16 +97,10 @@ footer a:hover {
     justify-content: center;
     align-items: stretch;
     border-radius: 11px;
-    /* backdrop-filter: blur(5px); */
-    /* background-color: rgba(0,191,255, 0.075); */
     box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
-    /* border: 2px rgba(255,255,255,0.4) solid; */
-    /* border-bottom: 2px rgba(40,40,40,0.35) solid; */
-    /* border-right: 2px rgba(40,40,40,0.35) solid; */
 }
 
 .left {
-    /* background-color: #6cf; */
     background-image: url(../img/left.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -114,7 +108,6 @@ footer a:hover {
     width: 320px;
     border-top-left-radius: 11px;
     border-bottom-left-radius: 11px;
-    /* backdrop-filter: blur(5px); */
     background-color: rgb(36 36 36 / 8%);
     box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
     border: 2px rgb(0 0 0 / 40%) solid;
@@ -123,7 +116,6 @@ footer a:hover {
 }
 
 .information {
-    /* background-color: rgb(36 36 36); */
     display: flex;
     flex-direction: column;
     padding: 33px 30px 0px;
@@ -132,7 +124,6 @@ footer a:hover {
     border-bottom-right-radius: 11px;
     backdrop-filter: blur(5px);
     background-color: rgb(36 36 36 / 55%);
-    /* box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px; */
     border: 2px rgb(0 0 0 / 40%) solid;
     border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
     border-right: 2px rgba(40, 40, 40, 0.35) solid;
@@ -260,34 +251,4 @@ footer a:hover {
         0 0 15px #11ff45,
         0 0 30px #11ff45,
         0 0 60px #11ff45;
-}
-
-
-
-.aplayer {
-    background: #242424;
-}
-
-.aplayer .aplayer-lrc:before {
-    background: linear-gradient(180deg, #242424 0, hsla(0, 0%, 100%, 0));
-}
-
-.aplayer .aplayer-lrc:after {
-    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 0, #242424);
-}
-
-.aplayer-title {
-    color: white;
-}
-
-.aplayer .aplayer-info .aplayer-music .aplayer-author {
-    color: #66ccff;
-}
-
-.aplayer .aplayer-lrc p {
-    color: white;
-}
-
-.aplayer .aplayer-lrc p.aplayer-lrc-current {
-    color: #66ccff;
 }
