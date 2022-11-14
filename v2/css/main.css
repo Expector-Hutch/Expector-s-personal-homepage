@@ -58,14 +58,9 @@ p.words:hover {
     transition: 0.5s;
     backdrop-filter: blur(20px);
     text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px #0fa,
-        0 0 82px #0fa,
-        0 0 92px #0fa,
-        0 0 102px #0fa,
-        0 0 151px #0fa;
+        0 0 7px aqua,
+        0 0 10px aqua,
+        0 0 21px aqua;
     user-select: text;
 }
 
@@ -86,12 +81,7 @@ a:hover {
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px #0fa,
-        0 0 82px #0fa,
-        0 0 92px #0fa,
-        0 0 102px #0fa,
-        0 0 151px #0fa;
+        0 0 21px #fff;
 }
 
 footer p,
