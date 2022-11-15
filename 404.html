@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="./img/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.3/vanilla-tilt.min.js"></script>
+</head>
+
+<body>
+    <div class="box" style="width: 300px;text-align: center;">
+        <h1 style="color: #66ccff;"><svg class="icon"
+                style="width: 150px;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024"
+                version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3451">
+                <path
+                    d="M260.266667 789.333333c-21.333333 0-38.4-17.066667-38.4-38.4v-59.733333H38.4c-12.8 0-29.866667-8.533333-34.133333-21.333333-4.266667-17.066667-4.266667-29.866667 4.266666-42.666667l221.866667-294.4c8.533333-12.8 25.6-17.066667 42.666667-12.8 17.066667 4.266667 25.6 21.333333 25.6 38.4v256h34.133333c21.333333 0 38.4 17.066667 38.4 38.4s-17.066667 38.4-38.4 38.4H298.666667v59.733333c0 21.333333-17.066667 38.4-38.4 38.4z m-145.066667-179.2h106.666667V469.333333l-106.666667 140.8zM913.066667 742.4c-21.333333 0-38.4-17.066667-38.4-38.4v-59.733333h-183.466667c-12.8 0-29.866667-8.533333-34.133333-21.333334-8.533333-12.8-4.266667-29.866667 4.266666-38.4l221.866667-294.4c8.533333-12.8 25.6-17.066667 42.666667-12.8 17.066667 4.266667 25.6 21.333333 25.6 38.4v256h34.133333c21.333333 0 38.4 17.066667 38.4 38.4s-17.066667 38.4-38.4 38.4h-34.133333v59.733334c0 17.066667-17.066667 34.133333-38.4 34.133333zM768 567.466667h106.666667V426.666667L768 567.466667zM533.333333 597.333333c-46.933333 0-85.333333-25.6-119.466666-68.266666-29.866667-38.4-42.666667-93.866667-42.666667-145.066667 0-55.466667 17.066667-106.666667 42.666667-145.066667 29.866667-42.666667 72.533333-68.266667 119.466666-68.266666 46.933333 0 85.333333 25.6 119.466667 68.266666 29.866667 38.4 42.666667 93.866667 42.666667 145.066667 0 55.466667-17.066667 106.666667-42.666667 145.066667-34.133333 46.933333-76.8 68.266667-119.466667 68.266666z m0-362.666666c-55.466667 0-98.133333 68.266667-98.133333 149.333333s46.933333 149.333333 98.133333 149.333333c55.466667 0 98.133333-68.266667 98.133334-149.333333s-46.933333-149.333333-98.133334-149.333333z"
+                    fill="#66ccff" p-id="3452"></path>
+                <path
+                    d="M354.133333 691.2a162.133333 21.333333 0 1 0 324.266667 0 162.133333 21.333333 0 1 0-324.266667 0Z"
+                    fill="#E3E5FC" p-id="3453"></path>
+                <path d="M8.533333 832a162.133333 21.333333 0 1 0 324.266667 0 162.133333 21.333333 0 1 0-324.266667 0Z"
+                    fill="#E3E5FC" p-id="3454"></path>
+                <path
+                    d="M661.333333 797.866667a162.133333 21.333333 0 1 0 324.266667 0 162.133333 21.333333 0 1 0-324.266667 0Z"
+                    fill="#E3E5FC" p-id="3455"></path>
+            </svg>
+            <br>您的页面走丢了！
+        </h1>
+        <img src="./img/logo.png"
+                style="height: 200px;width: 200px;filter:grayscale(100%);">
+        <a style="color: #fff;" href="index.html"><br><span>点我回到首页</span></a>
+    </div>
+    <style>
+        html,
+        body {
+            background-image: url(https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png);
+            user-select: none;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            text-shadow:
+                0 0 7px #6cf,
+                0 0 10px #6cf,
+                0 0 21px #6cf;
+        }
+
+        .box {
+            border-radius: 11px;
+            backdrop-filter: blur(5px);
+            background-color: rgb(36 36 36 / 55%);
+            border: 2px rgb(0 0 0 / 40%) solid;
+            border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
+            border-right: 2px rgba(40, 40, 40, 0.35) solid;
+            border-left: none;
+            box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
+        }
+
+        .box .js-tilt-glare {
+            border-radius: 11px;
+        }
+
+        a span:hover {
+            text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff;
+        }
+    </style>
+    <script>
+        VanillaTilt.init(document.querySelector(".box"), {
+            max: 5,
+            speed: 400,
+            glare: true,   // 发光效果
+            "max-glare": 0.5,
+            // 调整旋转角度
+            gyroscopeMinAngleX: -5,
+            gyroscopeMaxAngleX: 5,
+            gyroscopeMinAngleY: -5,
+            gyroscopeMaxAngleY: 5,
+        });
+    </script>
+</body>
+
+</html>
