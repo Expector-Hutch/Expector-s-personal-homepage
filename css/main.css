@@ -15,32 +15,37 @@ body::-webkit-scrollbar-track {
     background: #6cf;
 }
 
-html, body {
+html,
+body {
     background-color: #6cf;
-    background-image: url(https://api.ixiaowai.cn/gqapi/gqapi.php);
+    background-image: url(https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     user-select: none;
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 h1 {
     font-size: 24px;
     color: #6cf;
+    text-shadow:
+        0 0 7px #6cf,
+        0 0 10px #6cf,
+        0 0 21px #6cf,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
 }
-
 p {
     font-size: 15px;
     word-wrap: break-word;
     color: aqua;
 }
-
 a {
     text-align: center;
     text-decoration-line: none;
@@ -48,20 +53,13 @@ a {
     font-size: 16px;
     line-height: 10px;
 }
-
 a:hover {
     color: white;
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 42px #0fa,
-        0 0 82px #0fa,
-        0 0 92px #0fa,
-        0 0 102px #0fa,
-        0 0 151px #0fa;
+        0 0 21px #fff;
 }
-
 footer p,
 footer a,
 footer a:hover {
@@ -69,36 +67,47 @@ footer a:hover {
     color: darkgray;
 }
 
-.my-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    box-shadow: 11px 11px 11px 0px #000;
+.btn:nth-child(1)::before,
+.btn:nth-child(1)::after {
+    background-color: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71,
+        0 0 15px #ff1f71,
+        0 0 30px #ff1f71,
+        0 0 60px #ff1f71;
 }
 
-.left {
-    background-color: #6cf;
-    background-image: url(../img/left.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 320px;
+.btn:nth-child(2)::before,
+.btn:nth-child(2)::after {
+    background-color: #2bd2ff;
+    box-shadow: 0 0 5px #2bd2ff,
+        0 0 15px #2bd2ff,
+        0 0 30px #2bd2ff,
+        0 0 60px #2bd2ff;
+}
+
+.btn:nth-child(3)::before,
+.btn:nth-child(3)::after {
+    background-color: #11ff45;
+    box-shadow: 0 0 5px #11ff45,
+        0 0 15px #11ff45,
+        0 0 30px #11ff45,
+        0 0 60px #11ff45;
+}
+.my-card {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 11px;
 }
 
 .information {
-    background-color: #242424;
     display: flex;
     flex-direction: column;
     padding: 33px 30px 0px;
-    width: 580px;
-}
-
-.more {
-    display: flex;
-    height: 50px;
-}
-
-.more a {
-    width: 33%;
+    backdrop-filter: blur(5px);
+    background-color: rgb(36 36 36 / 55%);
+    border: 2px rgb(0 0 0 / 40%) solid;
+    border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
+    border-right: 2px rgba(40, 40, 40, 0.35) solid;
+    border-left: none;
 }

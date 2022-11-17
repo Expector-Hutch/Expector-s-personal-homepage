@@ -1,0 +1,27 @@
+.aplayer {
+    background: #242424;
+}
+
+.aplayer .aplayer-lrc:before {
+    background: linear-gradient(180deg, #242424 0, hsla(0, 0%, 100%, 0));
+}
+
+.aplayer .aplayer-lrc:after {
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 0, #242424);
+}
+
+.aplayer-title {
+    color: white;
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+    color: #66ccff;
+}
+
+.aplayer .aplayer-lrc p {
+    color: white;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+    color: #66ccff;
+}
