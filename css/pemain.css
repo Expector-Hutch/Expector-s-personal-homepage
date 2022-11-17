@@ -1,0 +1,56 @@
+html,
+body {
+    width: calc(100vw - 4px);
+    height: auto;
+    background-color: #6cf;
+    background-image: url(https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 24px;
+    color: #6cf;
+    text-shadow:
+        0 0 7px #6cf,
+        0 0 10px #6cf,
+        0 0 21px #6cf,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+p {
+    font-size: 15px;
+    word-wrap: break-word;
+    color: aqua;
+}
+
+a {
+    text-align: center;
+    text-decoration-line: none;
+    color: white;
+    font-size: 16px;
+    line-height: 10px;
+}
+
+a:hover {
+    color: white;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff;
+}
+
+.left {
+    background-image: url(../img/left.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 50vw;
+}
