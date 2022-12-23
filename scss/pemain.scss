@@ -1,14 +1,13 @@
 html,
 body {
-    height: 100%;
-    width: 100%;
+    width: calc(100vw - 4px);
+    height: auto;
 }
 
-p.words:hover {
+p.words {
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 20%);
     border-radius: 30px;
-    transition: 0.5s;
     backdrop-filter: blur(20px);
     text-shadow:
         0 0 7px aqua,
@@ -17,47 +16,37 @@ p.words:hover {
     user-select: text;
 }
 
-p.words {
-    transition: 0.5s;
-}
-
-.my-card {
-    flex-direction: row;
-    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
-}
 
 .tbg {
     background-image: url(../img/left.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 320px;
+    width: auto;
+    height: calc(100vw - 22px);
     border-top-left-radius: 11px;
-    border-bottom-left-radius: 11px;
-    background-color: rgb(36 36 36 / 8%);
-    box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
-    border: 2px rgb(0 0 0 / 40%) solid;
-    border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
-    border-right: none;
+    border-top-right-radius: 11px;
+    background-color: rgba(36, 36, 36, 8%);
+    /* box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px; */
+    border: 2px rgba(0, 0, 0, 40%) solid;
+    border-bottom: none;
+    border-right: 2px rgba(40, 40, 40, 0.35) solid;
 }
 
 .information {
-    border-top-right-radius: 11px;
+    border-bottom-left-radius: 11px;
     border-bottom-right-radius: 11px;
-    border-left: none;
-    width: 580px;
+    border-top: none;
 }
 
 .more {
     display: flex;
-    height: 50px;
+    align-items: stretch;
 }
 
 .btn {
     position: relative;
-    width: 150px;
-    height: 33px;
-    margin: 0px 20px;
+    height: 50px;
 }
 
 .btn a {
@@ -84,42 +73,19 @@ p.words {
     backdrop-filter: blur(20px);
 }
 
-.btn:hover a {
-    letter-spacing: 3px;
-}
-
-.btn a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
-    transform: skew(45deg) translateX(0);
-    transition: 0.5s;
-}
-
-.btn:hover a::before {
-    transform: skew(45deg) translateX(100px);
-}
-
 .btn::before {
     content: '';
     position: absolute;
     left: 50%;
-    width: 30px;
-    height: 10px;
-    bottom: -5px;
+    /* width: 30px; */
+    /* height: 10px; */
+    /* bottom: -5px; */
     transform: translateX(-50%);
-    background-color: #00f;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-
-.btn:hover:before {
-    bottom: 0px;
-    width: 80%;
+    /* background-color: #00f; */
+    /* border-radius: 10px; */
+    /* transition: 0.5s; */
+    bottom: 10px;
+    width: calc(100% - 30px);
     height: 50%;
     border-radius: 30px;
 }
@@ -128,18 +94,27 @@ p.words {
     content: '';
     position: absolute;
     left: 50%;
-    width: 30px;
-    height: 10px;
-    top: -5px;
     transform: translateX(-50%);
     background-color: #00f;
     border-radius: 10px;
     transition: 0.5s;
-}
-
-.btn:hover:after {
-    top: 0px;
-    width: 80%;
+    top: 5px;
+    width: calc(100% - 30px);
     height: 50%;
     border-radius: 30px;
+}
+
+.my-card {
+    flex-direction: column;
+    width: calc(100% - 6px);
+    box-shadow: none;
+}
+
+.more {
+    flex-direction: column;
+    height: 150px;
+}
+
+.more a {
+    height: 44px;
 }
