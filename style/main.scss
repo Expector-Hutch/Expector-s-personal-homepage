@@ -1,5 +1,5 @@
-@import url(/css/pcmain.css) screen and (min-width: 960px);
-@import url(/css/pemain.css) screen and (max-width: 959px);
+@import url(/css/pcmain.css) (min-width: 960px);
+@import url(/css/pemain.css) (max-width: 959px);
 
 @font-face {
     font-family: 'Lucida Handwriting';

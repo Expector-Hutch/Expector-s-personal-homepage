@@ -42,3 +42,5 @@ expector-hutch.github.io
 ```
 
 `CSS`使用`VSCode`的`Easy SASS`扩展从`SACC`自动生成。
+
+**⚠ 本仓库源代码及文案均是 Copyleft 的**

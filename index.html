@@ -4,15 +4,18 @@
 <head>
     <meta name="msvalidate.01" content="44AF30E4DAF9A1195CEEF19AAC8E6FE0" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,
-              user-scalable=no,
-              initial-scale=1.0,
-              maximum-scale=1.0,
-              minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Expector的主页</title>
     <link rel="icon" href="/img/logo.png">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/aplayer.css">
+    <link rel="stylesheet" href="/css/main.css" media="screen">
+    <link rel="stylesheet" href="/css/aplayer.css" media="screen">
+    <style type="text/css">
+        @media not screen {
+            .tbg, .words, .more, meting-js, .moreicons {
+                display: none;
+            }
+        }
+    </style>
     <script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 </head>
@@ -23,8 +26,10 @@
         <div class="information">
             <h1 style="font-family: 'Lucida Handwriting';">Expector</h1>
             <p id="my">
-                &emsp;&emsp;你好，我是 Expector，一个热爱科学的中学生。本人虽才疏学浅但乐于助人，欢迎通过各种方式联系我，希望能帮到你。个人爱好广泛，乐于接受新事物，最喜欢 J.K.罗琳的《哈利·波特》系列，也是一个科幻迷，欢迎跟我讨论呀~
-                <br>&emsp;&emsp;作为一个学生，成绩一般，热爱理科，最喜欢数学。课余热爱编程，动手能力还不错，最爱 B 站 up 主才浅和毕导ヾ(≧▽≦*)o本人也在当 up，都来这儿了，去 B 站支持一下我呗[]~(￣▽￣)~*
+                &emsp;&emsp;你好，我是 Expector，一个热爱科学的中学生。本人虽才疏学浅但乐于助人，欢迎通过各种方式联系我，希望能帮到你。个人爱好广泛，乐于接受新事物，最喜欢
+                J.K.罗琳的《哈利·波特》系列，也是一个科幻迷，欢迎跟我讨论呀~
+                <br>&emsp;&emsp;作为一个学生，成绩一般，热爱理科，最喜欢数学。课余热爱编程，动手能力还不错，最爱 B 站 up 主才浅和毕导ヾ(≧▽≦*)o本人也在当 up，都来这儿了，去 B
+                站支持一下我呗[]~(￣▽￣)~*
             </p>
             <p class="words">&emsp;&emsp;『<spen id="hitokoto"><a id="hitokoto_text">:D: 获取中...</a></spen>』</p>
             <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer>
@@ -35,7 +40,7 @@
                 <div class="btn"><a href="mailto: expector-hutch@outlook.com" target="_blank">邮箱</a></div>
             </div>
             <meting-js server="netease" type="song" id="1808556594" theme="#66ccff"></meting-js>
-            <div>
+            <div class="moreicons">
                 <a href="https://gitee.com/expector" target="_blank">
                     <svg class="icon"
                         style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
@@ -70,7 +75,7 @@
                 </a>
             </div>
             <footer>
-                <p>Copyright 2022 - Now <a href="https://expector.netlify.app/" target="_blank">Expector</a>
+                <p>Copyleft (CC-BY-NC-ND) 2022 <a href="https://expector.netlify.app/" target="_blank">Expector</a>
                     <br>Made by <a href="https://expector.netlify.app/" target="_blank">Expector</a>
                 </p>
             </footer>
