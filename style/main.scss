@@ -1,14 +1,15 @@
-@import url(/.css/pcmain.css) screen and (min-width: 960px);
-@import url(/.css/pemain.css) screen and (max-width: 959px);
+@import url(/css/pcmain.css) screen and (min-width: 960px);
+@import url(/css/pemain.css) screen and (max-width: 959px);
 
 @font-face {
     font-family: 'Lucida Handwriting';
-    src: url(../fonts/lucida-handwrit.ttf);
+    src: url(/fonts/LHANDW.TTF);
 }
 
 $main_color: #66ccff;
 
-html, body {
+html,
+body {
     background: {
         color: $main-color;
         image: url(https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png);
@@ -52,11 +53,13 @@ h1 {
         0 0 102px $shadow-color2,
         0 0 151px $shadow-color2;
 }
+
 p {
     font-size: 15px;
     word-wrap: break-word;
     color: aqua;
 }
+
 a {
     text-align: center;
     text-decoration-line: none;
@@ -71,8 +74,11 @@ a {
             0 0 21px #fff;
     }
 }
+
 footer {
-    p, a, a:hover {
+    p,
+    a,
+    a:hover {
         font-size: 10px;
         color: darkgray;
     }
@@ -80,7 +86,8 @@ footer {
 
 .btn {
     @mixin btn_style($color) {
-        &::before, &::after{
+        &::before,
+        &::after {
             background-color: $color;
             box-shadow: 0 0 5px $color,
                 0 0 15px $color,
@@ -98,6 +105,7 @@ footer {
         @include btn_style(#11ff45);
     }
 }
+
 .my-card {
     display: flex;
     justify-content: center;
