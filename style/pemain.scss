@@ -6,7 +6,7 @@ body {
 
 p.words {
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 20%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     backdrop-filter: blur(20px);
     text-shadow:
@@ -26,9 +26,8 @@ p.words {
     height: calc(100vw - 22px);
     border-top-left-radius: 11px;
     border-top-right-radius: 11px;
-    background-color: rgba(36, 36, 36, 8%);
-    /* box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px; */
-    border: 2px rgba(0, 0, 0, 40%) solid;
+    background-color: rgba(36, 36, 36, 0.08);
+    border: 2px rgba(0, 0, 0, 0.4) solid;
     border-bottom: none;
     border-right: 2px rgba(40, 40, 40, 0.35) solid;
 }
@@ -77,13 +76,7 @@ p.words {
     content: '';
     position: absolute;
     left: 50%;
-    /* width: 30px; */
-    /* height: 10px; */
-    /* bottom: -5px; */
     transform: translateX(-50%);
-    /* background-color: #00f; */
-    /* border-radius: 10px; */
-    /* transition: 0.5s; */
     bottom: 10px;
     width: calc(100% - 30px);
     height: 50%;

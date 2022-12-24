@@ -6,7 +6,7 @@ body {
 
 p.words:hover {
     background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 20%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     transition: 0.5s;
     backdrop-filter: blur(20px);
@@ -34,9 +34,9 @@ p.words {
     width: 320px;
     border-top-left-radius: 11px;
     border-bottom-left-radius: 11px;
-    background-color: rgba(36, 36, 36, 8%);
-    box-shadow: rgba(0, 0, 0, 30%) 2px 8px 8px;
-    border: 2px rgba(0, 0, 0, 40%) solid;
+    background-color: rgba(36, 36, 36, 0.08);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+    border: 2px rgba(0, 0, 0, 0.4) solid;
     border-bottom: 2px rgba(40, 40, 40, 0.35) solid;
     border-right: none;
 }
