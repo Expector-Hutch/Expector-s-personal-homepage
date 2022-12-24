@@ -10,7 +10,8 @@
 ![](https://img.shields.io/badge/MD-black?style=for-the-badge&logo=markdown&logoColor=white)
 ![](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
 
-目录注解（`M` 表示手动编写，`A` 表示自动生成或无需修改）：
+## 目录注解
+*（`M` 表示手动编写，`A` 表示自动生成或无需修改）*
 ```
 expector-hutch.github.io
 │  .hintrc                A  vscode 高亮配置
