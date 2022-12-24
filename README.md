@@ -41,4 +41,4 @@ expector-hutch.github.io
   └  pemain.scss          M  竖屏设备附加样式
 ```
 
-`CSS`使用`VSCode`的`Easy SASS`扩展自动生成。
+`CSS`使用`VSCode`的`Easy SASS`扩展从`SACC`自动生成。
