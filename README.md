@@ -14,7 +14,7 @@
 *（`M` 表示手动编写，`A` 表示自动生成或无需修改）*
 ```
 expector-hutch.github.io
-│  .hintrc                A  vscode 高亮配置
+|  .gitignore             A
 │  404.html               M  404 页面
 │  index.html             M  主页面
 │  LICENSE                A  许可证 (GPL3)
