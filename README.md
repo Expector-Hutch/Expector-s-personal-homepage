@@ -17,7 +17,7 @@ expector-hutch.github.io
 │  .hintrc                A  vscode 高亮配置
 │  404.html               M  404 页面
 │  index.html             M  主页面
-│  LICENSE                A  许可证
+│  LICENSE                A  许可证 (GPL3)
 │  README                 A  说明文件
 ├─.css                    A  css 样式
 │ ┆
