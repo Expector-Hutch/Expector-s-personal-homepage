@@ -1,6 +1,15 @@
 # expector-hutch.github.io
 **我的个人主页！**
 
+## 开发工具/语言
+![](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![](https://img.shields.io/badge/H5-f5580a?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/SASS-cc6699?style=for-the-badge&logo=sass&logoColor=white)
+![](https://img.shields.io/badge/CSS3-007dc6?style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/JS-f7df1e?style=for-the-badge&logo=javascript&logoColor=white)
+![](https://img.shields.io/badge/MD-black?style=for-the-badge&logo=markdown&logoColor=white)
+![](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
+
 目录注解（`M` 表示手动编写，`A` 表示自动生成或无需修改）：
 ```
 expector-hutch.github.io
@@ -30,3 +39,5 @@ expector-hutch.github.io
   │  pcmain.scss          M  宽屏设备附加样式
   └  pemain.scss          M  竖屏设备附加样式
 ```
+
+`CSS`使用`VSCode`的`Easy SASS`扩展自动生成。
