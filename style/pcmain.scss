@@ -70,14 +70,17 @@ p.words {
     height: 33px;
     margin: 0px 20px;
     &:hover{
-        &:before {
-            bottom: 0px;
+        @mixin btntb() {
             width: 80%;
             height: 50%;
             border-radius: 30px;
         }
+        &:before {
+            @include btntb();
+            bottom: 0px;
+        }
         &:after {
-            @extend .btn:hover:before;
+            @include btntb();
             top: 0px;
         }
         a {
@@ -87,19 +90,22 @@ p.words {
             }
         }
     }
-    &::before {
+    @mixin btnba() {
         content: '';
         position: absolute;
         left: 50%;
         width: 30px;
         height: 10px;
-        bottom: -5px;
         transform: translateX(-50%);
         border-radius: 10px;
         transition: 0.5s;
     }
+    &::before {
+        @include btnba();
+        bottom: -5px;
+    }
     &::after {
-        @extend .btn::before;
+        @include btnba();
         top: -5px;
     }
     a {

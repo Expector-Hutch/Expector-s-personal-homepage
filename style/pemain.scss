@@ -62,18 +62,21 @@ p.words {
 .btn {
     position: relative;
     height: 50px;
-    &::before {
+    @mixin btnba() {
         content: '';
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 10px;
         width: calc(100% - 30px);
         height: 50%;
         border-radius: 30px;
     }
+    &::before {
+        @include btnba();
+        bottom: 10px;
+    }
     &::after {
-        @extend .btn::before;
+        @include btnba();
         top: 5px;
     }
     a {
