@@ -19,14 +19,11 @@
 expector-hutch.github.io
 |  .gitignore             git 忽略文件
 │  404.html               404 页面
-|  CNAME                  不用看了，可以删除哦~
 │  index.html             主页面
 │  LICENSE                许可证 (GPL3)
 │  README                 说明文件
 ├─fonts                   字体文件
 │ └  lucida-handwrit.ttf  lucida handwrit 西文字体
-├─html                    已弃用或嵌入用页面
-│ └  music.html           已弃用音乐播放页面
 ├─js                      js 脚本
 │ └  main.js              主脚本
 └─style                   预处理样式
