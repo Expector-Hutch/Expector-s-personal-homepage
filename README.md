@@ -14,36 +14,40 @@
 ![APlayer.js](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
 
 ## 目录注解
-*（`M` 表示手动编写，`A` 表示自动生成或无需修改）*
+
 ```
 expector-hutch.github.io
-|  .gitignore             A
-│  404.html               M  404 页面
-│  index.html             M  主页面
-│  LICENSE                A  许可证 (GPL3)
-│  README                 A  说明文件
-├─.css                    A  css 样式
-│ ┆
-│ └  *.css
-├─.vscode                 A  vscode 配置
-│ ┆
-│ └  *
-├─fonts                   M  字体文件
-│ └  lucida-handwrit.ttf
-├─html                    M  已弃用或嵌入用页面
-│ └  music.html           M  已弃用音乐播放页面
-├─img                     M  图像
-│ │  left.jpg
-│ └  logo.png             M  图标
-├─js                      M  js 脚本
-│ └  main.js              M  主脚本
-└─style                   M  预处理样式
-  │  aplayer.scss         M  APlayer 播放器样式
-  │  main.scss            M  主样式
-  │  pcmain.scss          M  宽屏设备附加样式
-  └  pemain.scss          M  竖屏设备附加样式
+|  .gitignore             git 忽略文件
+│  404.html               404 页面
+│  index.html             主页面
+│  LICENSE                许可证 (GPL3)
+│  README                 说明文件
+├─fonts                   字体文件
+│ └  lucida-handwrit.ttf  lucida handwrit 西文字体
+├─html                    已弃用或嵌入用页面
+│ └  music.html           已弃用音乐播放页面
+├─js                      js 脚本
+│ └  main.js              主脚本
+└─style                   预处理样式
+  │  aplayer.scss         APlayer 播放器样式
+  │  main.scss            主样式
+  │  pcmain.scss          宽屏设备附加样式
+  └  pemain.scss          竖屏设备附加样式
+```
+*本项目图片等资源均使用外链*
+
+## 构建
+
+确保电脑安装了`sass`，如无可使用`npm`安装：
+
+```powershell
+npm install -g sass
 ```
 
-`CSS`使用`VSCode`的`Easy SASS`扩展从`SACC`自动生成。
+运行以下命令即可完成构建：
+```powershell
+sass style:css --style=compressed
+```
 
+---
 **⚠ 本仓库源代码及文案均是 Copyleft 的**
