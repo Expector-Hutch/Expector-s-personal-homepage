@@ -19,6 +19,7 @@
 expector-hutch.github.io
 |  .gitignore             git 忽略文件
 │  404.html               404 页面
+|  CNAME                  不用看了，可以删除哦~
 │  index.html             主页面
 │  LICENSE                许可证 (GPL3)
 │  README                 说明文件
