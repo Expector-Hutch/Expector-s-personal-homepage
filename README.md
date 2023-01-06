@@ -46,6 +46,3 @@ npm install -g sass
 ```powershell
 sass style:css --style=compressed
 ```
-
----
-**⚠ 本仓库源代码及文案均是 Copyleft 的**
