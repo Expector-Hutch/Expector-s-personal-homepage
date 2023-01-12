@@ -21,7 +21,7 @@ expector-hutch.github.io
 │  404.html               404 页面
 │  index.html             主页面
 │  LICENSE                许可证 (GPL3)
-│  README                 说明文件
+│  README.md              说明文件
 ├─fonts                   字体文件
 │ └  lucida-handwrit.ttf  lucida handwrit 西文字体
 ├─js                      js 脚本
