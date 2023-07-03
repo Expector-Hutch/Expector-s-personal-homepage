@@ -8,10 +8,12 @@ under certain conditions; type `show c' for details.
 import data from '../data/main.json' assert {type: 'json'};
 
 function make_friends_link() {
-    var friends = data.friends;
-    let make_friend_link_html = friend => data.friend_link_html.replace("{site}", friend.site).replace("{icon}", friend.icon);
+    const friends = data.friends;
+    let make_friend_html = friend => data.friend_link_html.replace("{site}", friend.site).replace("{icon}", friend.icon);
+    var friends_html = document.getElementById("friends");
     for (var i = 0; i < friends.length; i++) {
-        
+        friends_html.innerHTML += make_friend_html(friends[i]);
+        console.log(friends_html);
     }
 }
 make_friends_link()
