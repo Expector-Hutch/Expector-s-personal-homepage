@@ -4,6 +4,18 @@ This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 This is free software, and you are welcome to redistribute it
 under certain conditions; type `show c' for details.
 */
+
+import data from '../data/main.json' assert {type: 'json'};
+
+function make_friends_link() {
+    var friends = data.friends;
+    let make_friend_link_html = friend => data.friend_link_html.replace("{site}", friend.site).replace("{icon}", friend.icon);
+    for (var i = 0; i < friends.length; i++) {
+        
+    }
+}
+make_friends_link()
+
 window.oncontextmenu = function(e){
     //取消默认的浏览器自带右键
     e.preventDefault();

@@ -1,0 +1,17 @@
+{
+ "friends": [
+  {
+   "name": "云帆沧海",
+   "icon": "https://avatars.githubusercontent.com/u/98736983?v=4",
+   "site": "https://budawu.github.io/",
+   "word": "一个写Python的初中生飞友"
+  },
+  {
+   "name": "邱璇洛",
+   "icon": "https://qiuxuanluo.xlog.app/_next/image?url=https%3A%2F%2Fipfs.4everland.xyz%2Fipfs%2Fbafybeibdfnpvwm66ftqql3x46iste6ejinibettjwuauibcwqr36jlmibu&w=384&q=75",
+   "site": "https://qiuxuanluo.xlog.app/",
+   "word": "立志于做一些奇奇怪怪希望有点用的事 |ω・´)"
+  }
+ ],
+ "friend_link_html": "<a class=\"friend\" href=\"{site}\"><img src=\"{icon}\"></a>"
+}
