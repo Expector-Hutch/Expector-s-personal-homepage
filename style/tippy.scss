@@ -1,0 +1,35 @@
+.tippy-tooltip {
+    background-color: rgba(36, 36, 36, 0.99);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.tippy-content {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 11px;
+    text-shadow: none;
+
+    img {
+        height: 33px;
+        width: 33px;
+        border-radius: 50%;
+    }
+
+    h3 {
+        display: inline;
+        font-size: 17px;
+        color: #66ccff;
+    }
+
+    hr {
+        width: 100%;
+        border: 1px solid aqua;
+        margin-top: 0px;
+    }
+
+    p {
+        color: white;
+    }
+}
