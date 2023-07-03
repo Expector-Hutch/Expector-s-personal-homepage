@@ -9,146 +9,189 @@ under certain conditions; type `show c' for details.
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Expector的主页</title>
-    <link rel="icon" href="https://pic.imgdb.cn/item/63b53573be43e0d30ee6306a.png">
-    <link rel="stylesheet" href="/css/main.css" media="screen">
-    <link rel="stylesheet" href="/css/aplayer.css" media="screen">
-    <style type="text/css">
-        @media not screen {
-            .tbg,
-            .words,
-            .more,
-            meting-js,
-            .moreicons {
-                display: none;
-            }
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Expector的主页</title>
+  <link rel="icon" href="https://pic.imgdb.cn/item/63b53573be43e0d30ee6306a.png">
+  <link rel="stylesheet" href="/css/main.css" media="screen">
+  <link rel="stylesheet" href="/css/aplayer.css" media="screen">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css">
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/animations/scale.css">
+  <style type="text/css">
+    @media not screen {
+
+      .tbg,
+      .words,
+      .more,
+      meting-js,
+      .moreicons {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="my-card">
-        <div class="tbg"></div>
-        <div class="information">
-            <a href="https://github.com/Expector-Hutch/Expector-s-personal-homepage" class="github-corner"
-                aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250"
-                    style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
-                    aria-hidden="true">
-                    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-                    <path
-                        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-                        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-                    <path
-                        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-                        fill="currentColor" class="octo-body"></path>
-                </svg></a>
-            <style>
-                .github-corner:hover .octo-arm {
-                    animation: octocat-wave 560ms ease-in-out
-                }
+  <div class="my-card">
+    <div class="tbg"></div>
+    <div class="information">
+      <a href="https://github.com/Expector-Hutch/Expector-s-personal-homepage" class="github-corner"
+        aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250"
+          style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+          <path
+            d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+            fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+          <path
+            d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+            fill="currentColor" class="octo-body"></path>
+        </svg></a>
+      <style>
+        .github-corner:hover .octo-arm {
+          animation: octocat-wave 560ms ease-in-out
+        }
 
-                @keyframes octocat-wave {
+        @keyframes octocat-wave {
 
-                    0%,
-                    100% {
-                        transform: rotate(0)
-                    }
+          0%,
+          100% {
+            transform: rotate(0)
+          }
 
-                    20%,
-                    60% {
-                        transform: rotate(-25deg)
-                    }
+          20%,
+          60% {
+            transform: rotate(-25deg)
+          }
 
-                    40%,
-                    80% {
-                        transform: rotate(10deg)
-                    }
-                }
+          40%,
+          80% {
+            transform: rotate(10deg)
+          }
+        }
 
-                .github-corner svg {
-                    border-top-right-radius: 11px;
-                }
+        .github-corner svg {
+          border-top-right-radius: 11px;
+        }
 
-                @media (max-width:959px) {
-                    .github-corner:hover .octo-arm {
-                        animation: none
-                    }
+        @media (max-width:959px) {
+          .github-corner:hover .octo-arm {
+            animation: none
+          }
 
-                    .github-corner .octo-arm {
-                        animation: octocat-wave 560ms ease-in-out
-                    }
+          .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+          }
 
-                    .github-corner svg {
-                        border-top-right-radius: 0px;
-                    }
-                }
-            </style>
-            <h1 style="font-family: 'Lucida Handwriting';">Expector</h1>
-            <p id="my">
-                &emsp;&emsp;你好，我是 Expector，一个热爱科学的中学生。本人虽才疏学浅但乐于助人，欢迎通过各种方式联系我，希望能帮到你。个人爱好广泛，乐于接受新事物，最喜欢《银河帝国》和《三体》，欢迎跟我讨论呀~
-                <br>&emsp;&emsp;作为一个学生，成绩一般，热爱理科，最喜欢数学。课余热爱编程，动手能力还不错；本人还在当 up，都来这儿了，去 B
-                站支持一下我呗[]~(￣▽￣)~*
-            </p>
-            <p class="words">&emsp;&emsp;『<spen id="hitokoto"><a id="hitokoto_text">我思故我在</a></spen>』</p>
-            <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer>
-            </script>
-            <div class="friends">
-				<p>&emsp;友链</p>
-				<img src="https://avatars.githubusercontent.com/u/98736983?v=4">
-            </div>
-            <div class="more">
-                <div class="btn"><a href="https://space.bilibili.com/1530809275" target="_blank">哔站</a></div>
-                <div class="btn"><a href="https://www.cnblogs.com/expector/" target="_blank">博客</a></div>
-                <div class="btn"><a href="mailto: expector-hutch@outlook.com" target="_blank">邮箱</a></div>
-            </div>
-            <meting-js server="netease" type="song" id="1299289240" theme="#66ccff"></meting-js>
-            <div class="moreicons">
-                <a href="https://github.com/Expector-Hutch/" target="_blank">
-                    <svg class="icon"
-                        style="width: 1.0244140625em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                        viewBox="0 0 1049 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2428">
-                        <path
-                            d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"
-                            fill="#fff" p-id="2429"></path>
-                        <path
-                            d="M199.040177 753.571326c-0.869171 2.607513-5.215026 3.476684-8.691711 1.738342s-6.084198-5.215026-4.345855-7.82254c0.869171-2.607513 5.215026-3.476684 8.691711-1.738342s5.215026 5.215026 4.345855 7.82254z m-6.953369-4.345856M219.900283 777.038945c-2.607513 2.607513-7.82254 0.869171-10.430053-2.607514-3.476684-3.476684-4.345855-8.691711-1.738342-11.299224 2.607513-2.607513 6.953369-0.869171 10.430053 2.607514 3.476684 4.345855 4.345855 9.560882 1.738342 11.299224z m-5.215026-5.215027M240.760389 807.459932c-3.476684 2.607513-8.691711 0-11.299224-4.345855-3.476684-4.345855-3.476684-10.430053 0-12.168395 3.476684-2.607513 8.691711 0 11.299224 4.345855 3.476684 4.345855 3.476684 9.560882 0 12.168395z m0 0M269.443034 837.011749c-2.607513 3.476684-8.691711 2.607513-13.906737-1.738342-4.345855-4.345855-6.084198-10.430053-2.607513-13.037566 2.607513-3.476684 8.691711-2.607513 13.906737 1.738342 4.345855 3.476684 5.215026 9.560882 2.607513 13.037566z m0 0M308.555733 853.526c-0.869171 4.345855-6.953369 6.084198-13.037566 4.345855-6.084198-1.738342-9.560882-6.953369-8.691711-10.430053 0.869171-4.345855 6.953369-6.084198 13.037566-4.345855 6.084198 1.738342 9.560882 6.084198 8.691711 10.430053z m0 0M351.145116 857.002684c0 4.345855-5.215026 7.82254-11.299224 7.82254-6.084198 0-11.299224-3.476684-11.299224-7.82254s5.215026-7.82254 11.299224-7.82254c6.084198 0 11.299224 3.476684 11.299224 7.82254z m0 0M391.126986 850.049315c0.869171 4.345855-3.476684 8.691711-9.560882 9.560882-6.084198 0.869171-11.299224-1.738342-12.168395-6.084197-0.869171-4.345855 3.476684-8.691711 9.560881-9.560882 6.084198-0.869171 11.299224 1.738342 12.168396 6.084197z m0 0"
-                            fill="#fff" p-id="2430"></path>
-                    </svg>
-                </a>
-                <a href="https://gitee.com/expector" target="_blank">
-                    <svg class="icon"
-                        style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                        viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1835">
-                        <path
-                            d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512z m259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-0.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l0.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"
-                            fill="#C71D23" p-id="1836"></path>
-                    </svg>
-                </a>
-                <a href="https://www.zhihu.com/people/shadowenderking" target="_blank">
-                    <svg class="icon"
-                        style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
-                        viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4908">
-                        <path
-                            d="M512 1024C229.2224 1024 0 794.7776 0 512 0 229.2224 229.2224 0 512 0c282.7776 0 512 229.2224 512 512 0 282.7776-229.2224 512-512 512z m-129.877333-756.48s-36.1984 2.116267-48.981334 24.490667c-12.782933 22.357333-54.306133 137.3696-54.306133 137.3696s13.841067 6.382933 37.2736-10.6496c23.432533-17.0496 30.890667-46.865067 30.890667-46.865067l42.581333-2.116267 1.0752 121.3952s-73.489067-1.0752-88.405333 0c-14.8992 1.058133-23.415467 40.448-23.415467 40.448h111.8208s-9.591467 67.106133-38.3488 116.087467c-28.740267 48.981333-83.063467 87.313067-83.063467 87.313067s39.424 15.9744 77.738667-6.382934c38.3488-22.357333 66.6112-120.712533 66.6112-120.712533l89.941333 110.062933s8.192-52.394667-1.467733-67.1744c-9.659733-14.7968-62.208-74.2912-62.208-74.2912l-22.954667 20.224 16.3328-65.109333h97.962667s0-38.3488-19.1488-40.465067c-19.182933-2.133333-78.813867 0-78.813867 0v-119.278933h88.405334s-1.0752-39.389867-18.1248-39.389867H359.765333l22.357334-64.955733z m170.001066 61.184v358.570667h36.010667l13.090133 45.0048 63.351467-45.0048h89.053867V328.704H552.123733z m42.666667 39.918933h117.879467v277.9136h-41.864534l-53.384533 40.2432-11.639467-40.2432h-10.990933V368.64z"
-                            fill="#056DE8" p-id="4909"></path>
-                    </svg>
-                </a>
-            </div>
-            <footer>
-                <p>Copyright (<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh"
-                        title="Creative Commons License Details" target="_blank">CC-BY-NC-ND</a>) 2022 <a
-                        href="https://expector-hutch.github.io/" target="_blank">Expector</a>
-                    <br>Made by <a href="https://expector-hutch.github.io/">Expector</a>
-                </p>
-            </footer>
-        </div>
+          .github-corner svg {
+            border-top-right-radius: 0px;
+          }
+        }
+      </style>
+      <h1 style="font-family: 'Lucida Handwriting';">Expector</h1>
+      <p id="my">
+        &emsp;&emsp;你好，我是 Expector，一个热爱科学的中学生。本人虽才疏学浅但乐于助人，欢迎通过各种方式联系我，希望能帮到你。个人爱好广泛，乐于接受新事物，最喜欢《银河帝国》和《三体》，欢迎跟我讨论呀~
+        <br>&emsp;&emsp;作为一个学生，成绩一般，热爱理科，最喜欢数学。课余热爱编程，动手能力还不错；本人还在当 up，都来这儿了，去 B
+        站支持一下我呗[]~(￣▽￣)~*
+      </p>
+      <p class="words">&emsp;&emsp;『<spen id="hitokoto"><a id="hitokoto_text">我思故我在</a></spen>』</p>
+      <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer>
+      </script>
+      <div class="friends">
+        <p>&emsp;友链&emsp;</p>
+        <a class="friend" href="https://budawu.github.io/"><img src="https://avatars.githubusercontent.com/u/98736983?v=4"></a>
+      </div>
+      <div class="more">
+        <div class="btn"><a href="https://space.bilibili.com/1530809275" target="_blank">哔站</a></div>
+        <div class="btn"><a href="https://www.cnblogs.com/expector/" target="_blank">博客</a></div>
+        <div class="btn"><a href="mailto: expector-hutch@outlook.com" target="_blank">邮箱</a></div>
+      </div>
+      <meting-js server="netease" type="song" id="1299289240" theme="#66ccff"></meting-js>
+      <div class="moreicons">
+        <a href="https://github.com/Expector-Hutch/" target="_blank">
+          <svg class="icon"
+            style="width: 1.0244140625em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+            viewBox="0 0 1049 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2428">
+            <path
+              d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"
+              fill="#fff" p-id="2429"></path>
+            <path
+              d="M199.040177 753.571326c-0.869171 2.607513-5.215026 3.476684-8.691711 1.738342s-6.084198-5.215026-4.345855-7.82254c0.869171-2.607513 5.215026-3.476684 8.691711-1.738342s5.215026 5.215026 4.345855 7.82254z m-6.953369-4.345856M219.900283 777.038945c-2.607513 2.607513-7.82254 0.869171-10.430053-2.607514-3.476684-3.476684-4.345855-8.691711-1.738342-11.299224 2.607513-2.607513 6.953369-0.869171 10.430053 2.607514 3.476684 4.345855 4.345855 9.560882 1.738342 11.299224z m-5.215026-5.215027M240.760389 807.459932c-3.476684 2.607513-8.691711 0-11.299224-4.345855-3.476684-4.345855-3.476684-10.430053 0-12.168395 3.476684-2.607513 8.691711 0 11.299224 4.345855 3.476684 4.345855 3.476684 9.560882 0 12.168395z m0 0M269.443034 837.011749c-2.607513 3.476684-8.691711 2.607513-13.906737-1.738342-4.345855-4.345855-6.084198-10.430053-2.607513-13.037566 2.607513-3.476684 8.691711-2.607513 13.906737 1.738342 4.345855 3.476684 5.215026 9.560882 2.607513 13.037566z m0 0M308.555733 853.526c-0.869171 4.345855-6.953369 6.084198-13.037566 4.345855-6.084198-1.738342-9.560882-6.953369-8.691711-10.430053 0.869171-4.345855 6.953369-6.084198 13.037566-4.345855 6.084198 1.738342 9.560882 6.084198 8.691711 10.430053z m0 0M351.145116 857.002684c0 4.345855-5.215026 7.82254-11.299224 7.82254-6.084198 0-11.299224-3.476684-11.299224-7.82254s5.215026-7.82254 11.299224-7.82254c6.084198 0 11.299224 3.476684 11.299224 7.82254z m0 0M391.126986 850.049315c0.869171 4.345855-3.476684 8.691711-9.560882 9.560882-6.084198 0.869171-11.299224-1.738342-12.168395-6.084197-0.869171-4.345855 3.476684-8.691711 9.560881-9.560882 6.084198-0.869171 11.299224 1.738342 12.168396 6.084197z m0 0"
+              fill="#fff" p-id="2430"></path>
+          </svg>
+        </a>
+        <a href="https://gitee.com/expector" target="_blank">
+          <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1835">
+            <path
+              d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512z m259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-0.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l0.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z"
+              fill="#C71D23" p-id="1836"></path>
+          </svg>
+        </a>
+        <a href="https://www.zhihu.com/people/shadowenderking" target="_blank">
+          <svg class="icon" style="width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;"
+            viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4908">
+            <path
+              d="M512 1024C229.2224 1024 0 794.7776 0 512 0 229.2224 229.2224 0 512 0c282.7776 0 512 229.2224 512 512 0 282.7776-229.2224 512-512 512z m-129.877333-756.48s-36.1984 2.116267-48.981334 24.490667c-12.782933 22.357333-54.306133 137.3696-54.306133 137.3696s13.841067 6.382933 37.2736-10.6496c23.432533-17.0496 30.890667-46.865067 30.890667-46.865067l42.581333-2.116267 1.0752 121.3952s-73.489067-1.0752-88.405333 0c-14.8992 1.058133-23.415467 40.448-23.415467 40.448h111.8208s-9.591467 67.106133-38.3488 116.087467c-28.740267 48.981333-83.063467 87.313067-83.063467 87.313067s39.424 15.9744 77.738667-6.382934c38.3488-22.357333 66.6112-120.712533 66.6112-120.712533l89.941333 110.062933s8.192-52.394667-1.467733-67.1744c-9.659733-14.7968-62.208-74.2912-62.208-74.2912l-22.954667 20.224 16.3328-65.109333h97.962667s0-38.3488-19.1488-40.465067c-19.182933-2.133333-78.813867 0-78.813867 0v-119.278933h88.405334s-1.0752-39.389867-18.1248-39.389867H359.765333l22.357334-64.955733z m170.001066 61.184v358.570667h36.010667l13.090133 45.0048 63.351467-45.0048h89.053867V328.704H552.123733z m42.666667 39.918933h117.879467v277.9136h-41.864534l-53.384533 40.2432-11.639467-40.2432h-10.990933V368.64z"
+              fill="#056DE8" p-id="4909"></path>
+          </svg>
+        </a>
+      </div>
+      <footer>
+        <p>Copyright (<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh"
+            title="Creative Commons License Details" target="_blank">CC-BY-NC-ND</a>) 2022 <a
+            href="https://expector-hutch.github.io/" target="_blank">Expector</a>
+          <br>Made by <a href="https://expector-hutch.github.io/">Expector</a>
+        </p>
+      </footer>
     </div>
-    <script src="/js/main.js"></script>
+  </div>
+  <script src="/js/main.js"></script>
+  <script src="https://unpkg.com/popper.js@1"></script>
+  <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+  <script>
+    tippy('.friend',
+          {content: '<div> \
+            <img src="https://avatars.githubusercontent.com/u/98736983?v=4"> \
+            <h3>云帆沧海</h3> \
+            </div><hr><p>一个写Python的初中生飞友</p>',
+            interactive: true,
+            animation: 'scale'});
+  </script>
+  <style>
+    .tippy-tooltip {
+      background-color: rgba(36, 36, 36, 0.99);
+	    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+    .tippy-content {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 11px;
+    text-shadow: none;
+    }
+    .tippy-content img {
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+  }
+  .tippy-content h3 {
+    display: inline;
+    font-size: 17px;
+    color: #66ccff;
+  }
+  .tippy-content hr {
+    width: 100%;
+    border:1px solid aqua;
+    margin-top: 0px;
+  }
+  .tippy-content p {
+    color: white;
+  }
+  </style>
 </body>
 
 </html>

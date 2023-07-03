@@ -141,6 +141,7 @@ footer {
 }
 
 .friends {
+    display: flex;
 	background: rgba(255, 255, 255, 0.05);
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
@@ -153,7 +154,7 @@ footer {
 	padding: 5px;
 	p {
 		display: inline;
-		text-align:center;
+        margin: 0;
 	}
 	img {
 		border-radius: 50%;
