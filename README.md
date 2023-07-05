@@ -31,7 +31,8 @@ expector-hutch.github.io
   │  aplayer.scss         APlayer 播放器样式
   │  main.scss            主样式
   │  pcmain.scss          宽屏设备附加样式
-  └  pemain.scss          竖屏设备附加样式
+  │  pemain.scss          竖屏设备附加样式
+  └  tippy.scss           Tippy 友链卡片样式
 ```
 *本项目图片等资源均使用外链*
 
