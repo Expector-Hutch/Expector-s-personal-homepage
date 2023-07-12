@@ -25,8 +25,8 @@ expector-hutch.github.io
 │  README.md              说明文件
 ├─fonts                   字体文件
 │ └  lucida-handwrit.ttf  lucida handwrit 西文字体
-├─js                      js 脚本
-│ └  main.js              主脚本
+├─script                  脚本
+│ └  main.py              主脚本
 └─style                   预处理样式
   │  aplayer.scss         APlayer 播放器样式
   │  main.scss            主样式
@@ -38,13 +38,15 @@ expector-hutch.github.io
 
 ## 构建
 
-确保电脑安装了`sass`，如无可使用`npm`安装：
+确保电脑安装了`sass`以及`rapydscript`，如无可使用`npm`安装：
 
 ```powershell
-npm install -g sass
+npm i -g sass
+npm i -g rapydscript
 ```
 
 运行以下命令即可完成构建：
 ```powershell
 sass style:css --style=compressed
+rapydscript -6 script/main.py -o js/main.js
 ```
