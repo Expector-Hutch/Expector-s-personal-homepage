@@ -1,5 +1,5 @@
 # Expector's Personal Homepage
-⚠半弃坑状态
+
 **我的[个人主页](https://expector.netlify.app)！**
 
 ## 开发/部署工具/语言（堆图标）
