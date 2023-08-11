@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "sass style:css --style=compressed & uglifyjs ./script/main.js -m -c -o ./js/main.js"
+  },
+  "dependencies": {
+    "sass": "^1.65.1",
+    "tippy.js": "^5.2.1",
+    "uglify-js": "^3.17.4"
+  }
+}

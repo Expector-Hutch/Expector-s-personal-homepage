@@ -3,3 +3,4 @@ test.html
 css/
 js/
 .vscode/
+node_modules/
