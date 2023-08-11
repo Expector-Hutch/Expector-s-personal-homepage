@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "sass style:css --style=compressed & uglifyjs ./script/main.js -m -c -o ./js/main.js"
+    "build-style": "sass style:css --style=compressed",
+    "build-script": "uglifyjs ./script/main.js -m -c -o ./js/main.js"
   },
   "dependencies": {
     "sass": "^1.65.1",
