@@ -40,5 +40,6 @@ expector-hutch.github.io
 运行以下命令即可完成构建：
 ```powershell
 npm install .
+madir js
 npm run build
 ```
