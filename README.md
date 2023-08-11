@@ -41,5 +41,6 @@ expector-hutch.github.io
 ```powershell
 npm install .
 madir js
-npm run build
+npm run build-style
+npm run build-script
 ```
