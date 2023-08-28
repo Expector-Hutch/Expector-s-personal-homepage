@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "build-style": "sass style:css --style=compressed",
-    "build-script": "uglifyjs ./script/main.js -m -c -o ./js/main.js"
+    "build": "parcel index.html 404.html"
   },
   "dependencies": {
     "aplayer": "^1.10.1",

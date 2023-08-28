@@ -14,7 +14,7 @@
 ![Markdown](https://img.shields.io/badge/MD-black?style=for-the-badge&logo=markdown&logoColor=white)
 ![APlayer.js](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
 
-## 目录注解
+## 目录注解 !本节内容尚未同重构后代码更新
 
 ```
 expector-hutch.github.io
@@ -40,7 +40,5 @@ expector-hutch.github.io
 运行以下命令即可完成构建：
 ```powershell
 npm install .
-madir js
-npm run build-style
-npm run build-script
+npm run build
 ```
