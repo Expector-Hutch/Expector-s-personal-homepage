@@ -1,3 +1,4 @@
+import tippy from "tippy.js";
 try {
     tippy('.friend', {
         content(reference) {

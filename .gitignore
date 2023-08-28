@@ -1,6 +1,6 @@
 .hintrc
 test.html
-css/
-js/
+dist/
+.cache/
 .vscode/
 node_modules/

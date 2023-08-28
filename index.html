@@ -14,12 +14,12 @@ under certain conditions; type `show c' for details.
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Expector的主页</title>
   <link rel="icon" href="https://pic.imgdb.cn/item/63b53573be43e0d30ee6306a.png">
-  <link rel="stylesheet" href="/css/main.css" media="screen">
-  <link rel="stylesheet" href="/css/tippy.css" media="screen">
-  <link rel="stylesheet" href="/css/aplayer.css" media="screen">
-  <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/tippy.css">
-  <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css">
-  <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/animations/scale.css">
+  <link rel="stylesheet" href="/style/main.scss" media="screen">
+  <link rel="stylesheet" href="/style/tippy.scss" media="screen">
+  <link rel="stylesheet" href="/style/aplayer.scss" media="screen">
+  <link rel="stylesheet" href="/node_modules/tippy.js/dist/tippy.css">
+  <link rel="stylesheet" href="/node_modules/tippy.js/dist/backdrop.css">
+  <link rel="stylesheet" href="/node_modules/tippy.js/animations/scale.css">
   <style type="text/css">
     @media not screen {
 
@@ -124,7 +124,10 @@ under certain conditions; type `show c' for details.
         <div class="btn"><a href="https://www.cnblogs.com/expector/" target="_blank">博客</a></div>
         <div class="btn"><a href="mailto: expector-hutch@outlook.com" target="_blank">邮箱</a></div>
       </div>
-      <meting-js server="netease" type="song" id="1299289240" theme="#66ccff"></meting-js>
+      <!-- <meting-js server="netease" type="song" id="1299289240" theme="#66ccff"></meting-js> -->
+      <meting-js
+	auto="https://music.163.com/#/playlist?id=60198">
+</meting-js>
       <div class="moreicons">
         <a href="https://github.com/Expector-Hutch/" target="_blank">
           <svg class="icon"
@@ -164,11 +167,9 @@ under certain conditions; type `show c' for details.
       </footer>
     </div>
   </div>
-  <script src="https://unpkg.com/popper.js@1"></script>
-  <script src="https://unpkg.com/tippy.js@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="node_modules/aplayer/dist/APlayer.min.js"></script>
+  <script src="node_modules/meting/dist/Meting.min.js" defer></script>
+  <script src="/script/main.js" type="module"></script>
 </body>
 
 </html>

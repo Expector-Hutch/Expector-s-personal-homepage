@@ -5,8 +5,8 @@ This is free software, and you are welcome to redistribute it
 under certain conditions; type `show c' for details.
 */
 
-@import url(/css/pcmain.css) (min-width: 960px);
-@import url(/css/pemain.css) (max-width: 959px);
+@import url(/style/pcmain.scss) (min-width: 960px);
+@import url(/style/pemain.scss) (max-width: 959px);
 
 @font-face {
     font-family: 'Lucida Handwriting';
