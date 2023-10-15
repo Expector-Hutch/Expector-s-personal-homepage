@@ -39,6 +39,5 @@ expector-hutch.github.io
 
 运行以下命令即可完成构建：
 ```powershell
-npm install .
-npm run build
+yarn build
 ```
