@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "node data-download.js && parcel index.html"
+    "build": "node data-download.js && parcel build index.html",
+    "build-server": "node data-download.js && parcel index.html"
   },
   "dependencies": {
     "aplayer": "^1.10.1",
