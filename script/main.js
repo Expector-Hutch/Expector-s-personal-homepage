@@ -10,7 +10,7 @@ try {
     });
 } catch (err) { }
 
-import APlayer from 'APlayer';
+import APlayer from 'aplayer';
 
 import detail from '../data/detail.json';
 import lyric from '../data/lyric.json';
