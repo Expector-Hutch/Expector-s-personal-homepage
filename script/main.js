@@ -14,7 +14,7 @@ import APlayer from 'aplayer';
 
 import detail from '../data/detail.json';
 import lyric from '../data/lyric.json';
-const ap = new APlayer({
+try{const ap = new APlayer({
     container: document.getElementsByTagName("APlayer-js")[0],
     lrcType: 1,
     audio: [{
@@ -24,4 +24,4 @@ const ap = new APlayer({
         cover: detail.picUrl,
         lrc: lyric.lyric
     }]
-});
+});} catch (err) { }

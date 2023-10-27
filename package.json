@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "node data-download.js && parcel build index.html",
+    "build": "node data-download.js && parcel build index.html 404.html",
     "build-server": "node data-download.js && parcel index.html"
   },
   "dependencies": {
