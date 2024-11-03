@@ -46,6 +46,7 @@ expector-hutch.github.io
 
 运行以下命令即可完成构建：
 ```powershell
+yarn
 yarn build
 ```
 构建后的所有文件都将存储于 `dist` 目录中
