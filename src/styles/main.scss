@@ -5,12 +5,12 @@ This is free software, and you are welcome to redistribute it
 under certain conditions; type `show c' for details.
 */
 
-@import url(/style/pcmain.scss) (min-width: 960px);
-@import url(/style/pemain.scss) (max-width: 959px);
+@import url(./pcmain.scss) (min-width: 960px);
+@import url(./pemain.scss) (max-width: 959px);
 
 @font-face {
     font-family: 'Lucida Handwriting';
-    src: url(/fonts/LHANDW.TTF);
+    src: url(src/assets/fonts/LHANDW.TTF);
 }
 
 $main_color: #66ccff;
