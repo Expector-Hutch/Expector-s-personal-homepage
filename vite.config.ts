@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    assetsInclude: ["**/*.ttf"],
     css: {
         preprocessorOptions: {
             scss: {
@@ -10,10 +11,10 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '/api': {
+            '/music': {
                 target: 'http://music.163.com',
                 changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/api/, ''),
+                rewrite: (path) => path.replace(/^\/music/, ''),
             },
         },
     }

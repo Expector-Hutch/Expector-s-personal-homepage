@@ -1,0 +1,10 @@
+[[redirects]]
+from = "/music/*"
+to = "https://music.163.com"
+status = 200
+force = true
+
+[[headers]]
+for = "/music/*"
+[headers.values]
+Access-Control-Allow-Origin = "*"

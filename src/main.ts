@@ -18,7 +18,7 @@ const songid = 1299289240;
 
 async function fetchSongDetail(songId: number) {
     try {
-        const response = await fetch(`/api/api/song/detail/?id=${songId}&ids=%5B${songId}%5D`);
+        const response = await fetch(`/music/api/song/detail/?id=${songId}&ids=%5B${songId}%5D`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -31,7 +31,7 @@ async function fetchSongDetail(songId: number) {
 }
 async function fetchSongLyric(songId: number) {
     try {
-        const response = await fetch(`/api/api/song/lyric?id=${songId}&lv=1&kv=1&tv=-1`);
+        const response = await fetch(`/music/api/song/lyric?id=${songId}&lv=1&kv=1&tv=-1`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
