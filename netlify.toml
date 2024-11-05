@@ -1,6 +1,6 @@
 [[redirects]]
 from = "/music/*"
-to = "https://music.163.com"
+to = "https://music.163.com:splat"
 status = 200
 force = true
 
