@@ -1,5 +1,7 @@
 import './style.scss';
 
+import './components/gh_link';
+
 import tippy from "tippy.js";
 try {
     tippy('.friend', {
@@ -37,7 +39,7 @@ async function fetchSongLyric(songId: number) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        return data.lrc.lyric; // 返回歌词
+        return data.lrc.lyric;
     } catch (error) {
         console.error('Error fetching song lyric:', error);
         return null;
@@ -57,7 +59,7 @@ fetchSongDetail(songid).then((detail) => {
                             artist: detail.artists.map((artist: { name: any; }) => artist.name).join(', '),
                             url: `https://music.163.com/song/media/outer/url?id=${songid}.mp3`,
                             cover: detail.album.picUrl,
-                            lrc: lyric // 传递歌词
+                            lrc: lyric
                         }]
                     });
                 } catch (err) {
