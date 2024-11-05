@@ -2,51 +2,42 @@
 
 **我的[个人主页](https://expector.netlify.app)！**
 
-## 开发/部署工具/语言
-![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
-![Git](https://img.shields.io/badge/Git-f34f29?style=for-the-badge&logo=git&logoColor=white)
-![Github](https://img.shields.io/badge/Github-161b22?style=for-the-badge&logo=github&logoColor=white)
+## 技术栈
+
+![VSCode](https://img.shields.io/badge/vscodium-2F80ED?style=for-the-badge&logo=vscodium&logoColor=white)
+![Git](https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Github](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Netlify](https://img.shields.io/badge/netlify-149cab?style=for-the-badge&logo=netlify&logoColor=white)
 
-![HTML5](https://img.shields.io/badge/H5-f5580a?style=for-the-badge&logo=html5&logoColor=white)
+![Node.js](https://img.shields.io/badge/nodejs-5FA04E?style=for-the-badge&logo=node.js&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
+![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+
+![HTML5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-cc6699?style=for-the-badge&logo=sass&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-007dc6?style=for-the-badge&logo=css3&logoColor=white)
-![JScript](https://img.shields.io/badge/JS-f7df1e?style=for-the-badge&logo=javascript&logoColor=white)
-![Markdown](https://img.shields.io/badge/MD-black?style=for-the-badge&logo=markdown&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+
 ![APlayer.js](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
-
-## 目录注解
-
-```
-expector-hutch.github.io
-|  .gitignore
-|  .htmlnanorc            一个迂回解决编译器 BUG 的配置
-│  404.html
-|  data-download.js       将下载提供给 APlayer 的数据
-│  index.html
-│  LICENSE                GPL3
-|  package-lock.json
-|  package.json
-│  README.md
-|  yarn-error.log
-|  yarn.lock
-├─fonts
-│ └  lucida-handwrit.ttf  首页标题字体文件
-├─script
-│ └  main.js
-└─style
-  │  aplayer.scss         APlayer 播放器样式
-  │  main.scss            主样式
-  │  pcmain.scss          宽屏设备附加样式
-  │  pemain.scss          竖屏设备附加样式
-  └  tippy.scss           Tippy 友链卡片样式
-```
+![Tippy.js](https://img.shields.io/badge/TIPPY.js-5b89f3?style=for-the-badge&logo=tippy.js&logoColor=white)
 
 ## 构建 & 运行
 
-运行以下命令即可完成构建：
-```powershell
-yarn
-yarn build
+确保你已经安装了 `node.js` 和 `pnpm`，若无，可通过以下命令安装：
+```sh
+sudo apt install nodejs npm # 安装 node.js 以及 npm，示例为 debian 系系统
+npm -g i pnpm # 安装 pnpm
 ```
-构建后的所有文件都将存储于 `dist` 目录中
+接下来，在项目中运行
+```sh
+pnpm i .
+```
+以安装依赖包，然后你可以通过
+```sh
+pnpm run dev
+```
+在开发模式下启动项目，以及
+```sh
+pnpm run build
+```
+构建项目。
