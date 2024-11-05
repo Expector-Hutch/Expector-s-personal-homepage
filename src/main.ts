@@ -12,7 +12,7 @@ try {
     });
 } catch (err) { }
 
-import APlayer from "APlayer";
+import APlayer from "aplayer";
 
 const songid = 1299289240;
 
