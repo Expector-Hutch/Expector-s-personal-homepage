@@ -8,6 +8,7 @@ try {
             const template = document.getElementById(id ? id : "");
             return template ? template.innerHTML : "";
         },
+        allowHTML: true,
         interactive: true
     });
 } catch (err) { }
