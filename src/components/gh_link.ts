@@ -1,4 +1,4 @@
-class GHLinkElement extends HTMLElement {
+export class GHLinkElement extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });

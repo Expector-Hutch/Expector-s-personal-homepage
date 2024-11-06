@@ -1,4 +1,4 @@
-class HitokotoElement extends HTMLElement {
+export class HitokotoElement extends HTMLElement {
     constructor() {
         super();
         fetch('https://v1.hitokoto.cn')

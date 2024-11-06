@@ -52,53 +52,6 @@ main {
     }
 }
 
-.btn {
-    position: relative;
-    height: 50px;
-    @mixin btnba() {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 30px);
-        height: 50%;
-        border-radius: 30px;
-    }
-    &::before {
-        @include btnba();
-        bottom: 10px;
-    }
-    &::after {
-        @include btnba();
-        top: 5px;
-    }
-    a {
-        text-decoration: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        border: {
-            top: 1px solid rgba(255, 255, 255, 0.1);
-            bottom: 1px solid rgba(255, 255, 255, 0.1);
-            radius: 30px;
-        }
-        color: #fff;
-        z-index: 1;
-        font-weight: 400;
-        letter-spacing: 1px;
-        overflow: hidden;
-        transition: 0.5s;
-        backdrop-filter: blur(20px);
-    }
-}
-
 .my-card {
     flex-direction: column;
     width: calc(100% - 6px);
