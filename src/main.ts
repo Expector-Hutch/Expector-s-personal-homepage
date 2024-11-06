@@ -2,6 +2,7 @@ import './style.scss';
 
 import './components/gh_link';
 import './components/hitokoto';
+import './components/light_btn';
 
 import tippy from "tippy.js";
 try {

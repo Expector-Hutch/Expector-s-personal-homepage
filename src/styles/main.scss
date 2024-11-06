@@ -91,27 +91,27 @@ footer {
     }
 }
 
-.btn {
-    @mixin btn_style($color) {
-        &::before,
-        &::after {
-            background-color: $color;
-            box-shadow: 0 0 5px $color,
-                0 0 15px $color,
-                0 0 30px $color,
-                0 0 60px $color;
-        }
-    }
-    &:nth-child(1) {
-        @include btn_style(#ff1f71);
-    }
-    &:nth-child(2) {
-        @include btn_style(#2bd2ff);
-    }
-    &:nth-child(3) {
-        @include btn_style(#11ff45);
-    }
-}
+// .btn {
+//     @mixin btn_style($color) {
+//         &::before,
+//         &::after {
+//             background-color: $color;
+//             box-shadow: 0 0 5px $color,
+//                 0 0 15px $color,
+//                 0 0 30px $color,
+//                 0 0 60px $color;
+//         }
+//     }
+//     &:nth-child(1) {
+//         @include btn_style(#ff1f71);
+//     }
+//     &:nth-child(2) {
+//         @include btn_style(#2bd2ff);
+//     }
+//     &:nth-child(3) {
+//         @include btn_style(#11ff45);
+//     }
+// }
 
 .my-card {
     display: flex;
