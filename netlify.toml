@@ -9,9 +9,3 @@ from = "/icons/*"
 to = "https://cdn.simpleicons.org/:splat"
 status = 200
 force = true
-
-[[redirects]]
-from = "/cdn/*"
-to = "https://cdn.jsdelivr.net/npm/:splat"
-status = 200
-force = true
