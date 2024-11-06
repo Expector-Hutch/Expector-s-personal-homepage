@@ -15,6 +15,11 @@ export default defineConfig({
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/music/, ''),
             },
+            '/icons': {
+                target: 'https://cdn.simpleicons.org',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/icons/, ''),
+            }
         },
     }
 });
