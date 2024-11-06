@@ -21,10 +21,6 @@
 ![APlayer.js](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
 ![Tippy.js](https://img.shields.io/badge/TIPPY.js-5b89f3?style=for-the-badge&logo=tippy.js&logoColor=white)
 
-## TODO
-
-- 修改 404 页面
-
 ## 构建 & 运行
 
 确保你已经安装了 `node.js` 和 `pnpm`，若无，可通过以下命令安装：
