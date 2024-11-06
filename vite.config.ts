@@ -24,7 +24,7 @@ export default defineConfig({
             modules: [
                 {
                     name: 'aplayer',
-                    var: 'aplayer',
+                    var: 'APlayer',
                     path: 'dist/APlayer.min.js',
                     css: 'dist/APlayer.min.css'
                 },
