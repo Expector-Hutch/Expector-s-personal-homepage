@@ -4,7 +4,7 @@ to = "https://music.163.com/:splat"
 status = 200
 force = true
 
-[[headers]]
-for = "/music/*"
-[headers.values]
-Access-Control-Allow-Origin = "*"
+# [[headers]]
+# for = "/music/*"
+# [headers.values]
+# Access-Control-Allow-Origin = "*"
