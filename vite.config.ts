@@ -31,7 +31,7 @@ export default defineConfig({
                 {
                     name: 'tippy.js',
                     var: 'tippy.js',
-                    path: 'dist/tippy.esm.min.js',
+                    path: 'dist/tippy.umd.min.js',
                     css: [
                         'dist/tippy.css',
                         'dist/backdrop.css',
