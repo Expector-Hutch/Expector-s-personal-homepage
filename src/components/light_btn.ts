@@ -21,7 +21,6 @@ export class LightBtnElement extends HTMLElement {
                             0 0 30px ${color},
                             0 0 60px ${color};
                     }
-                    ${style}
                 </style>
             `;
     }

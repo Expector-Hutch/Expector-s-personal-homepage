@@ -2,6 +2,14 @@
 @import 'tippy.js/dist/backdrop.css';
 @import 'tippy.js/animations/scale.css';
 
+friend-link {
+    display: flex;
+    margin: {
+        top: 0.2em;
+        bottom: 0.2em;
+    }
+}
+
 .tippy-tooltip {
     background-color: rgba(36, 36, 36, 0.99);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
