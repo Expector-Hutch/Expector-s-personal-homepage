@@ -4,7 +4,7 @@ body {
     width: 100%;
 }
 
-p.words {
+p.hitokoto {
     transition: 0.5s;
     &:hover {
         background: rgba(255, 255, 255, 0.05);
@@ -54,5 +54,11 @@ main {
 
 .more {
     display: flex;
+    justify-content: space-around;
     height: 50px;
+    gap: 33px;
+    margin: {
+        left: 11px;
+        right: 11px;
+    }
 }
