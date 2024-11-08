@@ -1,6 +1,14 @@
 import { defineConfig } from 'vite';
 
+import Icons from 'unplugin-icons/vite';
+
 export default defineConfig({
+    plugins: [
+        Icons({
+            autoInstall: true,
+            compiler: 'raw',
+        })
+    ],
     css: {
         preprocessorOptions: {
             scss: {
@@ -14,11 +22,6 @@ export default defineConfig({
                 target: 'http://music.163.com',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/music/, ''),
-            },
-            '/icons': {
-                target: 'https://cdn.simpleicons.org',
-                changeOrigin: true,
-                rewrite: (path) => path.replace(/^\/icons/, ''),
             }
         },
     }

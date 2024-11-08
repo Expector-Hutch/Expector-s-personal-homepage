@@ -10,8 +10,12 @@
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {
+    "@iconify-json/mono-icons": "^1.2.0",
+    "@iconify-json/si": "^1.2.2",
+    "@iconify-json/simple-icons": "^1.2.11",
     "sass": "^1.80.6",
     "typescript": "~5.6.3",
+    "unplugin-icons": "^0.20.1",
     "vite": "^5.4.10"
   }
 }
