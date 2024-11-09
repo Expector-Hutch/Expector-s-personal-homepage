@@ -9,16 +9,15 @@ export class FriendLinkElement extends HTMLElement {
         super();
         let id = generateID(),
             icon = this.getAttribute("icon"),
-            alt = this.getAttribute('alt'),
             href = this.getAttribute('href'),
             name = this.getAttribute("name");
         this.innerHTML = /*html*/`
             <a id="friend-link-${id}" href="${href}">
-                <img src="${icon}" alt="${alt}">
+                <img src="${icon}" alt="${name}">
             </a>
             <div id="friend-card-${id}" style="display: none;">
                 <div>
-                    <img src="${icon}" alt="${alt}">
+                    <img src="${icon}" alt="${name}">
                     <h3>${name}</h3>
                 </div>
                 <hr>
