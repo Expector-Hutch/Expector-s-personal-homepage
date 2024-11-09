@@ -5,19 +5,6 @@ import './components/hitokoto';
 import './components/light_btn';
 import './components/friend_link';
 
-// import tippy from "tippy.js";
-// try {
-//     tippy('.friend', {
-//         content(reference) {
-//             const id = reference.getAttribute('tippy-id');
-//             const template = document.getElementById(id ? id : "");
-//             return template ? template.innerHTML : "";
-//         },
-//         allowHTML: true,
-//         interactive: true
-//     });
-// } catch (err) { }
-
 import APlayer from "aplayer";
 
 const songid = 1299289240;
