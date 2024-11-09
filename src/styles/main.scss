@@ -1,3 +1,5 @@
+@use './defines.scss' as *;
+
 @import url(./pcmain.scss) (min-width: 960px);
 @import url(./pemain.scss) (max-width: 959px);
 
@@ -12,7 +14,7 @@ html,
 body {
     background: {
         color: $main-color;
-        image: url(https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png);
+        image: $background-url;
         position: center center;
         repeat: no-repeat;
         attachment: fixed;
