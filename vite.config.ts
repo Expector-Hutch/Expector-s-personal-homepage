@@ -9,6 +9,14 @@ export default defineConfig({
             compiler: 'raw',
         })
     ],
+    build: {
+        rollupOptions: {
+            input: {
+                index: './index.html',
+                404: './404.html'
+            }
+        }
+    },
     css: {
         preprocessorOptions: {
             scss: {
