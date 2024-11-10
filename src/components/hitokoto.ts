@@ -15,19 +15,19 @@ export class HitokotoElement extends HTMLElement {
             return await response.text();
         } catch (error) {
             try {
-                const response = await fetch('https://tenapi.cn/v2/yiyan');
+                const response = await fetch('https://v1.hitokoto.cn');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                return await response.text();
+                const { hitokoto: hitokotoText } = await response.json();
+                return hitokotoText;
             } catch (error) {
                 try {
-                    const response = await fetch('https://v1.hitokoto.cn');
+                    const response = await fetch('https://tenapi.cn/v2/yiyan');
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
-                    const { hitokoto: hitokotoText } = await response.json();
-                    return hitokotoText;
+                    return await response.text();
                 } catch (error) {
                     throw error;
                 }
