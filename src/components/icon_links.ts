@@ -7,7 +7,7 @@ abstract class IconLinkElement extends HTMLElement {
         super();
         this.icon = icon;
         this.innerHTML = /*html*/`
-            <a href="${this.getAttribute("href")}" target="_blank">
+            <a href="${this.getAttribute("href")}">
                 ${this.icon}
             </a>
         `
