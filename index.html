@@ -49,41 +49,9 @@
       </div>
       <APlayer-js server="netease" type="song" id="1299289240" theme="#66ccff"></APlayer-js>
       <div class="moreicons">
-        <a id="github-link" href="https://github.com/Expector-Hutch/" target="_blank">
-        </a>
-        <a id="gitee-link" href="https://gitee.com/expector" target="_blank">
-        </a>
-        <a id="zhihu-link" href="https://www.zhihu.com/people/shadowenderking" target="_blank">
-        </a>
-        <script type="module">
-          import github from '~icons/simple-icons/github';
-          import gitee from '~icons/simple-icons/gitee';
-          import zhihu from '~icons/simple-icons/zhihu';
-
-          const icons = {
-            'github': github,
-            'gitee': gitee,
-            'zhihu': zhihu
-          };
-          Object.entries(icons).forEach(([name, icon]) => {
-            document.querySelector(`#${name}-link`).innerHTML = icon;
-          })
-        </script>
-        <style>
-          #github-link {
-            color: #FFFFFF;
-          }
-          #gitee-link {
-            color: #c71d23;
-          }
-          #zhihu-link {
-            color: #0084FF;
-          }
-          .moreicons>a>svg {
-            height: 1em;
-            width: 1em;
-          }
-        </style>
+        <github-link href="https://github.com/Expector-Hutch/"></github-link>
+        <gitee-link href="https://gitee.com/expector"></gitee-link>
+        <zhihu-link href="https://www.zhihu.com/people/shadowenderking"></zhihu-link>
       </div>
       <footer>
         <p>Copyright (<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh"

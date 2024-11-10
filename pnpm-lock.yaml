@@ -15,12 +15,6 @@ importers:
         specifier: ^6.3.7
         version: 6.3.7
     devDependencies:
-      '@iconify-json/mono-icons':
-        specifier: ^1.2.0
-        version: 1.2.0
-      '@iconify-json/si':
-        specifier: ^1.2.2
-        version: 1.2.2
       '@iconify-json/simple-icons':
         specifier: ^1.2.11
         version: 1.2.11
@@ -182,12 +176,6 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
-
-  '@iconify-json/mono-icons@1.2.0':
-    resolution: {integrity: sha512-VznAz1aZrcY+8rFlxXa/07mZfBaT78OEGNngUk1vKOcMW8C9M5Un+5bz8KAUaZy66Kzmu075tpIxjg4hWlMlQw==}
-
-  '@iconify-json/si@1.2.2':
-    resolution: {integrity: sha512-P6BqOtvMDtZ4pX1/FSIFet33y3kdJ9utqVZlcUdl8iwTjCiOyPqEkVt8Hob6j1A0pQqDg+BhDc0lXMNixBInIQ==}
 
   '@iconify-json/simple-icons@1.2.11':
     resolution: {integrity: sha512-AHCGDtBRqP+JzAbBzgO8uN/08CXxEmuaC6lQQZ3b5burKhRU12AJnJczwbUw2K5Mb/U85EpSUNhYMG3F28b8NA==}
@@ -686,14 +674,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
-
-  '@iconify-json/mono-icons@1.2.0':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/si@1.2.2':
-    dependencies:
-      '@iconify/types': 2.0.0
 
   '@iconify-json/simple-icons@1.2.11':
     dependencies:

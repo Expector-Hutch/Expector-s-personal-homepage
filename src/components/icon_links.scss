@@ -1,0 +1,22 @@
+@mixin icon($color) {
+    display: flex;
+    align-items: center;
+
+    svg {
+        color: $color;
+        height: 1em;
+        width: 1em;
+    }
+}
+
+github-link {
+    @include icon(#FFFFFF)
+}
+
+gitee-link {
+    @include icon(#c71d23)
+}
+
+zhihu-link {
+    @include icon(#0084FF)
+}
