@@ -1,7 +1,5 @@
 import './friend_link.scss';
 
-import { generateID } from '../utils/generateID';
-
 import tippy, { createSingleton } from 'tippy.js';
 
 export class FriendLinkElement extends HTMLElement {
@@ -28,12 +26,9 @@ export class FriendLinkElement extends HTMLElement {
 customElements.define('friend-link', FriendLinkElement);
 
 export class FriendLinksCtrElement extends HTMLElement {
-    protected ID: string;
     constructor() {
         super();
-        this.ID = generateID();
         const friend_link_elements = Array.from(this.children).filter(child => child.tagName.toLowerCase() === 'friend-link');
-        console.log(friend_link_elements)
         const tippyInstances = tippy(friend_link_elements, {
             content: (reference) => reference.getElementsByClassName("friend-card")[0],
             allowHTML: true
