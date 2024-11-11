@@ -22,15 +22,6 @@ export class FriendLinkElement extends HTMLElement {
                 <hr>
                 <p>${this.innerHTML}</p>
             </div>`;
-        // const link_element = document.getElementById(`friend-link-${id}`);
-        // const card_element = document.getElementById(`friend-card-${id}`)?.innerHTML;
-        // if (link_element) {
-        //     tippy(link_element, {
-        //         content: card_element,
-        //         allowHTML: true,
-        //         interactive: true
-        //     });
-        // }
     }
 }
 
@@ -43,12 +34,18 @@ export class FriendLinksCtrElement extends HTMLElement {
         this.ID = generateID();
         const friend_link_elements = Array.from(this.children).filter(child => child.tagName.toLowerCase() === 'friend-link');
         console.log(friend_link_elements)
-        // const friend_links = friend_link_elements.map(child => child.getElementsByClassName('friend-link')[0]);
         const tippyInstances = tippy(friend_link_elements, {
             content: (reference) => reference.getElementsByClassName("friend-card")[0],
             allowHTML: true
         });
-        createSingleton(tippyInstances, { moveTransition: 'transform 0.2s ease-out' });
+        createSingleton(tippyInstances, {
+            interactive: true,
+            allowHTML: true,
+            placement: "top",
+            offset: [0, 15],
+            moveTransition: 'transform 0.2s ease-out',
+            animation: "scale-extreme",
+        });
     }
 }
 
