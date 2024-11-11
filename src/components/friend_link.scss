@@ -10,11 +10,6 @@ friend-link {
     }
 }
 
-.tippy-tooltip {
-    background-color: rgba(36, 36, 36, 0.99);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-}
-
 .tippy-content {
     width: 200px;
     display: flex;
@@ -24,8 +19,8 @@ friend-link {
     text-shadow: none;
 
     img {
-        height: 33px;
-        width: 33px;
+        height: 1.6em;
+        width: 1.6em;
         border-radius: 50%;
     }
 
@@ -43,5 +38,11 @@ friend-link {
 
     p {
         color: white;
+        margin-bottom: 0;
+        margin-top: 0.5em;
     }
+}
+
+friend-links-ctr {
+    display: flex;
 }
