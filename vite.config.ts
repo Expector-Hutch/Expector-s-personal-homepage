@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
-    base: '/Expector-s-personal-homepage/',
+    // base: '/Expector-s-personal-homepage/',
     plugins: [
         Icons({
             autoInstall: true,
