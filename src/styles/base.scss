@@ -35,6 +35,12 @@ body {
     }
 }
 
+@media (prefers-color-scheme: light) {
+    body {
+        @include background($background-url-light, $theme-color);
+    }
+}
+
 h1#title {
     font-family: "Lucida Handwriting";
     $shadow-color: #00ffaa;
@@ -88,6 +94,7 @@ p#self-introduction {
 }
 
 footer {
+
     p,
     a,
     a:hover {

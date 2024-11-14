@@ -12,14 +12,15 @@ $main_color: #66ccff;
 
 html,
 body {
-    background: {
-        color: $main-color;
-        image: $background-url;
-        position: center center;
-        repeat: no-repeat;
-        attachment: fixed;
-        size: cover;
-    }
+    // @include background($background-url);
+    // background: {
+    //     color: $main-color;
+    //     image: $background-url;
+    //     position: center center;
+    //     repeat: no-repeat;
+    //     attachment: fixed;
+    //     size: cover;
+    // }
     user-select: none;
     display: flex;
     justify-content: center;
