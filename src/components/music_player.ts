@@ -11,7 +11,7 @@ export class MusicPlayerElement extends HTMLElement {
                 this.fetchSongLyric(id).then((lyric) => {
                     if (lyric) {
                         try {
-                            const aplayer = APlayer().init({
+                            APlayer().init({
                                 container: this,
                                 lrcType: 1,
                                 audio: [
