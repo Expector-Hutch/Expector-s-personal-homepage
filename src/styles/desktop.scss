@@ -1,0 +1,110 @@
+@use './share.scss' as *;
+
+.main-card {
+    border-radius: 11px;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+}
+
+aside#head-image {
+    width: 320px;
+
+    border: 2px rgba(0, 0, 0, 0.4) solid {
+        bottom-left-radius: 11px;
+        bottom: 2px rgba($main-color, 0.35) solid;
+        right: none;
+        top-left-radius: 11px;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 33px 30px 0px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(36, 36, 36, 0.55);
+
+    border: 2px rgba(0, 0, 0, 0.4) solid {
+        bottom: 2px rgba(40, 40, 40, 0.35) solid;
+        right: 2px rgba(40, 40, 40, 0.35) solid;
+        left: none;
+    }
+
+    border: {
+        top-right-radius: 11px;
+        bottom-right-radius: 11px;
+        left: none;
+    }
+
+    width: 580px;
+}
+
+#friends {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    text-shadow:
+        0 0 7px aqua,
+        0 0 10px aqua,
+        0 0 21px aqua;
+    margin-bottom: 15px;
+    padding: 5px;
+
+    p {
+        display: inline;
+
+        margin: {
+            top: 0;
+            bottom: 0;
+            left: 1em;
+            right: 0.5em;
+        }
+    }
+}
+
+p.hitokoto {
+    transition: 0.5s;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        backdrop-filter: blur(20px);
+        text-shadow:
+            0 0 7px aqua,
+            0 0 10px aqua,
+            0 0 21px aqua;
+        user-select: text;
+        transition: 0.5s;
+    }
+}
+
+.app-links {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    gap: 33px;
+
+    margin: {
+        left: 11px;
+        right: 11px;
+    }
+
+    light-btn {
+        width: 100%;
+    }
+}
+
+.more-links {
+    display: inline-flex;
+    height: 1.5em;
+    gap: 0.5em;
+
+    margin: {
+        left: 0.5em;
+        right: 0.5em;
+    }
+}

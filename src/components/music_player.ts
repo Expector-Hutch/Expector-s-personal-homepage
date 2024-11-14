@@ -1,6 +1,6 @@
 import './music_player.scss';
 
-import APlayer from "aplayer";
+import APlayer from 'aplayer-ts';
 
 export class MusicPlayerElement extends HTMLElement {
     constructor() {
@@ -11,16 +11,23 @@ export class MusicPlayerElement extends HTMLElement {
                 this.fetchSongLyric(id).then((lyric) => {
                     if (lyric) {
                         try {
-                            new APlayer({
+                            const aplayer = APlayer().init({
                                 container: this,
                                 lrcType: 1,
-                                audio: [{
-                                    name: detail.name,
-                                    artist: detail.artists.map((artist: { name: any; }) => artist.name).join(', '),
-                                    url: `https://music.163.com/song/media/outer/url?id=${id}.mp3`,
-                                    cover: detail.album.picUrl,
-                                    lrc: lyric
-                                }]
+                                audio: [
+                                    {
+                                        name: detail.name,
+                                        artist: detail.artists
+                                            .map(
+                                                (artist: { name: any }) =>
+                                                    artist.name,
+                                            )
+                                            .join(', '),
+                                        url: `https://music.163.com/song/media/outer/url?id=${id}.mp3`,
+                                        cover: detail.album.picUrl,
+                                        lrc: lyric,
+                                    },
+                                ],
                             });
                         } catch (err) {
                             console.error('Error initializing APlayer:', err);
@@ -33,7 +40,9 @@ export class MusicPlayerElement extends HTMLElement {
 
     async fetchSongDetail(songId: number) {
         try {
-            const response = await fetch(`/music/api/song/detail/?id=${songId}&ids=%5B${songId}%5D`);
+            const response = await fetch(
+                `/music/api/song/detail/?id=${songId}&ids=%5B${songId}%5D`,
+            );
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -46,7 +55,9 @@ export class MusicPlayerElement extends HTMLElement {
     }
     async fetchSongLyric(songId: number) {
         try {
-            const response = await fetch(`/music/api/song/lyric?id=${songId}&lv=1&kv=1&tv=-1`);
+            const response = await fetch(
+                `/music/api/song/lyric?id=${songId}&lv=1&kv=1&tv=-1`,
+            );
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

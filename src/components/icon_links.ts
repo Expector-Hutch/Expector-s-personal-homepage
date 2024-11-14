@@ -6,11 +6,11 @@ abstract class IconLinkElement extends HTMLElement {
     constructor(icon: string) {
         super();
         this.icon = icon;
-        this.innerHTML = /*html*/`
-            <a href="${this.getAttribute("href")}">
+        this.innerHTML = /*html*/ `
+            <a href="${this.getAttribute('href')}">
                 ${this.icon}
             </a>
-        `
+        `;
     }
 }
 

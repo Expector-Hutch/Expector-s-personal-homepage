@@ -1,9 +1,11 @@
 export class HitokotoElement extends HTMLElement {
     constructor() {
         super();
-        this.getHitokoto().then(hitokoto => {
-            this.innerHTML = hitokoto;
-        }).catch(error => console.log(error));
+        this.getHitokoto()
+            .then((hitokoto) => {
+                this.innerHTML = hitokoto;
+            })
+            .catch((error) => console.log(error));
     }
 
     async getHitokoto(): Promise<string> {
@@ -25,7 +27,9 @@ export class HitokotoElement extends HTMLElement {
                 try {
                     const response = await fetch('https://tenapi.cn/v2/yiyan');
                     if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                        throw new Error(
+                            `HTTP error! status: ${response.status}`,
+                        );
                     }
                     return await response.text();
                 } catch (error) {

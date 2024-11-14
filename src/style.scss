@@ -1,1 +1,7 @@
-@import url(./styles/main.scss);
+@use './styles/share.scss' as share;
+
+@import url(./styles/base.scss);
+
+@import url(./styles/desktop.scss) (min-width: share.$screen-limit);
+@import url(./styles/mobile.scss)
+(max-width: calc(#{share.$screen-limit} - 1px));

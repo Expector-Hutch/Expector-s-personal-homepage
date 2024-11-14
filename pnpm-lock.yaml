@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      aplayer:
-        specifier: ^1.10.1
-        version: 1.10.1
+      aplayer-ts:
+        specifier: ^2.4.5
+        version: 2.4.5
       tippy.js:
         specifier: ^6.3.7
         version: 6.3.7
@@ -18,6 +18,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: ^1.2.11
         version: 1.2.11
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
       sass:
         specifier: ^1.80.6
         version: 1.80.6
@@ -384,11 +387,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aplayer@1.10.1:
-    resolution: {integrity: sha512-HAfyxgCUTLAqtYlxzzK9Fyqg6y+kZ9CqT1WfeWE8FSzwspT6oBqWOZHANPHF3RGTtC33IsyEgrfthPDzU5r9kQ==}
-
-  balloon-css@0.5.2:
-    resolution: {integrity: sha512-zheJpzwyNrG4t39vusA67v3BYg1HTVXOF8cErPEHzWK88PEOFwgo6Ea9VHOgOWNMgeuOtFVtB73NE2NWl9uDyQ==}
+  aplayer-ts@2.4.5:
+    resolution: {integrity: sha512-yijKWeJ9LDZUtd6a+oJDxYYkzzPoG1g3syAPgcnO1tIxs5i0IDuP7yehy3Hxtwmf1skB4x7nVB00MS3R/nc5QA==}
 
   braces@3.0.3:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
@@ -489,8 +489,10 @@ packages:
     resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  promise-polyfill@7.1.0:
-    resolution: {integrity: sha512-P6NJ2wU/8fac44ENORsuqT8TiolKGB2u0fEClPtXezn7w5cmLIjM/7mhPlTebke2EPr6tmqZbXvnX0TxwykGrg==}
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   readdirp@4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
@@ -505,9 +507,6 @@ packages:
     resolution: {integrity: sha512-ccZgdHNiBF1NHBsWvacvT5rju3y1d/Eu+8Ex6c21nHp2lZGLBEtuwc415QfiI1PJa1TpCo3iXwwSRjRpn2Ckjg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
-
-  smoothscroll@0.4.0:
-    resolution: {integrity: sha512-sggQ3U2Un38b3+q/j1P4Y4fCboCtoUIaBYoge+Lb6Xg1H8RTIif/hugVr+ErMtIDpvBbhQfTjtiTeYAfbw1ZGQ==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -814,13 +813,7 @@ snapshots:
 
   acorn@8.14.0: {}
 
-  aplayer@1.10.1:
-    dependencies:
-      balloon-css: 0.5.2
-      promise-polyfill: 7.1.0
-      smoothscroll: 0.4.0
-
-  balloon-css@0.5.2: {}
+  aplayer-ts@2.4.5: {}
 
   braces@3.0.3:
     dependencies:
@@ -935,7 +928,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  promise-polyfill@7.1.0: {}
+  prettier@3.3.3: {}
 
   readdirp@4.0.2: {}
 
@@ -970,8 +963,6 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.0
-
-  smoothscroll@0.4.0: {}
 
   source-map-js@1.2.1: {}
 

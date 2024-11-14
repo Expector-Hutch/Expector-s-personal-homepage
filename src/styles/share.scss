@@ -1,0 +1,20 @@
+$screen-limit: 960px;
+
+$theme-color: #66ccff;
+$main-color: #242424;
+$p-color: #00ffff;
+$a-color: #ffffff;
+$footer-color: #a9a9a9;
+
+$background-url: url('https://kaifa.baidu.com/assets/bkg-img-dark.624f42a6452944fb8b6fd3d0be459ac5.png');
+$head-image-url: url('https://pic.imgdb.cn/item/63b5351ebe43e0d30ee5a31b.jpg');
+
+@mixin background($url, $color) {
+    background: {
+        image: $url;
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+        color: $color;
+    }
+}

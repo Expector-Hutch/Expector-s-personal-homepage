@@ -24,20 +24,28 @@
 ## 构建 & 运行
 
 确保你已经安装了 `node.js` 和 `pnpm`，若无，可通过以下命令安装：
+
 ```sh
 sudo apt install nodejs npm # 安装 node.js 以及 npm，示例为 debian 系系统
 npm -g i pnpm # 安装 pnpm
 ```
+
 接下来，在项目中运行
+
 ```sh
 pnpm i .
 ```
+
 以安装依赖包，然后你可以通过
+
 ```sh
 pnpm run dev
 ```
+
 在开发模式下启动项目，以及
+
 ```sh
 pnpm run build
 ```
+
 构建项目。
