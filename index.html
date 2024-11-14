@@ -1,70 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <title>Expector的主页</title>
+        <link rel="icon" href="/icon.svg" />
+      <script type="module" crossorigin src="/assets/index-BBF_6F_Y.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-DJ_qFGTL.css">
+    </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>Expector的主页</title>
-  <link rel="icon" href="/icon.svg">
-  <script type="module" crossorigin src="/assets/index-Bzar-h_k.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BkiWe8nc.css">
-</head>
+    <body>
+        <div class="main-card">
+            <aside id="head-image"></aside>
+            <main>
+                <gh-link
+                    href="https://github.com/Expector-Hutch/Expector-s-personal-homepage"
+                ></gh-link>
 
-<body>
-  <div class="my-card">
-    <aside></aside>
-    <main>
-      <gh-link href="https://github.com/Expector-Hutch/Expector-s-personal-homepage"></gh-link>
-      <h1 id="title" style="font-family: 'Lucida Handwriting';">Expector</h1>
-      <p id="self-introduction">
-          &emsp;&emsp;你好你好，我是 Exceptor！高中现役 OIer，热衷于计算机技术。虽然我的才华有限，但我总是乐于帮助他人，希望可以通过不同的方式与你建立联系，一起成长。<br>
-          &emsp;&emsp;我的兴趣非常广泛，从数学到编程，再到视频制作，我都乐此不疲。平时也会在B站分享一些内容，或是逛逛知乎寻找灵感。我还特别喜欢玩音游和二游，另外——最喜欢洛天依啦~不知道会不会有缘认识你呢~
-      </p>
-      <p class="hitokoto">&emsp;&emsp;『<the-hitokoto>我思故我在</the-hitokoto>』</p>
-      </script>
-      <div id="friends">
-        <p>友链</p>
-        <friend-links-ctr>
-          <friend-link name="枫上天游" href="https://www.fstu.cc/"
-            icon="https://avatars.githubusercontent.com/u/105190211?v=4">
-            一个普普通通的OIer，兴趣广泛
-          </friend-link>
-          <friend-link name="云帆沧海" href="https://budawu.github.io/"
-            icon="https://avatars.githubusercontent.com/u/98736983?v=4">
-            勇敢为你，无畏地做白日梦 高中生/飞友/锦依卫/港区萌新指挥官
-          </friend-link>
-          <friend-link name="邱璇洛" href="https://qiuxuanluo.xlog.app/"
-            icon="https://avatars.githubusercontent.com/u/72391548?v=4">
-            立志于做一些奇奇怪怪希望有点用的事~
-          </friend-link>
-          <friend-link name="HD Superman" href="https://hackertalk.net/users/186247014399643648"
-            icon="https://avatars.githubusercontent.com/u/50064165?v=4">
-            Across the Great Wall, we can reach every corner in the world.
-          </friend-link>
-        </friend-links-ctr>
-      </div>
-      <div class="more">
-        <light-btn color="#ff1f71" href="https://space.bilibili.com/1530809275">哔站</light-btn>
-        <light-btn color="#2bd2ff" href="https://www.cnblogs.com/expector/">博客</light-btn>
-        <light-btn color="#11ff45" href="mailto: expector-hutch@outlook.com">邮箱</light-btn>
-      </div>
-      <music-player server="netease" type="song" id="1299289240" theme="#66ccff"></music-player>
-      <div class="moreicons">
-        <github-link href="https://github.com/Expector-Hutch/"></github-link>
-        <gitee-link href="https://gitee.com/expector"></gitee-link>
-        <zhihu-link href="https://www.zhihu.com/people/shadowenderking"></zhihu-link>
-      </div>
-      <footer>
-        <p>Copyright (<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh"
-            title="Creative Commons License Details" target="_blank">CC-BY-NC-ND</a>) 2022 <a
-            href="https://expector-hutch.github.io/" target="_blank">Expector</a>
-          <br>Made by <a href="https://expector-hutch.github.io/">Expector</a>
-        </p>
-      </footer>
-  </div>
-  </div>
-  <div id="app" style="color: rgb(99, 195, 174)"></div>
-</body>
+                <h1 id="title">
+                    Expector
+                </h1>
 
+                <p id="self-introduction">
+                    &emsp;&emsp;你好你好，我是 Exceptor！高中现役 OIer，热衷于计算机技术。虽然我的才华有限，但我总是乐于帮助他人，希望可以通过不同的方式与你建立联系，一起成长。<br>
+                    &emsp;&emsp;我的兴趣非常广泛，从数学到编程，再到视频制作，我都乐此不疲。平时也会在B站分享一些内容，或是逛逛知乎寻找灵感。我还特别喜欢玩音游和二游，另外——最喜欢洛天依啦~如果你对这些也感兴趣，不妨加个好友吧！
+                </p>
+
+                <p class="hitokoto">
+                    &emsp;&emsp;『<the-hitokoto>我思故我在</the-hitokoto>』
+                </p>
+
+                <div id="friends">
+                    <p>友链</p>
+
+                    <friend-links-ctr>
+                        <friend-link
+                            name="枫上天游"
+                            href="https://www.fstu.cc/"
+                            icon="https://avatars.githubusercontent.com/u/105190211?v=4"
+                        >
+                            一个普普通通的OIer，兴趣广泛
+                        </friend-link>
+
+                        <friend-link
+                            name="云帆沧海"
+                            href="https://budawu.github.io/"
+                            icon="https://avatars.githubusercontent.com/u/98736983?v=4"
+                        >
+                            勇敢为你，无畏地做白日梦
+                            高中生/飞友/锦依卫/港区萌新指挥官
+                        </friend-link>
+
+                        <friend-link
+                            name="邱璇洛"
+                            href="https://qiuxuanluo.xlog.app/"
+                            icon="https://avatars.githubusercontent.com/u/72391548?v=4"
+                        >
+                            立志于做一些奇奇怪怪希望有点用的事~
+                        </friend-link>
+
+                        <friend-link
+                            name="HD Superman"
+                            href="https://hackertalk.net/users/186247014399643648"
+                            icon="https://avatars.githubusercontent.com/u/50064165?v=4"
+                        >
+                            Across the Great Wall, we can reach every corner in
+                            the world.
+                        </friend-link>
+                    </friend-links-ctr>
+                </div>
+
+                <div class="app-links">
+                    <light-btn
+                        color="#ff1f71"
+                        href="https://space.bilibili.com/1530809275"
+                        >哔站</light-btn
+                    >
+                    <light-btn
+                        color="#2bd2ff"
+                        href="https://www.cnblogs.com/expector/"
+                        >博客</light-btn
+                    >
+                    <light-btn
+                        color="#11ff45"
+                        href="mailto: expector-hutch@outlook.com"
+                        >邮箱</light-btn
+                    >
+                </div>
+
+                <music-player
+                    server="netease"
+                    type="song"
+                    id="1299289240"
+                    theme="#66ccff"
+                ></music-player>
+
+                <div class="more-links">
+                    <github-link
+                        href="https://github.com/Expector-Hutch/"
+                    ></github-link>
+                    <gitee-link href="https://gitee.com/expector"></gitee-link>
+                    <zhihu-link
+                        href="https://www.zhihu.com/people/shadowenderking"
+                    ></zhihu-link>
+                </div>
+
+                <footer>
+                    <p>
+                        Copyright (<a
+                            href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh"
+                            title="Creative Commons License Details"
+                            target="_blank"
+                            >CC-BY-NC-ND</a
+                        >) 2022
+                        <a
+                            href="https://expector-hutch.github.io/"
+                            target="_blank"
+                            >Expector</a
+                        >
+
+                        <br />Made by
+                        <a href="https://expector-hutch.github.io/">Expector</a>
+                    </p>
+                </footer>
+            </main>
+        </div>
+        <div id="app" style="color: rgb(99, 195, 174)"></div>
+    </body>
 </html>
