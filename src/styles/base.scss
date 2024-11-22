@@ -33,11 +33,26 @@ body {
         border-radius: 0;
         background: $theme-color;
     }
-}
 
-@media (prefers-color-scheme: light) {
-    body {
+    @media (prefers-color-scheme: light) {
         @include background($background-url-light, $theme-color);
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+            border-radius: 0;
+            background: $theme-color;
+        }
     }
 }
 
@@ -81,6 +96,10 @@ a {
 
 aside#head-image {
     @include background($head-image-url, rgba($main-color, .08));
+
+    @media (prefers-color-scheme: light) {
+        @include background($head-image-url, rgba($main-color-light, .08));
+    }
 }
 
 .main-card {
