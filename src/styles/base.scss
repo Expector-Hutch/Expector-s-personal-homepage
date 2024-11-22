@@ -76,6 +76,9 @@ p {
     font-size: 15px;
     word-wrap: break-word;
     color: $p-color;
+    @media (prefers-color-scheme: light) {
+        color: $p-color-light;
+    }
 }
 
 a {

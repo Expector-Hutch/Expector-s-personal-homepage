@@ -1,3 +1,5 @@
+@use '../styles/share.scss' as share;
+
 @import 'tippy.js/dist/tippy.css';
 @import 'tippy.js/dist/backdrop.css';
 @import 'tippy.js/animations/scale-extreme.css';
@@ -58,5 +60,12 @@ friend-links-ctr {
         color: white;
         margin-bottom: 0;
         margin-top: 0.5em;
+    }
+
+    @media (prefers-color-scheme: light) {
+        background-color: share.$main-color-light;
+        p {
+            color: black;
+        }
     }
 }

@@ -2,52 +2,50 @@
 
 @import url('aplayer-ts/src/css/base.css');
 
-.aplayer {
-    .aplayer-body {
-        background: #242424;
-    }
-
-    .aplayer-lrc {
-        &:before {
-            background: linear-gradient(
-                180deg,
-                #242424 0,
-                hsla(0, 0%, 100%, 0)
-            );
+@media (prefers-color-scheme: dark) {
+    .aplayer {
+        .aplayer-body {
+            background: share.$main-color;
         }
 
-        &:after {
-            background: linear-gradient(
-                180deg,
-                hsla(0, 0%, 100%, 0) 0,
-                #242424
-            );
+        .aplayer-lrc {
+            &:before {
+                background: linear-gradient(180deg,
+                        share.$main-color 0,
+                        hsla(0, 0%, 100%, 0));
+            }
+
+            &:after {
+                background: linear-gradient(180deg,
+                        hsla(0, 0%, 100%, 0) 0,
+                        share.$main-color );
+            }
+
+            p {
+                color: white;
+
+                &.aplayer-lrc-current {
+                    color: #66ccff;
+                }
+            }
         }
 
-        p {
-            color: white;
-
-            &.aplayer-lrc-current {
-                color: #66ccff;
+        .aplayer-info {
+            .aplayer-music {
+                .aplayer-author {
+                    color: #66ccff;
+                }
             }
         }
     }
 
-    .aplayer-info {
-        .aplayer-music {
-            .aplayer-author {
-                color: #66ccff;
-            }
-        }
+    .aplayer-title {
+        color: white;
     }
-}
 
-.aplayer-title {
-    color: white;
-}
-
-@media (max-width: calc(#{share.$screen-limit} - 1px)) {
-    music-player {
-        display: none;
+    @media (max-width: calc(#{share.$screen-limit} - 1px)) {
+        music-player {
+            display: none;
+        }
     }
 }
