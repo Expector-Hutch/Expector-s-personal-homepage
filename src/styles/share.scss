@@ -10,7 +10,7 @@ $footer-color: #a9a9a9;
 
 $background-url: url('../assets/images/background-dark.png');
 $background-url-light: url('../assets/images/background-light.png');
-$head-image-url: url('https://pic.imgdb.cn/item/63b5351ebe43e0d30ee5a31b.jpg');
+$head-image-url: url('../assets/images/head-image.jpg');
 
 @mixin background($url, $color) {
     background: {
