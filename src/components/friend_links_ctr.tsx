@@ -1,3 +1,5 @@
+import { DOMcreateElement } from '../utils/jsxFactory';
+
 import './friend_link.scss';
 
 import tippy, { createSingleton } from 'tippy.js';
@@ -7,19 +9,23 @@ export class FriendLinkElement extends HTMLElement {
         super();
         let icon = this.getAttribute('icon'),
             href = this.getAttribute('href'),
-            name = this.getAttribute('name');
-        this.innerHTML = /*html*/ `
-            <a class="friend-link" href="${href}">
-                <img src="${icon}" alt="${name}">
-            </a>
-            <div class="friend-card">
-                <div>
-                    <img src="${icon}" alt="${name}">
-                    <h3>${name}</h3>
+            name = this.getAttribute('name'),
+            text = this.innerHTML;
+        this.innerHTML = "";
+        this.appendChild(
+            <div>
+                <a class="friend-link" href={href} >
+                    <img src={icon} alt={name} />
+                </a>
+                <div class="friend-card">
+                    <div>
+                        <img src={icon} alt={name} />
+                        <h3>{name}</h3>
+                    </div>
+                    <hr />
+                    <p>{text}</p>
                 </div>
-                <hr>
-                <p>${this.innerHTML}</p>
-            </div>`;
+            </div>);
     }
 }
 

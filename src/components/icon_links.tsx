@@ -1,3 +1,5 @@
+import { DOMcreateElement } from '../utils/jsxFactory';
+
 import './icon_links.scss';
 
 abstract class IconLinkElement extends HTMLElement {
@@ -6,11 +8,13 @@ abstract class IconLinkElement extends HTMLElement {
     constructor(icon: string) {
         super();
         this.icon = icon;
-        this.innerHTML = /*html*/ `
-            <a href="${this.getAttribute('href')}">
-                ${this.icon}
-            </a>
-        `;
+        this.innerHTML = this.icon;
+        const icon_data = this.children[0];
+        this.innerHTML = "";
+        this.appendChild(
+            <a href={this.getAttribute('href')}>
+                {icon_data}
+            </a>);
     }
 }
 
