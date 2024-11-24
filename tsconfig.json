@@ -3,11 +3,7 @@
         "target": "ES2020",
         "useDefineForClassFields": true,
         "module": "ESNext",
-        "lib": [
-            "ES2020",
-            "DOM",
-            "DOM.Iterable"
-        ],
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "skipLibCheck": true,
         /* Bundler mode */
         "moduleResolution": "Bundler",
@@ -26,7 +22,5 @@
         "jsxFactory": "DOMcreateElement",
         "jsxFragmentFactory": "DOMcreateFragment"
     },
-    "include": [
-        "src"
-    ]
+    "include": ["src"]
 }

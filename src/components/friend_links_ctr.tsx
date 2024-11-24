@@ -11,10 +11,10 @@ export class FriendLinkElement extends HTMLElement {
             href = this.getAttribute('href'),
             name = this.getAttribute('name'),
             text = this.innerHTML;
-        this.innerHTML = "";
+        this.innerHTML = '';
         this.appendChild(
             <div>
-                <a class="friend-link" href={href} >
+                <a class="friend-link" href={href}>
                     <img src={icon} alt={name} />
                 </a>
                 <div class="friend-card">
@@ -25,7 +25,8 @@ export class FriendLinkElement extends HTMLElement {
                     <hr />
                     <p>{text}</p>
                 </div>
-            </div>);
+            </div>,
+        );
     }
 }
 

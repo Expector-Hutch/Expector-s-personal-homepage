@@ -10,7 +10,7 @@ export class LightBtnElement extends HTMLElement {
         const id = generateID();
         const color = this.getAttribute('color');
         const text = this.innerHTML;
-        this.innerHTML = "";
+        this.innerHTML = '';
         this.appendChild(
             <div class={`${style['light-btn']} light-btn light-btn-${id}`}>
                 <a href={this.getAttribute('href')} target="_blank">
@@ -25,7 +25,8 @@ export class LightBtnElement extends HTMLElement {
                         0 0 60px ${color};
                 }`}
                 </style>
-            </div>);
+            </div>,
+        );
     }
 }
 

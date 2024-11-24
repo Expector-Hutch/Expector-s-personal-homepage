@@ -3,12 +3,12 @@ interface entityMapData {
 }
 
 export const entityMap: entityMapData = {
-    "&": "amp",
-    "<": "lt",
-    ">": "gt",
-    '"': "quot",
-    "'": "#39",
-    "/": "#x2F"
+    '&': 'amp',
+    '<': 'lt',
+    '>': 'gt',
+    '"': 'quot',
+    "'": '#39',
+    '/': '#x2F',
 };
 
 export const escapeHtml = (str: object[] | string) =>
@@ -22,7 +22,7 @@ export function DOMcreateElement(
     attrs = attrs || {};
     const stack: any[] = [...children];
 
-    if (typeof tag === "function") {
+    if (typeof tag === 'function') {
         attrs.children = stack;
         return tag(attrs);
     }
@@ -40,7 +40,7 @@ export function DOMcreateElement(
             elm.appendChild(
                 (child as HTMLElement).nodeType == null
                     ? document.createTextNode(child.toString())
-                    : child
+                    : child,
             );
         } else {
             stack.push(...child);
@@ -56,4 +56,4 @@ export function DOMcreateFragment(
 ): (HTMLElement | string)[] {
     console.log(attrs);
     return children;
-};
+}

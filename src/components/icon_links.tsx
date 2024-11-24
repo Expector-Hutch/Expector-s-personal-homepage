@@ -10,11 +10,8 @@ abstract class IconLinkElement extends HTMLElement {
         this.icon = icon;
         this.innerHTML = this.icon;
         const icon_data = this.children[0];
-        this.innerHTML = "";
-        this.appendChild(
-            <a href={this.getAttribute('href')}>
-                {icon_data}
-            </a>);
+        this.innerHTML = '';
+        this.appendChild(<a href={this.getAttribute('href')}>{icon_data}</a>);
     }
 }
 

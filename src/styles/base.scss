@@ -57,7 +57,7 @@ body {
 }
 
 h1#title {
-    font-family: "Lucida Handwriting";
+    font-family: 'Lucida Handwriting';
     $shadow-color: #00ffaa;
     font-size: 24px;
     color: $theme-color;
@@ -98,10 +98,10 @@ a {
 }
 
 aside#head-image {
-    @include background($head-image-url, rgba($main-color, .08));
+    @include background($head-image-url, rgba($main-color, 0.08));
 
     @media (prefers-color-scheme: light) {
-        @include background($head-image-url, rgba($main-color-light, .08));
+        @include background($head-image-url, rgba($main-color-light, 0.08));
     }
 }
 
@@ -116,7 +116,6 @@ p#self-introduction {
 }
 
 footer {
-
     p,
     a,
     a:hover {
