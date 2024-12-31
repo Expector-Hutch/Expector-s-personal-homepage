@@ -2,7 +2,7 @@
 	import Card from '../components/Card.svelte';
 	import Quote from '../components/Quote.svelte';
 	import Image from '../components/Image.svelte';
-	import LinkButton from '../components/linkButton.svelte';
+	import LinkButton from '../components/LinkButton.svelte';
 	import Block from '../components/Block.svelte';
 	import Footer from '../components/Footer.svelte';
 	import MusicPlayer from '../components/MusicPlayer.svelte';
@@ -15,6 +15,24 @@
 		'我的兴趣非常广泛，从数学到编程，再到视频制作，我都乐此不疲。平时也会在B站分享一些内容，或是逛逛知乎寻找灵感。我还特别喜欢玩音游和二游，另外——最喜欢洛天依啦~如果你对这些也感兴趣，不妨加个好友吧！'
 	];
 	const quote_replace = '我思故我在';
+	const app_links = [
+		{
+			href: 'https://space.bilibili.com/1530809275',
+			text: '哔站',
+			color: '#ff1f71'
+		},
+		{
+			href: 'https://www.cnblogs.com/expector/',
+			text: '博客',
+			color: '#2bd2ff'
+		},
+		{
+			href: 'mailto: expector-hutch@outlook.com',
+			text: '邮箱',
+			color: '#11ff45'
+		}
+	];
+	const music_id = 2151900715; // netease music song id
 </script>
 
 <div class="page">
@@ -34,14 +52,11 @@
 					</p>
 				</Block>
 				<div class="app-links">
-					<LinkButton href="https://space.bilibili.com/1530809275" text="哔站" color="#ff1f71"
-					></LinkButton>
-					<LinkButton href="https://www.cnblogs.com/expector/" text="博客" color="#2bd2ff"
-					></LinkButton>
-					<LinkButton href="mailto: expector-hutch@outlook.com" text="邮箱" color="#11ff45"
-					></LinkButton>
+					{#each app_links as { href, text, color }}
+						<LinkButton href={href} text={text} color={color}></LinkButton>
+					{/each}
 				</div>
-				<MusicPlayer songId={2151900715}></MusicPlayer>
+				<MusicPlayer songId={music_id}></MusicPlayer>
 				<Footer>
 					<p>
 						&copy; 2022-2024 <a href="https://expector.netlify.app/" target="_blank">Expector</a>

@@ -5,30 +5,14 @@
 
 	async function getQuote(): Promise<string> {
 		try {
-			const response = await fetch('https://uapis.cn/api/say');
+			const response = await fetch('https://v1.hitokoto.cn');
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);
 			}
-			return await response.text();
+			const { hitokoto: quoteText } = await response.json();
+			return quoteText;
 		} catch (error) {
-			try {
-				const response = await fetch('https://v1.hitokoto.cn');
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-				const { hitokoto: quoteText } = await response.json();
-				return quoteText;
-			} catch (error) {
-				try {
-					const response = await fetch('https://tenapi.cn/v2/yiyan');
-					if (!response.ok) {
-						throw new Error(`HTTP error! status: ${response.status}`);
-					}
-					return await response.text();
-				} catch (error) {
-					throw error;
-				}
-			}
+			throw error;
 		}
 	}
 
