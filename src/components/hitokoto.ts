@@ -8,36 +8,62 @@ export class HitokotoElement extends HTMLElement {
             .catch((error) => console.log(error));
     }
 
-    async getHitokoto(): Promise<string> {
-        try {
-            const response = await fetch('https://uapis.cn/api/say');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.text();
-        } catch (error) {
-            try {
-                const response = await fetch('https://v1.hitokoto.cn');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const { hitokoto: hitokotoText } = await response.json();
-                return hitokotoText;
-            } catch (error) {
-                try {
-                    const response = await fetch('https://tenapi.cn/v2/yiyan');
-                    if (!response.ok) {
-                        throw new Error(
-                            `HTTP error! status: ${response.status}`,
-                        );
-                    }
-                    return await response.text();
-                } catch (error) {
-                    throw error;
-                }
-            }
-        }
-    }
+	async getHitokoto(): Promise<string> {
+		// 由于目前没有找到合适的每日一言 api，所以这里使用了古诗词
+		const ancientPoems = [
+			'人生若只如初见，何事秋风悲画扇。',
+			'青青子衿，悠悠我心。但为君故，沉吟至今。',
+			'众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。',
+			'问世间情为何物，直教生死相许？',
+			'问君能有几多愁？恰似一江春水向东流。',
+			'天若有情天亦老，人间正道是沧桑。',
+			'同是天涯沦落人，相逢何必曾相识！',
+			'此情可待成追忆，只是当时已惘然。',
+			'关关雎鸠，在河之洲。窈窕淑女，君子好逑。',
+			'无可奈何花落去，似曾相识燕归来。',
+			'衣带渐宽终不悔，为伊消得人憔悴。',
+			'年年岁岁花相似，岁岁年年人不同。',
+			'云想衣裳花想容，春风拂槛露华浓。',
+			'竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。',
+			'天苍苍，野茫茫，风吹草低见牛羊。',
+			'但愿人长久，千里共婵娟。',
+			'弃我去者，昨日之日不可留；乱我心者，今日之日多烦忧。',
+			'在天愿作比翼鸟，在地愿为连理枝。',
+			'抽刀断水水更流，举杯消愁愁更愁。',
+			'人生如梦，一尊还酹江月。',
+			'一生一代一双人，争教两处销魂。',
+			'庄生晓梦迷蝴蝶，望帝春心托杜鹃。',
+			'东边日出西边雨， 道是无晴却有晴。',
+			'等闲识得东风面，万紫千红总是春。',
+			'前不见古人，后不见来者。',
+			'敕勒川，阴山下。 天似穹庐，笼盖四野。',
+			'曲径通幽处，禅房花木深。',
+			'春花秋月何时了，往事知多少？',
+			'身无彩凤双飞翼，心有灵犀一点通。',
+			'无言独上西楼，月如钩。寂寞梧桐深院锁清秋。',
+			'沧海月明珠有泪，蓝田日暖玉生烟。',
+			'君当作磐石，妾当作蒲苇，蒲苇纫如丝，磐石无转移。',
+			'江山如画，一时多少豪杰。',
+			'天长地久有时尽，此恨绵绵无绝期。',
+			'愿得一心人，白头不相离。',
+			'飘飘何所似，天地一沙鸥。',
+			'锦瑟无端五十弦，一弦一柱思华年。',
+			'世界微尘里，吾宁爱与憎。',
+			'花非花，雾非雾。 夜半来，天明去。',
+			'此曲只应天上有，人间能得几回闻。',
+			'墙里秋千墙外道。墙外行人，墙里佳人笑。',
+			'清时有味是无能，闲爱孤云静爱僧。',
+			'云青青兮欲雨，水澹澹兮生烟。',
+			'初闻征雁已无蝉，百尺楼高水接天。',
+			'爽籁发而清风生，纤歌凝而白云遏。',
+			'千呼万唤始出来，犹抱琵琶半遮面。',
+			'饮散落花流水各西东。后会不知何处是，烟浪远，暮云重。',
+			'无情有恨何人觉？月晓风清欲堕时。',
+			'若待上林花似锦，出门俱是看花人。',
+			'菩提本无树，明镜亦非台。 本来无一物，何处惹尘埃！'
+		];
+		return ancientPoems[Math.floor(Math.random() * ancientPoems.length)];
+	}
 }
 
 customElements.define('the-hitokoto', HitokotoElement);
