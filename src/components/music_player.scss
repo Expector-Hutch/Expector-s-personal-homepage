@@ -2,33 +2,33 @@
 
 @import url('aplayer-ts/src/css/base.css');
 
-.aplayer-body {
+.aplayer {
     border-radius: 10px;
-    overflow: hidden;
+    .aplayer-body {
+        border-radius: 10px;
+        overflow: hidden;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
     .aplayer {
         background-color: #0000;
+
         .aplayer-body {
             background: share.$main-color;
         }
 
         .aplayer-lrc {
             &:before {
-                background: linear-gradient(
-                    180deg,
-                    share.$main-color 0,
-                    hsla(0, 0%, 100%, 0)
-                );
+                background: linear-gradient(180deg,
+                        share.$main-color 0,
+                        hsla(0, 0%, 100%, 0));
             }
 
             &:after {
-                background: linear-gradient(
-                    180deg,
-                    hsla(0, 0%, 100%, 0) 0,
-                    share.$main-color
-                );
+                background: linear-gradient(180deg,
+                        hsla(0, 0%, 100%, 0) 0,
+                        share.$main-color );
             }
 
             p {
