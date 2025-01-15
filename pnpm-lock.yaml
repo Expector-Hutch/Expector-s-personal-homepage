@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       aplayer-ts:
-        specifier: https://github.com/Expector-Hutch/aplayer-ts
-        version: https://codeload.github.com/Expector-Hutch/aplayer-ts/tar.gz/901c5a6dbb526fc4b2f7a28e401bad95cd5f036e
+        specifier: ^2.5.0
+        version: 2.5.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -602,9 +602,8 @@ packages:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
     engines: {node: '>=8'}
 
-  aplayer-ts@https://codeload.github.com/Expector-Hutch/aplayer-ts/tar.gz/901c5a6dbb526fc4b2f7a28e401bad95cd5f036e:
-    resolution: {tarball: https://codeload.github.com/Expector-Hutch/aplayer-ts/tar.gz/901c5a6dbb526fc4b2f7a28e401bad95cd5f036e}
-    version: 2.4.5
+  aplayer-ts@2.5.0:
+    resolution: {integrity: sha512-1W7w2rBU+ogro5RVs8/8FdH5Xft/yZ9gIxjxfHBmgRQS5GoZmE+6fVLSfSZOOiO4QCNCuDnysXxIee1HSj5v+A==}
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -1717,7 +1716,7 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  aplayer-ts@https://codeload.github.com/Expector-Hutch/aplayer-ts/tar.gz/901c5a6dbb526fc4b2f7a28e401bad95cd5f036e: {}
+  aplayer-ts@2.5.0: {}
 
   argparse@2.0.1: {}
 
