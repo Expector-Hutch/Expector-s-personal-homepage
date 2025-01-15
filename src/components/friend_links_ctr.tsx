@@ -50,6 +50,7 @@ export class FriendLinksCtrElement extends HTMLElement {
             offset: [0, 15],
             moveTransition: 'transform 0.2s ease-out',
             animation: 'scale-extreme',
+            theme: 'auto',
         });
     }
 }
