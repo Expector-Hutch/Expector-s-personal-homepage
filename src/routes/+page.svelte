@@ -1,21 +1,16 @@
-<script>
-	import Card from '../components/Card.svelte';
-	import Quote from '../components/Quote.svelte';
-	import Image from '../components/Image.svelte';
-	import LinkButton from '../components/LinkButton.svelte';
-	import Block from '../components/Block.svelte';
-	import Footer from '../components/Footer.svelte';
-	import MusicPlayer from '../components/MusicPlayer.svelte';
-
-	import head_image from '../assets/images/head-image.webp';
-
-	const name = 'Expector';
-	const introduction = [
+<script lang="ts">
+	const name: string = 'Expector';
+	const introduction: string[] = [
 		'你好你好，我是 Exceptor！高中现役 OIer，热衷于计算机技术。虽然我的才华有限，但我总是乐于帮助他人，希望可以通过不同的方式与你建立联系，一起成长。',
 		'我的兴趣非常广泛，从数学到编程，再到视频制作，我都乐此不疲。平时也会在B站分享一些内容，或是逛逛知乎寻找灵感。我还特别喜欢玩音游和二游，另外——最喜欢洛天依啦~如果你对这些也感兴趣，不妨加个好友吧！'
 	];
-	const quote_replace = '我思故我在';
-	const app_links = [
+	const quote_replace: string = '我思故我在';
+	interface AppLink {
+		href: string;
+		text: string;
+		color: string;
+	};
+	const app_links: AppLink[] = [
 		{
 			href: 'https://space.bilibili.com/1530809275',
 			text: '哔站',
@@ -32,7 +27,37 @@
 			color: '#11ff45'
 		}
 	];
-	const music_id = 2151900715; // netease music song id
+	const music_id: number = 2151900715; // netease music song id
+	interface LinksWithIcon {
+		platform: 'github' | 'gitee' | 'zhihu';
+		href: string;
+	}
+	const links_with_icon: LinksWithIcon[] = [
+		{
+			platform: 'github',
+			href: 'https://github.com/Expector-Hutch/'
+		},
+		{
+			platform: 'gitee',
+			href: 'https://gitee.com/expector/'
+		},
+		{
+			platform: 'zhihu',
+			href: 'https://www.zhihu.com/people/shadowenderking'
+		}
+	];
+
+
+	import Card from '../components/Card.svelte';
+	import Quote from '../components/Quote.svelte';
+	import Image from '../components/Image.svelte';
+	import LinkButton from '../components/LinkButton.svelte';
+	import Block from '../components/Block.svelte';
+	import Footer from '../components/Footer.svelte';
+	import MusicPlayer from '../components/MusicPlayer.svelte';
+	import IconLink from '../components/IconLink.svelte';
+
+	import head_image from '../assets/images/head-image.webp';
 </script>
 
 <div class="page">
@@ -53,10 +78,13 @@
 				</Block>
 				<div class="app-links">
 					{#each app_links as { href, text, color }}
-						<LinkButton href={href} text={text} color={color}></LinkButton>
+						<LinkButton {href} {text} {color}></LinkButton>
 					{/each}
 				</div>
 				<MusicPlayer songId={music_id}></MusicPlayer>
+				{#each links_with_icon as { platform, href }}
+					<IconLink {platform} {href}></IconLink>
+				{/each}
 				<Footer>
 					<p>
 						&copy; 2022-2024 <a href="https://expector.netlify.app/" target="_blank">Expector</a>
