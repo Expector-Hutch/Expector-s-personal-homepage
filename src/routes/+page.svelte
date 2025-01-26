@@ -9,7 +9,7 @@
 		href: string;
 		text: string;
 		color: string;
-	};
+	}
 	const app_links: AppLink[] = [
 		{
 			href: 'https://space.bilibili.com/1530809275',
@@ -31,22 +31,25 @@
 	interface LinksWithIcon {
 		platform: 'github' | 'gitee' | 'zhihu';
 		href: string;
+		color: string;
 	}
 	const links_with_icon: LinksWithIcon[] = [
 		{
 			platform: 'github',
-			href: 'https://github.com/Expector-Hutch/'
+			href: 'https://github.com/Expector-Hutch/',
+			color: '#fff'
 		},
 		{
 			platform: 'gitee',
-			href: 'https://gitee.com/expector/'
+			href: 'https://gitee.com/expector/',
+			color: '#c71d23'
 		},
 		{
 			platform: 'zhihu',
-			href: 'https://www.zhihu.com/people/shadowenderking'
+			href: 'https://www.zhihu.com/people/shadowenderking',
+			color: '#0084ff'
 		}
 	];
-
 
 	import Card from '../components/Card.svelte';
 	import Quote from '../components/Quote.svelte';
@@ -82,10 +85,12 @@
 					{/each}
 				</div>
 				<MusicPlayer songId={music_id}></MusicPlayer>
-				{#each links_with_icon as { platform, href }}
-					<IconLink {platform} {href}></IconLink>
-				{/each}
-				<Footer>
+				<div class="icon-links">
+					{#each links_with_icon as { platform, href, color }}
+						<IconLink {platform} {href} {color}></IconLink>
+					{/each}
+				</div>
+				<Footer class="footer">
 					<p>
 						&copy; 2022-2024 <a href="https://expector.netlify.app/" target="_blank">Expector</a>
 						<br />Text:
@@ -146,6 +151,9 @@
 		}
 	}
 	.app-links {
+		display: inline-flex;
+	}
+	.icon-links {
 		display: inline-flex;
 	}
 </style>

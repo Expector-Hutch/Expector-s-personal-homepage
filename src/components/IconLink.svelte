@@ -1,6 +1,7 @@
 <script lang="ts">
     export let platform: 'github' | 'gitee' | 'zhihu';
     export let href: string = '';
+    export let color: string = 'inherit';
 
 	import GithubIcon from '~icons/simple-icons/github';
     import GiteeIcon from '~icons/simple-icons/gitee';
@@ -13,6 +14,6 @@
     }
 </script>
 
-<a href={href}>
+<a href={href} style="color: {color};">
     <svelte:component this={Icons[platform]} />
 </a>

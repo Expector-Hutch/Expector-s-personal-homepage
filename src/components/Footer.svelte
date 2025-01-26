@@ -3,7 +3,7 @@
 </footer>
 
 <style>
-	:global(.footer ::slotted(p)) {
+	.footer {
 		font-size: 10px;
 		color: #a9a9a9;
 	}
