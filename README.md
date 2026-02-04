@@ -18,7 +18,7 @@
 ![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Markdown](https://img.shields.io/badge/markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 
-![APlayer.js](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
+![APlayer.ts](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
 ![Tippy.js](https://img.shields.io/badge/TIPPY.js-5b89f3?style=for-the-badge&logo=tippy.js&logoColor=white)
 
 ## 构建 & 运行
