@@ -28,6 +28,10 @@ export class GHLinkElement extends HTMLElement {
                     }
                     .gh-link svg {
                         border-top-right-radius: 11px;
+                        
+                        @media (prefers-color-scheme: light) {
+                            filter: invert(1);
+                        }
                     }
                     @media (max-width: 959px) {
                         .gh-link:hover .octo-arm {

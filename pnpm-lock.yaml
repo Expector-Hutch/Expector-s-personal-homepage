@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      Expector-s-personal-homepage:
+        specifier: 'link:'
+        version: 'link:'
       aplayer-ts:
         specifier: ^2.5.1
         version: 2.5.1

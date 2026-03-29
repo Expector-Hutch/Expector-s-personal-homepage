@@ -8,6 +8,7 @@
         "check-format": "prettier --check ."
     },
     "dependencies": {
+        "Expector-s-personal-homepage": "link:",
         "aplayer-ts": "^2.5.1",
         "tippy.js": "^6.3.7"
     },
