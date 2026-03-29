@@ -23,6 +23,10 @@ var qn=Object.defineProperty;var Rn=(e,t,n)=>t in e?qn(e,t,{enumerable:!0,config
                     }
                     .gh-link svg {
                         border-top-right-radius: 11px;
+                        
+                        @media (prefers-color-scheme: light) {
+                            filter: invert(1);
+                        }
                     }
                     @media (max-width: 959px) {
                         .gh-link:hover .octo-arm {
