@@ -1,4 +1,19 @@
+# 基础格式
 semi: true
-singleQuote: true
-trailingComma: all
+singleQuote: false
 tabWidth: 4
+useTabs: false
+trailingComma: es5
+bracketSpacing: true
+arrowParens: avoid
+printWidth: 100
+endOfLine: lf
+
+overrides:
+  - files: "*.scss"
+    options:
+      singleQuote: false
+
+  - files: "*.tsx"
+    options:
+      parser: typescript

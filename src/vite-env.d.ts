@@ -3,11 +3,11 @@
 declare namespace JSX {
     type Element = HTMLElement;
     interface IntrinsicElements {
-        [eleName: string]: any;
+        [eleName: string];
     }
 }
 
-declare module '~icons/simple-icons/*' {
+declare module "~icons/simple-icons/*" {
     const content: string;
     export default content;
 }

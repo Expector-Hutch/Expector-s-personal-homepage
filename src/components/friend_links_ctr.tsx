@@ -1,17 +1,17 @@
-import { DOMcreateElement } from '../utils/jsxFactory';
+import { DOMcreateElement } from "../utils/jsxFactory";
 
-import './friend_link.scss';
+import "./friend_link.scss";
 
-import tippy, { createSingleton } from 'tippy.js';
+import tippy, { createSingleton } from "tippy.js";
 
 export class FriendLinkElement extends HTMLElement {
     constructor() {
         super();
-        let icon = this.getAttribute('icon'),
-            href = this.getAttribute('href'),
-            name = this.getAttribute('name'),
+        let icon = this.getAttribute("icon"),
+            href = this.getAttribute("href"),
+            name = this.getAttribute("name"),
             text = this.innerHTML;
-        this.innerHTML = '';
+        this.innerHTML = "";
         this.appendChild(
             <div>
                 <a class="friend-link" href={href}>
@@ -25,34 +25,33 @@ export class FriendLinkElement extends HTMLElement {
                     <hr />
                     <p>{text}</p>
                 </div>
-            </div>,
+            </div>
         );
     }
 }
 
-customElements.define('friend-link', FriendLinkElement);
+customElements.define("friend-link", FriendLinkElement);
 
 export class FriendLinksCtrElement extends HTMLElement {
     constructor() {
         super();
         const friend_link_elements = Array.from(this.children).filter(
-            (child) => child.tagName.toLowerCase() === 'friend-link',
+            child => child.tagName.toLowerCase() === "friend-link"
         );
         const tippyInstances = tippy(friend_link_elements, {
-            content: (reference) =>
-                reference.getElementsByClassName('friend-card')[0],
+            content: reference => reference.getElementsByClassName("friend-card")[0],
             allowHTML: true,
         });
         createSingleton(tippyInstances, {
             interactive: true,
             allowHTML: true,
-            placement: 'top',
+            placement: "top",
             offset: [0, 15],
-            moveTransition: 'transform 0.2s ease-out',
-            animation: 'scale-extreme',
-            theme: 'auto',
+            moveTransition: "transform 0.2s ease-out",
+            animation: "scale-extreme",
+            theme: "auto",
         });
     }
 }
 
-customElements.define('friend-links-ctr', FriendLinksCtrElement);
+customElements.define("friend-links-ctr", FriendLinksCtrElement);

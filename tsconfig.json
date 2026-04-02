@@ -22,5 +22,5 @@
         "jsxFactory": "DOMcreateElement",
         "jsxFragmentFactory": "DOMcreateFragment"
     },
-    "include": ["src"]
+    "include": ["src", "*.config.ts"]
 }

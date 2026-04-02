@@ -33,19 +33,33 @@ npm -g i pnpm # 安装 pnpm
 接下来，在项目中运行
 
 ```sh
-pnpm i .
+pnpm i
 ```
 
 以安装依赖包，然后你可以通过
 
 ```sh
-pnpm run dev
+pnpm dev
 ```
 
 在开发模式下启动项目，以及
 
 ```sh
-pnpm run build
+pnpm build
 ```
 
 构建项目。
+
+提交代码前应运行检查
+
+```sh
+pnpm lint
+```
+
+执行
+
+```sh
+pnpm lint:fix
+```
+
+可自动修复部分错误。
