@@ -84,6 +84,10 @@ p {
     @media (prefers-color-scheme: light) {
         color: $p-color-light;
     }
+
+    &.hitokoto {
+        font-family: serif;
+    }
 }
 
 a {

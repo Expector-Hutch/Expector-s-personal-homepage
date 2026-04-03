@@ -10,18 +10,16 @@ export class FriendLinkElement extends HTMLElement {
             name = this.getAttribute("name"),
             text = this.innerHTML;
         this.replaceChildren(
-            <div>
-                <a class="friend-link" href={href}>
+            <a class="friend-link" href={href}>
+                <img src={icon} alt={name} />
+            </a>,
+            <div class="friend-card">
+                <div>
                     <img src={icon} alt={name} />
-                </a>
-                <div class="friend-card">
-                    <div>
-                        <img src={icon} alt={name} />
-                        <h3>{name}</h3>
-                    </div>
-                    <hr />
-                    <p>{text}</p>
+                    <h3>{name}</h3>
                 </div>
+                <hr />
+                <p>{text}</p>
             </div>
         );
     }
