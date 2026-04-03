@@ -9,8 +9,7 @@ export class FriendLinkElement extends HTMLElement {
             href = this.getAttribute("href"),
             name = this.getAttribute("name"),
             text = this.innerHTML;
-        this.innerHTML = "";
-        this.appendChild(
+        this.replaceChildren(
             <div>
                 <a class="friend-link" href={href}>
                     <img src={icon} alt={name} />
