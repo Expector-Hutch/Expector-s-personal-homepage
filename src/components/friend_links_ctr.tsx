@@ -1,5 +1,3 @@
-import { DOMcreateElement } from "../utils/jsxFactory";
-
 import "./friend_link.scss";
 
 import tippy, { createSingleton } from "tippy.js";

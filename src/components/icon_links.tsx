@@ -1,5 +1,3 @@
-import { DOMcreateElement } from "../utils/jsxFactory";
-
 import "./icon_links.scss";
 
 abstract class IconLinkElement extends HTMLElement {

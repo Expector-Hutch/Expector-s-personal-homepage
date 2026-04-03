@@ -1,5 +1,3 @@
-import { DOMcreateElement } from "../utils/jsxFactory";
-
 import style from "./light_btn.module.scss";
 
 import { generateID } from "../utils/generateID";
