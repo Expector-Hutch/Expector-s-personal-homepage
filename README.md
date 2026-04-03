@@ -50,9 +50,10 @@ pnpm build
 
 构建项目。
 
-提交代码前应运行检查
+提交代码前应运行格式化及检查
 
 ```sh
+pnpm format
 pnpm lint
 ```
 

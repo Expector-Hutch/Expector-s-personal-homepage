@@ -10,10 +10,10 @@ printWidth: 100
 endOfLine: lf
 
 overrides:
-  - files: "*.scss"
-    options:
-      singleQuote: false
+    - files: "*.scss"
+      options:
+          singleQuote: false
 
-  - files: "*.tsx"
-    options:
-      parser: typescript
+    - files: "*.tsx"
+      options:
+          parser: typescript

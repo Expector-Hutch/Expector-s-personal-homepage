@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Lint Code
 on:
     push:
         branches:
@@ -28,11 +28,4 @@ jobs:
               run: pnpm install
 
             - name: Build project
-              run: pnpm build
-
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v4
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./dist
-                  commit_message: "Deploy to GitHub Pages"
+              run: pnpm lint

@@ -18,12 +18,6 @@ export default defineConfig({
             },
         },
     },
-    esbuild: {
-        jsx: "transform",
-        jsxFactory: "DOMcreateElement",
-        jsxFragment: "Fragment",
-        jsxInject: `import { DOMcreateElement } from "/src/utils/jsxFactory"`,
-    },
     css: {
         preprocessorOptions: {
             scss: {

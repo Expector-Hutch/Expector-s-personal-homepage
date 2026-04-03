@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "aplayer-ts": "^2.6.0",
+        "nano-jsx": "^0.2.1",
         "tippy.js": "^6.3.7"
     },
     "devDependencies": {

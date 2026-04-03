@@ -1,4 +1,4 @@
-.tippy-box[data-theme~='auto'] > .tippy-content {
+.tippy-box[data-theme~="auto"] > .tippy-content {
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-    .tippy-box[data-theme~='auto'] {
+    .tippy-box[data-theme~="auto"] {
         color: #26323d;
         box-shadow:
             0 0 20px 4px rgba(154, 161, 177, 0.15),
@@ -47,31 +47,27 @@
         background-color: #fff;
     }
 
-    .tippy-box[data-theme~='auto'][data-placement^='top']
-        > .tippy-arrow:before {
+    .tippy-box[data-theme~="auto"][data-placement^="top"] > .tippy-arrow:before {
         border-top-color: #fff;
     }
 
-    .tippy-box[data-theme~='auto'][data-placement^='bottom']
-        > .tippy-arrow:before {
+    .tippy-box[data-theme~="auto"][data-placement^="bottom"] > .tippy-arrow:before {
         border-bottom-color: #fff;
     }
 
-    .tippy-box[data-theme~='auto'][data-placement^='left']
-        > .tippy-arrow:before {
+    .tippy-box[data-theme~="auto"][data-placement^="left"] > .tippy-arrow:before {
         border-left-color: #fff;
     }
 
-    .tippy-box[data-theme~='auto'][data-placement^='right']
-        > .tippy-arrow:before {
+    .tippy-box[data-theme~="auto"][data-placement^="right"] > .tippy-arrow:before {
         border-right-color: #fff;
     }
 
-    .tippy-box[data-theme~='auto'] > .tippy-backdrop {
+    .tippy-box[data-theme~="auto"] > .tippy-backdrop {
         background-color: #fff;
     }
 
-    .tippy-box[data-theme~='auto'] > .tippy-svg-arrow {
+    .tippy-box[data-theme~="auto"] > .tippy-svg-arrow {
         fill: #fff;
     }
 }

@@ -18,9 +18,8 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true,
         /* JSX */
-        "jsx": "preserve",
-        "jsxFactory": "DOMcreateElement",
-        "jsxFragmentFactory": "DOMcreateFragment"
+        "jsx": "react-jsx",
+        "jsxImportSource": "nano-jsx/esm" // esm for ESModules
     },
     "include": ["src", "*.config.ts"]
 }

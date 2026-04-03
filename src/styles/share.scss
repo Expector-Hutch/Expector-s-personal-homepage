@@ -8,9 +8,9 @@ $p-color-light: #008b8b;
 $a-color: #ffffff;
 $footer-color: #a9a9a9;
 
-$background-url: url('../assets/images/background-dark.png');
-$background-url-light: url('../assets/images/background-light.png');
-$head-image-url: url('../assets/images/head-image.webp');
+$background-url: url("../assets/images/background-dark.png");
+$background-url-light: url("../assets/images/background-light.png");
+$head-image-url: url("../assets/images/head-image.webp");
 
 @mixin background($url, $color) {
     background: {
