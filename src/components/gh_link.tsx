@@ -1,7 +1,10 @@
+import style from "./gh_link.scss?inline";
+
 export class GHLinkElement extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+
     if (this.shadowRoot) {
       this.shadowRoot.replaceChildren(
         <a class="gh-link" href={this.getAttribute("href")} aria-label="View source on GitHub">
@@ -25,49 +28,12 @@ export class GHLinkElement extends HTMLElement {
               class="octo-body"
             ></path>
           </svg>
-        </a>,
-        <style>
-          {
-            /* css */ `
-.gh-link:hover .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-}
-@keyframes octocat-wave {
-    0%,
-    100% {
-        transform: rotate(0);
-    }
-    20%,
-    60% {
-        transform: rotate(-25deg);
-    }
-    40%,
-    80% {
-        transform: rotate(10deg);
-    }
-}
-.gh-link svg {
-    border-top-right-radius: 11px;
-
-    @media (prefers-color-scheme: light) {
-        filter: invert(1);
-    }
-}
-@media (max-width: 959px) {
-    .gh-link:hover .octo-arm {
-        animation: none;
-    }
-    .gh-link .octo-arm {
-        animation: octocat-wave 560ms ease-in-out;
-    }
-    .gh-link svg {
-        border-top-right-radius: 0px;
-    }
-}
-`
-          }
-        </style>
+        </a>
       );
+
+      const sheet = new CSSStyleSheet();
+      sheet.replaceSync(style);
+      this.shadowRoot.adoptedStyleSheets = [sheet];
     }
   }
 }

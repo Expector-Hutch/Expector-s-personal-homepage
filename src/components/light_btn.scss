@@ -38,6 +38,16 @@ $transition: 0.5s;
 
     transition: $transition;
   }
+
+  &::before,
+  &::after {
+    background-color: var(--btn-color);
+    box-shadow:
+      0 0 5px var(--btn-color),
+      0 0 15px var(--btn-color),
+      0 0 30px var(--btn-color),
+      0 0 60px var(--btn-color);
+  }
 }
 
 @media (min-width: 960px) {

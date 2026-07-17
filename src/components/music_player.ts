@@ -5,7 +5,9 @@ import APlayer from "aplayer-ts";
 export class MusicPlayerElement extends HTMLElement {
   constructor() {
     super();
+
     const id = parseInt(this.id);
+
     this.fetchSongDetail(id).then(detail => {
       if (detail) {
         this.fetchSongLyric(id).then(lyric => {
@@ -48,6 +50,7 @@ export class MusicPlayerElement extends HTMLElement {
       return null;
     }
   }
+
   async fetchSongLyric(songId: number) {
     try {
       const response = await fetch(`/music/api/song/lyric?id=${songId}&lv=1&kv=1&tv=-1`);
