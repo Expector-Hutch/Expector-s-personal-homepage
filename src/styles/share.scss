@@ -13,11 +13,11 @@ $background-url-light: url("../assets/images/background-light.png");
 $head-image-url: url("../assets/images/head-image.webp");
 
 @mixin background($url, $color) {
-    background: {
-        image: $url;
-        position: center center;
-        repeat: no-repeat;
-        size: cover;
-        color: $color;
-    }
+  background: {
+    image: $url;
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+    color: $color;
+  }
 }

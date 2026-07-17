@@ -1,7 +1,6 @@
-# 基础格式
 semi: true
 singleQuote: false
-tabWidth: 4
+tabWidth: 2
 useTabs: false
 trailingComma: es5
 bracketSpacing: true
@@ -10,10 +9,10 @@ printWidth: 100
 endOfLine: lf
 
 overrides:
-    - files: "*.scss"
-      options:
-          singleQuote: false
+  - files: "*.scss"
+    options:
+      singleQuote: false
 
-    - files: "*.tsx"
-      options:
-          parser: typescript
+  - files: "*.tsx"
+    options:
+      parser: typescript

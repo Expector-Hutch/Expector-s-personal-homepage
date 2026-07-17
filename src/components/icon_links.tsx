@@ -1,14 +1,14 @@
 import "./icon_links.scss";
 
 function defineIconLinkElement(tagName: string, icon: string): void {
-    class IconLinkElement extends HTMLElement {
-        constructor() {
-            super();
-            this.innerHTML = icon;
-            this.replaceChildren(<a href={this.getAttribute("href")}>{this.children[0]}</a>);
-        }
+  class IconLinkElement extends HTMLElement {
+    constructor() {
+      super();
+      this.innerHTML = icon;
+      this.replaceChildren(<a href={this.getAttribute("href")}>{this.children[0]}</a>);
     }
-    customElements.define(tagName, IconLinkElement);
+  }
+  customElements.define(tagName, IconLinkElement);
 }
 
 import github_icon from "~icons/simple-icons/github";
