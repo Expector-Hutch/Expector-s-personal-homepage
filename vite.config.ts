@@ -26,6 +26,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: path => path.replace(/^\/music/, ""),
       },
+      "/hitokoto": {
+        target: "https://uapis.cn",
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/hitokoto/, ""),
+      },
     },
   },
 });
