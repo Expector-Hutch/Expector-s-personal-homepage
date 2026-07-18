@@ -14,6 +14,8 @@ import github_icon from "~icons/simple-icons/github?color=%23ffffff";
 import gitee_icon from "~icons/simple-icons/gitee?color=%23c71d23";
 import zhihu_icon from "~icons/simple-icons/zhihu?color=%230084ff";
 
+import data from "./data/data.yaml";
+
 function App() {
   return (
     <div class="main-card">
@@ -21,14 +23,9 @@ function App() {
       <main>
         <GithubLink href="https://github.com/Expector-Hutch/Expector-s-personal-homepage"></GithubLink>
 
-        <h1 id="title">Expector</h1>
+        <h1 id="title">{data.name}</h1>
 
-        <p id="self-introduction">
-          &emsp;&emsp;你好你好，我是 Exceptor！高中已退役
-          OIer，热衷于计算机技术。虽然我的才华有限，但我总是乐于帮助他人，希望可以通过不同的方式与你建立联系，一起成长。
-          <br />
-          &emsp;&emsp;我的兴趣非常广泛，从数学到编程，再到视频制作，我都乐此不疲。平时也会在B站分享一些内容，或是逛逛知乎寻找灵感。我还特别喜欢玩音游和二游，另外——最喜欢洛天依啦~如果你对这些也感兴趣，不妨加个好友吧！
-        </p>
+        <p id="self-introduction" innerHTML={{ __dangerousHtml: data.introduction }}></p>
 
         <p class="hitokoto">
           &emsp;&emsp;『<Hitokoto></Hitokoto>』
@@ -38,61 +35,32 @@ function App() {
           <p>友链</p>
 
           <FriendLinksCtr>
-            <FriendLink
-              name="枫上天游"
-              href="https://www.fstu.cc/"
-              icon="https://avatars.githubusercontent.com/u/105190211?v=4"
-            >
-              一个普普通通的OIer，兴趣广泛
-            </FriendLink>
-
-            <FriendLink
-              name="云帆沧海"
-              href="https://budawu.github.io/"
-              icon="https://avatars.githubusercontent.com/u/98736983?v=4"
-            >
-              勇敢为你，无畏地做白日梦 高中生/飞友/锦依卫/港区萌新指挥官
-            </FriendLink>
-
-            <FriendLink
-              name="邱璇洛"
-              href="https://qiuxuanluo.xlog.app/"
-              icon="https://avatars.githubusercontent.com/u/72391548?v=4"
-            >
-              立志于做一些奇奇怪怪希望有点用的事~
-            </FriendLink>
-
-            <FriendLink
-              name="HD Superman"
-              href="https://hackertalk.net/users/186247014399643648"
-              icon="https://avatars.githubusercontent.com/u/50064165?v=4"
-            >
-              Across the Great Wall, we can reach every corner in the world.
-            </FriendLink>
+            {data.friends.map(f => (
+              <FriendLink name={f.name} href={f.link} icon={f.icon}>
+                {f.brief}
+              </FriendLink>
+            ))}
           </FriendLinksCtr>
         </div>
 
         <div class="app-links">
-          <LightBtn color="#ff1f71" href="https://space.bilibili.com/1530809275">
+          <LightBtn color="#ff1f71" href={data.links.bilibili}>
             哔站
           </LightBtn>
-          <LightBtn color="#2bd2ff" href="https://www.cnblogs.com/expector/">
+          <LightBtn color="#2bd2ff" href={data.links.blog}>
             博客
           </LightBtn>
-          <LightBtn color="#11ff45" href="mailto: expector-hutch@outlook.com">
+          <LightBtn color="#11ff45" href={data.links.email}>
             邮箱
           </LightBtn>
         </div>
 
-        <MusicPlayer id={420397887}></MusicPlayer>
+        <MusicPlayer id={data.music}></MusicPlayer>
 
         <div class="more-links">
-          <IconLink href="https://github.com/Expector-Hutch/" icon={github_icon}></IconLink>
-          <IconLink href="https://gitee.com/expector" icon={gitee_icon}></IconLink>
-          <IconLink
-            href="https://www.zhihu.com/people/shadowenderking"
-            icon={zhihu_icon}
-          ></IconLink>
+          <IconLink href={data.links.github} icon={github_icon}></IconLink>
+          <IconLink href={data.links.gitee} icon={gitee_icon}></IconLink>
+          <IconLink href={data.links.zhihu} icon={zhihu_icon}></IconLink>
         </div>
 
         <footer>

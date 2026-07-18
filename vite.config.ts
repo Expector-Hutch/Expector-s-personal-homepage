@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
 import Icons from "unplugin-icons/vite";
+import yaml from "@rollup/plugin-yaml";
 
 export default defineConfig({
   base: "./",
   plugins: [
+    yaml(),
     Icons({
       autoInstall: true,
       compiler: "raw",

@@ -6,10 +6,10 @@ interface FriendLinkProps {
   name: string;
   href: string;
   icon: string;
-  children?: any;
+  children?: string;
 }
 
-export const FriendLink = ({ name, href, icon, children }: FriendLinkProps) => {
+export function FriendLink({ name, href, icon, children }: FriendLinkProps) {
   return (
     <Fragment>
       <a class="friend-link" href={href}>
@@ -25,14 +25,14 @@ export const FriendLink = ({ name, href, icon, children }: FriendLinkProps) => {
       </div>
     </Fragment>
   );
-};
+}
 
 import tippy, { createSingleton } from "tippy.js";
 
-export class FriendLinksCtr extends Component<{ children?: any }> {
+export class FriendLinksCtr extends Component<{ children?: Array<ReturnType<typeof FriendLink>> }> {
   private containerRef: HTMLDivElement | null = null;
-  private tippyInstances: any[] = [];
-  private singleton: any = null;
+  private tippyInstances: ReturnType<typeof tippy> = [];
+  private singleton: ReturnType<typeof createSingleton> | null = null;
 
   private setContainer = (el: HTMLDivElement | null) => {
     this.containerRef = el;
@@ -60,7 +60,7 @@ export class FriendLinksCtr extends Component<{ children?: any }> {
       },
       allowHTML: true,
     });
-    this.tippyInstances = instances as any[];
+    this.tippyInstances = instances;
 
     this.singleton = createSingleton(instances, {
       interactive: true,

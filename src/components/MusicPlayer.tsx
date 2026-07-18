@@ -15,7 +15,7 @@ interface SongDetail {
 
 class MusicPlayer extends Component<MusicPlayerProps> {
   private containerRef: HTMLDivElement | null = null;
-  aplayerInstance: any = null;
+  aplayerInstance: APlayer | null = null;
 
   private setContainer = (el: HTMLDivElement | null) => {
     this.containerRef = el;
