@@ -1,4 +1,5 @@
 ---
+import "../style.scss";
 import Hitokoto from "../components/Hitokoto.astro";
 import GithubLink from "../components/GithubLink.astro";
 import LightButton from "../components/LightButton.astro";
@@ -26,7 +27,7 @@ import data from "../data/data.yaml";
 
         <h1 id="title">{data.name}</h1>
 
-        <p id="self-introduction">{data.introduction}</p>
+        <p id="self-introduction" set:html={data.introduction} />
 
         <Hitokoto />
 
@@ -103,6 +104,9 @@ import data from "../data/data.yaml";
       </main>
     </div>
     <div id="app" style="color: rgb(99, 195, 174)"></div>
-    <script src="../main.ts"></script>
+    <script>
+      import "../components/music_player";
+      import "../components/friend_links_ctr";
+    </script>
   </body>
 </html>
