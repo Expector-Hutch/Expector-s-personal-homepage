@@ -26,6 +26,9 @@ importers:
       "@iconify-json/simple-icons":
         specifier: ^1.2.90
         version: 1.2.90
+      "@rollup/plugin-yaml":
+        specifier: ^5.0.0
+        version: 5.0.0
       "@typescript-eslint/eslint-plugin":
         specifier: ^8.64.0
         version: 8.64.0(@typescript-eslint/parser@8.64.0(eslint@10.7.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.7.0(jiti@2.7.0))(typescript@6.0.3)
@@ -56,9 +59,6 @@ importers:
       sass:
         specifier: ^1.101.0
         version: 1.101.0
-      typescript:
-        specifier: ~6.0.2
-        version: 6.0.3
       unplugin-icons:
         specifier: ^23.0.1
         version: 23.0.1
@@ -1311,6 +1311,18 @@ packages:
       {
         integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==,
       }
+
+  "@rollup/plugin-yaml@5.0.0":
+    resolution:
+      {
+        integrity: sha512-9XOiRGYJjDwmEwR15kuxw+RytZFKtEWshoXuITrtS6+57BVMQMzDfhmSO/xfQOAY5psQv1IrxhQTUqPNppe4lQ==,
+      }
+    engines: { node: ">=14.0.0" }
+    peerDependencies:
+      rollup: ^2.78.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
 
   "@rollup/pluginutils@5.4.0":
     resolution:
@@ -3305,6 +3317,13 @@ packages:
         integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==,
       }
 
+  tosource@2.0.0-alpha.3:
+    resolution:
+      {
+        integrity: sha512-KAB2lrSS48y91MzFPFuDg4hLbvDiyTjOVgaK7Erw+5AmZXNq4sFRVn8r6yxSLuNs15PaokrDRpS61ERY9uZOug==,
+      }
+    engines: { node: ">=10" }
+
   trim-lines@3.0.1:
     resolution:
       {
@@ -4244,6 +4263,12 @@ snapshots:
     optional: true
 
   "@rolldown/pluginutils@1.0.1": {}
+
+  "@rollup/plugin-yaml@5.0.0":
+    dependencies:
+      "@rollup/pluginutils": 5.4.0
+      js-yaml: 4.3.0
+      tosource: 2.0.0-alpha.3
 
   "@rollup/pluginutils@5.4.0":
     dependencies:
@@ -5542,6 +5567,8 @@ snapshots:
   tippy.js@6.3.7:
     dependencies:
       "@popperjs/core": 2.11.8
+
+  tosource@2.0.0-alpha.3: {}
 
   trim-lines@3.0.1: {}
 
