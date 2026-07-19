@@ -19,7 +19,8 @@
     "noUncheckedSideEffectImports": true,
     /* JSX */
     "jsx": "react-jsx",
-    "jsxImportSource": "nano-jsx/esm" // esm for ESModules
+    "jsxImportSource": "nano-jsx/esm", // esm for ESModules
+    "types": ["unplugin-icons/types/raw"]
   },
   "include": ["src", "*.config.ts"]
 }

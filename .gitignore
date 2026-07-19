@@ -11,8 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-
-.svelte-kit
+.astro
 
 # Editor directories and files
 .vscode/*

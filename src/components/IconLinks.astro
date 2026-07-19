@@ -1,0 +1,26 @@
+---
+import GithubIcon from "~icons/simple-icons/github?color=%23ffffff&height=1em&width=1em";
+import GiteeIcon from "~icons/simple-icons/gitee?color=%23c71d23&height=1em&width=1em";
+import ZhihuIcon from "~icons/simple-icons/zhihu?color=%230084ff&height=1em&width=1em";
+
+const icon_map = {
+  github: GithubIcon,
+  gitee: GiteeIcon,
+  zhihu: ZhihuIcon,
+} as const;
+
+interface Props {
+  href: string;
+  icon: keyof typeof icon_map;
+}
+
+const { href, icon } = Astro.props as Props;
+---
+
+<a class="icon-link" href={href} set:html={icon_map[icon]} />
+<style>
+  .icon-link {
+    display: flex;
+    align-items: center;
+  }
+</style>

@@ -8,6 +8,9 @@ arrowParens: avoid
 printWidth: 100
 endOfLine: lf
 
+plugins:
+  - prettier-plugin-astro
+
 overrides:
   - files: "*.scss"
     options:
@@ -16,3 +19,7 @@ overrides:
   - files: "*.tsx"
     options:
       parser: typescript
+
+  - files: "*.astro"
+    options:
+      parser: astro

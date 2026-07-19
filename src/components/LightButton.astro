@@ -1,0 +1,141 @@
+---
+const { color, href } = Astro.props;
+---
+
+<div class={`light-btn`} style={{ "--btn-color": color }}>
+  <a href={href} target="_blank">
+    <slot />
+  </a>
+</div>
+<style>
+  .light-btn {
+    position: relative;
+  }
+
+  .light-btn a {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    color: #fff;
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    transition: 0.5s;
+  }
+
+  .light-btn::before,
+  .light-btn::after {
+    background-color: var(--btn-color);
+    box-shadow:
+      0 0 5px var(--btn-color),
+      0 0 15px var(--btn-color),
+      0 0 30px var(--btn-color),
+      0 0 60px var(--btn-color);
+  }
+
+  @media (min-width: 960px) {
+    .light-btn {
+      width: 100%;
+      height: 33px;
+    }
+
+    .light-btn:hover::before {
+      width: 80%;
+      height: 50%;
+      border-radius: 30px;
+      bottom: 0px;
+    }
+
+    .light-btn:hover::after {
+      width: 80%;
+      height: 50%;
+      border-radius: 30px;
+      top: 0px;
+    }
+
+    .light-btn:hover a {
+      letter-spacing: 3px;
+    }
+
+    .light-btn:hover a::before {
+      transform: skew(45deg) translateX(100px);
+    }
+
+    .light-btn::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      transition: 0.5s;
+      bottom: -5px;
+    }
+
+    .light-btn::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 10px;
+      border-radius: 10px;
+      transition: 0.5s;
+      top: -5px;
+    }
+
+    .light-btn a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+      transform: skew(45deg) translateX(0);
+      transition: 0.5s;
+    }
+  }
+
+  @media (max-width: 959px) {
+    .light-btn {
+      height: 50px;
+    }
+
+    .light-btn::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 30px);
+      height: 50%;
+      border-radius: 30px;
+      bottom: 10px;
+    }
+
+    .light-btn::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 30px);
+      height: 50%;
+      border-radius: 30px;
+      top: 5px;
+    }
+  }
+</style>

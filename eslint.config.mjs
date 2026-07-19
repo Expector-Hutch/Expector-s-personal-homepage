@@ -3,14 +3,16 @@ import ts from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import prettierPlugin from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
+import eslintPluginAstro from "eslint-plugin-astro";
 import globals from "globals";
 
 export default [
   {
-    ignores: ["dist/**", "node_modules/**", "*.d.ts", "coverage/**"],
+    ignores: ["dist/**", "node_modules/**", "*.d.ts", "coverage/**", ".astro/**"],
   },
 
   js.configs.recommended,
+  ...eslintPluginAstro.configs.recommended,
 
   {
     files: ["**/*.{ts,tsx}"],
