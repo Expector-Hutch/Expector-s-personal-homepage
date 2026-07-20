@@ -1,0 +1,488 @@
+---
+interface Props {
+  uid: number;
+  color: string;
+}
+const { uid, color } = Astro.props as Props;
+
+const {
+  name: _name,
+  artists: _arts,
+  album: { picUrl: _purl },
+} = (
+  await (await fetch(`https://music.163.com/api/song/detail/?id=${uid}&ids=%5B${uid}%5D`)).json()
+).songs[0];
+const data = {
+  name: _name as string,
+  artist: _arts.map((artist: { name: string }) => artist.name).join(", ") as string,
+  url: `https://music.163.com/song/media/outer/url?id=${uid}.mp3`,
+  pic: _purl as string,
+  lrc: (
+    await (await fetch(`https://music.163.com/api/song/lyric?id=${uid}&lv=1&kv=1&tv=-1`)).json()
+  ).lrc.lyric
+    .split("\n")
+    .flatMap((l: string) => {
+      const t = [...l.matchAll(/\[(\d{2}:\d{2}\.\d{2})\]/g)].map(m => m[1]);
+      return t.length ? t.map(m => [m, l.replace(/\[\d{2}:\d{2}\.\d{2}\]/g, "")]) : [];
+    }) as string[][],
+};
+---
+
+<music-player class="player" style={{ "--color": color }} url={data.url}>
+  <div
+    class="pic"
+    style={{
+      "background-image": `url(${data.pic})`,
+    }}
+  >
+    <div class="switch">
+      <svg class="play" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-1 0 15 31">
+        <path
+          d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"
+        ></path>
+      </svg>
+      <svg class="pause" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31">
+        <path
+          d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <div class="info">
+    <div class="title">
+      <span class="name">{data.name}</span>
+      <span class="artist">&nbsp;&ndash;&nbsp;{data.artist}</span>
+    </div>
+    <div class="v-lrc">
+      <div class="lrc">
+        {data.lrc.map(l => <span data-time={l[0]}>{l[1]}</span>)}
+      </div>
+    </div>
+    <div class="ctrl">
+      <div class="bar">
+        <div class="a-bar"></div>
+        <div class="thumb"></div>
+      </div>
+      <div class="time">00:00&nbsp;/&nbsp;00:00</div>
+      <div class="voice">
+        <div class="vol-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 1 28 33"
+            ><path
+              d="M13.728 6.272v19.456q0 0.448-0.352 0.8t-0.8 0.32-0.8-0.32l-5.952-5.952h-4.672q-0.48 0-0.8-0.352t-0.352-0.8v-6.848q0-0.48 0.352-0.8t0.8-0.352h4.672l5.952-5.952q0.32-0.32 0.8-0.32t0.8 0.32 0.352 0.8zM20.576 16q0 1.344-0.768 2.528t-2.016 1.664q-0.16 0.096-0.448 0.096-0.448 0-0.8-0.32t-0.32-0.832q0-0.384 0.192-0.64t0.544-0.448 0.608-0.384 0.512-0.64 0.192-1.024-0.192-1.024-0.512-0.64-0.608-0.384-0.544-0.448-0.192-0.64q0-0.48 0.32-0.832t0.8-0.32q0.288 0 0.448 0.096 1.248 0.48 2.016 1.664t0.768 2.528z"
+            ></path>
+          </svg>
+        </div>
+        <div class="vol-bar">
+          <div class="vol-fill"></div>
+          <div class="vol-thumb"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</music-player>
+<style>
+  .player {
+    display: flex;
+    min-height: 90px;
+    max-height: 90px;
+    min-width: 90px;
+    max-width: 1000px;
+    width: 100%;
+    user-select: none;
+    backdrop-filter: blur(20px);
+    background: #ffffff0d;
+    border-radius: 11px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px #0003;
+    margin: 5px;
+
+    --text-color: #000;
+  }
+  @media (prefers-color-scheme: dark) {
+    .player {
+      --text-color: #fff;
+    }
+  }
+  .pic {
+    background-color: var(--color);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90px;
+    min-width: 90px;
+    max-height: 90px;
+    max-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  .switch {
+    position: absolute;
+    border: 2px solid #fff;
+    opacity: 0.8;
+    text-shadow: 0 1px 1px #0003;
+    background: #0003;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px #0003;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition:
+      width 0.3s ease,
+      height 0.3s ease,
+      transform 0.3s ease,
+      top 0.3s ease,
+      left 0.3s ease;
+  }
+  .pic:hover .switch {
+    opacity: 1;
+  }
+  .playing .switch {
+    width: 16px;
+    height: 16px;
+    top: auto;
+    left: auto;
+    bottom: 5px;
+    right: 5px;
+    transform: none;
+  }
+  .play,
+  .pause {
+    fill: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+  .play {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .playing .play {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    pointer-events: none;
+  }
+  .pause {
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  .playing .pause {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 7px 6px 7px;
+    justify-content: space-between;
+    color: var(--text-color);
+    flex: 1;
+    min-width: 0;
+  }
+  .title {
+    margin: 0 0 0 5px;
+  }
+  .name {
+    font-size: 14px;
+  }
+  .artist {
+    font-size: 12px;
+    color: var(--color);
+  }
+  .v-lrc {
+    height: 30px;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  .lrc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+  .lrc .current {
+    color: var(--color);
+  }
+  .ctrl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .bar {
+    height: 2px;
+    width: 100%;
+    background-color: #aaa;
+    margin: 5px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+  }
+  .a-bar {
+    height: 2px;
+    background-color: var(--color);
+    pointer-events: none;
+  }
+  .thumb {
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    background-color: var(--color);
+    margin-top: 0;
+    margin-left: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  .bar:hover .thumb,
+  .bar.dragging .thumb {
+    width: 10px;
+    height: 10px;
+    margin-top: -4px;
+    margin-left: -5px;
+  }
+  .time {
+    font-size: 11px;
+    margin: 0 3px;
+    white-space: nowrap;
+  }
+  .voice {
+    min-height: 15px;
+    min-width: 15px;
+    max-height: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .vol-icon {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .vol-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--text-color);
+    transition: opacity 0.2s;
+  }
+  .voice.muted .vol-icon svg {
+    opacity: 0.5;
+  }
+  .vol-bar {
+    width: 0;
+    height: 4px;
+    background: #aaa;
+    border-radius: 2px;
+    position: relative;
+    transition: width 0.3s ease;
+    overflow: visible;
+    cursor: pointer;
+  }
+  .voice:hover .vol-bar,
+  .vol-bar.dragging {
+    width: 50px;
+  }
+  .vol-fill {
+    height: 100%;
+    background: var(--color);
+    border-radius: 2px;
+    width: 100%;
+    position: relative;
+    pointer-events: none;
+  }
+  .vol-thumb {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .voice:hover .vol-thumb,
+  .vol-bar.dragging .vol-thumb {
+    opacity: 1;
+  }
+</style>
+<script>
+  class MusicPlayer extends HTMLElement {
+    async connectedCallback() {
+      const formatTime = (seconds: number): string => {
+        if (!isFinite(seconds) || isNaN(seconds)) return "00:00";
+        return seconds
+          ? `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(Math.floor(seconds % 60)).padStart(2, "0")}`
+          : "00:00";
+      };
+      const toTime = (f: string): number => {
+        const [minutes, seconds] = f.split(":");
+        return parseFloat(minutes) * 60 + parseFloat(seconds);
+      };
+
+      const picE = this.querySelector(".pic") as HTMLElement;
+      const lrcE = this.querySelector(".lrc") as HTMLElement;
+      const timeE = this.querySelector(".time") as HTMLElement;
+      const a_barE = this.querySelector(".a-bar") as HTMLElement;
+      const barE = this.querySelector(".bar") as HTMLElement;
+      const voiceE = this.querySelector(".voice") as HTMLElement;
+      const volBarE = voiceE.querySelector(".vol-bar") as HTMLElement;
+      const volFillE = voiceE.querySelector(".vol-fill") as HTMLElement;
+      const volIconE = voiceE.querySelector(".vol-icon") as HTMLElement;
+
+      const audio = new Audio(this.getAttribute("url") as string);
+      audio.volume = 1;
+
+      let lastVolume = 1;
+      let isDraggingProgress = false;
+      let isDraggingVolume = false;
+
+      // 播放/暂停
+      picE.addEventListener("click", () => {
+        if (picE.classList.contains("playing")) {
+          picE.classList.remove("playing");
+          audio.pause();
+        } else {
+          picE.classList.add("playing");
+          audio.play();
+        }
+      });
+
+      // 进度条点击与拖拽
+      const seek = (e: MouseEvent) => {
+        const rect = barE.getBoundingClientRect();
+        const percent = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        if (audio.duration && isFinite(audio.duration)) {
+          audio.currentTime = percent * audio.duration;
+        }
+      };
+
+      barE.addEventListener("mousedown", e => {
+        isDraggingProgress = true;
+        barE.classList.add("dragging");
+        seek(e);
+      });
+
+      // 音量调节
+      const setVolume = (e: MouseEvent) => {
+        const rect = volBarE.getBoundingClientRect();
+        const percent = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        audio.volume = percent;
+        volFillE.style.width = `${percent * 100}%`;
+        lastVolume = percent;
+        if (percent === 0) {
+          voiceE.classList.add("muted");
+        } else {
+          voiceE.classList.remove("muted");
+        }
+      };
+
+      volBarE.addEventListener("mousedown", e => {
+        isDraggingVolume = true;
+        volBarE.classList.add("dragging");
+        setVolume(e);
+      });
+
+      // 静音切换
+      volIconE.addEventListener("click", e => {
+        e.stopPropagation();
+        if (audio.volume > 0) {
+          lastVolume = audio.volume;
+          audio.volume = 0;
+          volFillE.style.width = "0%";
+          voiceE.classList.add("muted");
+        } else {
+          audio.volume = lastVolume || 1;
+          volFillE.style.width = `${audio.volume * 100}%`;
+          voiceE.classList.remove("muted");
+        }
+      });
+
+      document.addEventListener("mousemove", e => {
+        if (isDraggingProgress) seek(e);
+        if (isDraggingVolume) setVolume(e);
+      });
+
+      document.addEventListener("mouseup", () => {
+        if (isDraggingProgress) {
+          isDraggingProgress = false;
+          barE.classList.remove("dragging");
+        }
+        if (isDraggingVolume) {
+          isDraggingVolume = false;
+          volBarE.classList.remove("dragging");
+        }
+      });
+
+      // 音频元数据加载后更新总时长
+      audio.addEventListener("loadedmetadata", () => {
+        if (audio.duration && isFinite(audio.duration)) {
+          timeE.innerHTML = formatTime(0) + "&nbsp;/&nbsp;" + formatTime(audio.duration);
+        }
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        const currentT = audio.currentTime;
+        const durationT = audio.duration;
+
+        // 歌词高亮
+        [...lrcE.children].forEach(c => {
+          c.classList.remove("current");
+        });
+        const c = lrcE.children;
+        let f: HTMLElement | null = null;
+        for (let i = 1; i < c.length; i++) {
+          const cT = toTime((c[i] as HTMLElement).dataset.time as string);
+          if (cT > currentT) {
+            c[i - 1].classList.add("current");
+            f = c[i - 1] as HTMLElement;
+            break;
+          }
+        }
+        if (!f && c.length > 0) {
+          c[c.length - 1].classList.add("current");
+          f = c[c.length - 1] as HTMLElement;
+        }
+        if (f) {
+          lrcE.style.transform = `translateY(${-f.offsetTop}px)`;
+        }
+
+        // 进度条
+        if (durationT && isFinite(durationT)) {
+          a_barE.style.width = `${(currentT * 100) / durationT}%`;
+          timeE.innerHTML = formatTime(currentT) + "&nbsp;/&nbsp;" + formatTime(durationT);
+        }
+      });
+    }
+  }
+
+  customElements.define("music-player", MusicPlayer);
+</script>

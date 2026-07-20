@@ -4,6 +4,7 @@ import Hitokoto from "../components/Hitokoto.astro";
 import GithubLink from "../components/GithubLink.astro";
 import LightButton from "../components/LightButton.astro";
 import IconLinks from "../components/IconLinks.astro";
+import MusicPlayer from "../components/MusicPlayer.astro";
 
 import data from "../data/data.yaml";
 ---
@@ -35,54 +36,28 @@ import data from "../data/data.yaml";
           <p>友链</p>
 
           <friend-links-ctr>
-            <friend-link
-              name="枫上天游"
-              href="https://www.fstu.cc/"
-              icon="https://avatars.githubusercontent.com/u/105190211?v=4"
-            >
-              一个普普通通的OIer，兴趣广泛
-            </friend-link>
-
-            <friend-link
-              name="云帆沧海"
-              href="https://budawu.github.io/"
-              icon="https://avatars.githubusercontent.com/u/98736983?v=4"
-            >
-              勇敢为你，无畏地做白日梦 高中生/飞友/锦依卫/港区萌新指挥官
-            </friend-link>
-
-            <friend-link
-              name="邱璇洛"
-              href="https://qiuxuanluo.xlog.app/"
-              icon="https://avatars.githubusercontent.com/u/72391548?v=4"
-            >
-              立志于做一些奇奇怪怪希望有点用的事~
-            </friend-link>
-
-            <friend-link
-              name="HD Superman"
-              href="https://hackertalk.net/users/186247014399643648"
-              icon="https://avatars.githubusercontent.com/u/50064165?v=4"
-            >
-              Across the Great Wall, we can reach every corner in the world.
-            </friend-link>
+            {
+              data.friends.map(f => (
+                <friend-link name={f.name} href={f.link} icon={f.icon}>
+                  {f.brief}
+                </friend-link>
+              ))
+            }
           </friend-links-ctr>
         </div>
 
         <div class="app-links">
-          <LightButton color="#ff1f71" href="https://space.bilibili.com/1530809275"
-            >哔站</LightButton
-          >
-          <LightButton color="#2bd2ff" href="https://www.cnblogs.com/expector/">博客</LightButton>
-          <LightButton color="#11ff45" href="mailto: expector-hutch@outlook.com">邮箱</LightButton>
+          <LightButton color="#ff1f71" href={data.links.bilibili}>哔站</LightButton>
+          <LightButton color="#2bd2ff" href={data.links.blog}>博客</LightButton>
+          <LightButton color="#11ff45" href={data.links.email}>邮箱</LightButton>
         </div>
 
-        <music-player server="netease" type="song" id="420397887" theme="#66ccff"></music-player>
+        <MusicPlayer uid={data.music} color="#66ccff" />
 
         <div class="more-links">
-          <IconLinks href="https://github.com/Expector-Hutch/" icon="github" />
-          <IconLinks href="https://gitee.com/expector" icon="gitee" />
-          <IconLinks href="https://www.zhihu.com/people/shadowenderking" icon="zhihu" />
+          <IconLinks href={data.links.github} icon="github" />
+          <IconLinks href={data.links.gitee} icon="gitee" />
+          <IconLinks href={data.links.zhihu} icon="zhihu" />
         </div>
 
         <footer>
@@ -103,9 +78,7 @@ import data from "../data/data.yaml";
         </footer>
       </main>
     </div>
-    <div id="app" style="color: rgb(99, 195, 174)"></div>
     <script>
-      import "../components/music_player";
       import "../components/friend_links_ctr";
     </script>
   </body>
