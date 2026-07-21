@@ -1,5 +1,5 @@
 ---
-import GithubIcon from "~icons/simple-icons/github?color=%23ffffff&height=1em&width=1em";
+import GithubIcon from "~icons/simple-icons/github?height=1em&width=1em";
 import GiteeIcon from "~icons/simple-icons/gitee?color=%23c71d23&height=1em&width=1em";
 import ZhihuIcon from "~icons/simple-icons/zhihu?color=%230084ff&height=1em&width=1em";
 
@@ -22,5 +22,10 @@ const { href, icon } = Astro.props as Props;
   .icon-link {
     display: flex;
     align-items: center;
+  }
+  @media (prefers-color-scheme: light) {
+    .icon-link {
+      color: #000;
+    }
   }
 </style>
