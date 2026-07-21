@@ -11,12 +11,11 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "check": "prettier --write . && eslint . --fix"
   },
   "dependencies": {
-    "astro": "^7.1.1",
-    "nano-jsx": "^0.2.1",
-    "tippy.js": "^6.3.7"
+    "astro": "^7.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

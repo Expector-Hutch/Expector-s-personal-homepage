@@ -1,10 +1,13 @@
 ---
 import "../style.scss";
+
 import Hitokoto from "../components/Hitokoto.astro";
 import GithubLink from "../components/GithubLink.astro";
 import LightButton from "../components/LightButton.astro";
 import IconLinks from "../components/IconLinks.astro";
 import MusicPlayer from "../components/MusicPlayer.astro";
+import FriendLinks from "../components/FriendLinks.astro";
+import FriendLink from "../components/FriendLink.astro";
 
 import data from "../data/data.yaml";
 ---
@@ -35,15 +38,15 @@ import data from "../data/data.yaml";
         <div id="friends">
           <p>友链</p>
 
-          <friend-links-ctr>
+          <FriendLinks>
             {
               data.friends.map(f => (
-                <friend-link name={f.name} href={f.link} icon={f.icon}>
+                <FriendLink name={f.name} href={f.link} icon={f.icon}>
                   {f.brief}
-                </friend-link>
+                </FriendLink>
               ))
             }
-          </friend-links-ctr>
+          </FriendLinks>
         </div>
 
         <div class="app-links">
@@ -79,7 +82,7 @@ import data from "../data/data.yaml";
       </main>
     </div>
     <script>
-      import "../components/friend_links_ctr";
+      // import "../components/friend_links_ctr";
     </script>
   </body>
 </html>

@@ -5,22 +5,17 @@
     "module": "ESNext",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    /* Bundler mode */
     "moduleResolution": "Bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    /* JSX */
-    "jsx": "react-jsx",
-    "jsxImportSource": "nano-jsx/esm", // esm for ESModules
     "types": ["unplugin-icons/types/raw"]
   },
-  "include": ["src", "*.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.astro", "*.config.ts"]
 }

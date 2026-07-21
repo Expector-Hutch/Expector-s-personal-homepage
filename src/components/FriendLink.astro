@@ -1,0 +1,40 @@
+---
+export interface Props {
+  icon: string;
+  href: string;
+  name: string;
+}
+const { icon, href, name } = Astro.props;
+---
+
+<a class="friend-link" href={href} data-name={name}>
+  <img src={icon} alt={name} />
+  <template class="friend-card-template">
+    <div class="friend-card">
+      <div class="friend-card-header">
+        <img src={icon} alt={name} />
+        <h3>{name}</h3>
+      </div>
+      <hr />
+      <p><slot /></p>
+    </div>
+  </template>
+</a>
+
+<style>
+  .friend-link {
+    display: flex;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    text-decoration: none;
+  }
+  .friend-link > img {
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+</style>

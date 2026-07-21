@@ -1,0 +1,389 @@
+<div class="friend-links-ctr">
+  <slot />
+</div>
+
+<script>
+  (function () {
+    const container = document.querySelector(".friend-links-ctr");
+    if (!container) return;
+
+    const tooltip = document.createElement("div");
+    tooltip.className = "tip-tooltip";
+    tooltip.innerHTML = `
+<div class="tip-box" data-placement="top">
+  <div class="tip-content"></div>
+  <div class="tip-arrow"></div>
+</div>
+    `;
+    document.body.appendChild(tooltip);
+
+    const tipBox = tooltip.querySelector(".tip-box") as HTMLElement;
+    const tipContent = tooltip.querySelector(".tip-content") as HTMLElement;
+    const tipArrow = tooltip.querySelector(".tip-arrow") as HTMLElement;
+
+    let currentTrigger: Element | null = null;
+    let hideTimer: number | null = null;
+    let heightResetTimer: number | null = null;
+    let isVisible = false;
+
+    const OFFSET = 15;
+    const PADDING = 5;
+
+    function getCardHTML(trigger: Element) {
+      const tpl = trigger.querySelector(".friend-card-template") as HTMLTemplateElement | null;
+      return tpl ? tpl.innerHTML : "";
+    }
+
+    function measureNewHeight(html: string): number {
+      const clone = tooltip.cloneNode(true) as HTMLElement;
+      clone.style.cssText = `
+position: absolute;
+visibility: hidden;
+pointer-events: none;
+top: -9999px;
+left: -9999px;
+width: 200px;
+height: auto;
+display: block;
+transition: none;
+      `;
+      clone.classList.remove("visible", "interactive");
+      const content = clone.querySelector(".tip-content") as HTMLElement;
+      if (content) content.innerHTML = html;
+      document.body.appendChild(clone);
+      const h = clone.offsetHeight;
+      document.body.removeChild(clone);
+      return h;
+    }
+
+    function computePosition(trigger: Element, forcedHeight?: number) {
+      const triggerRect = trigger.getBoundingClientRect();
+      const scrollX = window.scrollX;
+      const scrollY = window.scrollY;
+      const vw = window.innerWidth;
+
+      const height =
+        forcedHeight ??
+        (tooltip.style.height ? parseFloat(tooltip.style.height) : tooltip.offsetHeight);
+      const width = 200;
+
+      let placement: "top" | "bottom" = "top";
+      let top = triggerRect.top + scrollY - height - OFFSET;
+
+      if (top < scrollY + PADDING) {
+        top = triggerRect.bottom + scrollY + OFFSET;
+        placement = "bottom";
+      }
+
+      let left = triggerRect.left + scrollX + (triggerRect.width - width) / 2;
+
+      if (left < scrollX + PADDING) {
+        left = scrollX + PADDING;
+      } else if (left + width > scrollX + vw - PADDING) {
+        left = scrollX + vw - PADDING - width;
+      }
+
+      const triggerCenterX = triggerRect.left + triggerRect.width / 2;
+      const arrowLeft = triggerCenterX - left;
+
+      return { top, left, placement, arrowLeft };
+    }
+
+    function teleportTo(pos: ReturnType<typeof computePosition>) {
+      tooltip.style.transition = "none";
+      tooltip.style.top = pos.top + "px";
+      tooltip.style.left = pos.left + "px";
+      tooltip.dataset.placement = pos.placement;
+      tipBox.dataset.placement = pos.placement;
+      tipArrow.style.left = pos.arrowLeft + "px";
+      void tooltip.offsetHeight;
+      tooltip.style.transition = "";
+    }
+
+    function prepareShow(trigger: Element) {
+      tipBox.style.transition = "none";
+      tipBox.style.transform = "scale(0)";
+      tipBox.style.opacity = "0.25";
+
+      tooltip.style.height = "";
+
+      const pos = computePosition(trigger);
+      teleportTo(pos);
+
+      void tipBox.offsetHeight;
+    }
+
+    function triggerShow() {
+      tooltip.classList.add("visible");
+
+      void tipBox.offsetHeight;
+
+      tipBox.style.transition = "";
+      tipBox.style.transform = "";
+      tipBox.style.opacity = "";
+    }
+
+    function show(trigger: Element) {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+
+      const wasVisible = isVisible;
+      isVisible = true;
+
+      if (currentTrigger !== trigger) {
+        if (wasVisible && tooltip.style.display !== "none") {
+          if (heightResetTimer) {
+            clearTimeout(heightResetTimer);
+            heightResetTimer = null;
+          }
+
+          let oldH: number;
+          const curH = tooltip.style.height;
+          if (curH && curH.endsWith("px")) {
+            oldH = parseFloat(curH);
+          } else {
+            oldH = tooltip.offsetHeight;
+          }
+
+          const html = getCardHTML(trigger);
+          tipContent.innerHTML = html;
+          currentTrigger = trigger;
+          tooltip.style.height = oldH + "px";
+
+          const newH = measureNewHeight(html);
+          const pos = computePosition(trigger, newH);
+
+          void tooltip.offsetHeight;
+
+          tooltip.style.top = pos.top + "px";
+          tooltip.style.left = pos.left + "px";
+          tooltip.style.height = newH + "px";
+          tooltip.dataset.placement = pos.placement;
+          tipBox.dataset.placement = pos.placement;
+          tipArrow.style.left = pos.arrowLeft + "px";
+
+          heightResetTimer = window.setTimeout(() => {
+            if (currentTrigger === trigger) {
+              tooltip.style.height = "";
+            }
+            heightResetTimer = null;
+          }, 220);
+        } else {
+          tipContent.innerHTML = getCardHTML(trigger);
+          currentTrigger = trigger;
+
+          tooltip.style.display = "block";
+          tooltip.classList.add("interactive");
+
+          prepareShow(trigger);
+          triggerShow();
+        }
+      } else if (!wasVisible) {
+        tooltip.style.display = "block";
+        tooltip.classList.add("interactive");
+
+        prepareShow(trigger);
+        triggerShow();
+      }
+    }
+
+    function hide() {
+      isVisible = false;
+      currentTrigger = null;
+
+      if (heightResetTimer) {
+        clearTimeout(heightResetTimer);
+        heightResetTimer = null;
+      }
+
+      tooltip.classList.remove("visible");
+      tooltip.classList.remove("interactive");
+
+      setTimeout(() => {
+        if (!isVisible) {
+          tooltip.style.display = "none";
+          tipContent.innerHTML = "";
+          tooltip.style.top = "";
+          tooltip.style.left = "";
+          tooltip.style.height = "";
+        }
+      }, 500);
+    }
+
+    function scheduleHide() {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(hide, 80);
+    }
+
+    container.addEventListener("mouseover", e => {
+      const trigger = (e.target as HTMLElement).closest(".friend-link");
+      if (!trigger) return;
+      show(trigger);
+    });
+
+    container.addEventListener("mouseout", e => {
+      const trigger = (e.target as HTMLElement).closest(".friend-link");
+      if (!trigger) return;
+      const related = (e as MouseEvent).relatedTarget as HTMLElement | null;
+      if (related && (related.closest(".friend-link") || related.closest(".tip-tooltip"))) {
+        return;
+      }
+      scheduleHide();
+    });
+
+    tooltip.addEventListener("mouseenter", () => {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
+    });
+
+    tooltip.addEventListener("mouseleave", e => {
+      const related = e.relatedTarget as HTMLElement | null;
+      if (related?.closest(".friend-link")) return;
+      scheduleHide();
+    });
+
+    const onScrollResize = () => {
+      if (isVisible && currentTrigger) {
+        const pos = computePosition(currentTrigger);
+        tooltip.style.top = pos.top + "px";
+        tooltip.style.left = pos.left + "px";
+        tooltip.dataset.placement = pos.placement;
+        tipBox.dataset.placement = pos.placement;
+        tipArrow.style.left = pos.arrowLeft + "px";
+      }
+    };
+    window.addEventListener("scroll", onScrollResize, true);
+    window.addEventListener("resize", onScrollResize);
+  })();
+</script>
+
+<style is:global>
+  .friend-links-ctr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tip-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    display: none;
+    width: 200px;
+    transition:
+      top 0.2s ease-out,
+      left 0.2s ease-out,
+      height 0.2s ease-out;
+  }
+  .tip-tooltip.visible {
+    display: block;
+  }
+  .tip-tooltip.interactive {
+    pointer-events: auto;
+  }
+
+  .tip-box {
+    position: relative;
+    background-color: var(--tip-bg, #333);
+    color: var(--text-color, #fff);
+    border-radius: 7px;
+    padding: 11px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-shadow: none;
+
+    transform: scale(0);
+    opacity: 0.25;
+
+    transition:
+      transform 0.5s cubic-bezier(0.54, 1.8, 0.38, 1.11),
+      opacity 0.5s cubic-bezier(0.54, 1.8, 0.38, 1.11);
+  }
+
+  .tip-tooltip.visible .tip-box {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .tip-box[data-placement="top"] {
+    transform-origin: bottom;
+  }
+  .tip-box[data-placement="bottom"] {
+    transform-origin: top;
+  }
+
+  .tip-arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: inherit;
+    z-index: -1;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tip-box[data-placement="top"] .tip-arrow {
+    bottom: -6px;
+    left: 50%;
+  }
+  .tip-box[data-placement="bottom"] .tip-arrow {
+    top: -6px;
+    left: 50%;
+  }
+
+  .tip-content .friend-card-header {
+    display: flex;
+    align-items: center;
+  }
+  .tip-content img {
+    height: 1.6em;
+    width: 1.6em;
+    border-radius: 50%;
+    display: block;
+  }
+  .tip-content h3 {
+    font-size: 17px;
+    color: #66ccff;
+    margin: 0;
+    padding-left: 0.5em;
+  }
+  .tip-content hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid aqua;
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+  .tip-content p {
+    color: white;
+    margin: 0;
+    margin-top: 0.5em;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .tip-box {
+      --tip-bg: #fff;
+      --text-color: #26323d;
+      box-shadow:
+        0 0 20px 4px rgba(154, 161, 177, 0.15),
+        0 4px 80px -8px rgba(36, 40, 47, 0.25),
+        0 4px 4px -2px rgba(91, 94, 105, 0.15);
+    }
+    .tip-content p {
+      color: black;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tip-box {
+      --tip-bg: #333;
+      --text-color: #fff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+</style>

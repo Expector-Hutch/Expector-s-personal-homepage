@@ -18,11 +18,6 @@ export default defineConfig({
     ],
     server: {
       proxy: {
-        "/music/api": {
-          target: "https://music.163.com",
-          changeOrigin: true,
-          rewrite: path => path.replace(/^\/music/, ""),
-        },
         "/hitokoto": {
           target: "https://uapis.cn",
           changeOrigin: true,
