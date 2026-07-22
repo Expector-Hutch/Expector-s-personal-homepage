@@ -8,8 +8,8 @@ $p-color-light: #008b8b;
 $a-color: #ffffff;
 $footer-color: #a9a9a9;
 
-$background-url: url("../assets/images/background-dark.png");
-$background-url-light: url("../assets/images/background-light.png");
+$background-url: url("../assets/images/background-dark.webp");
+$background-url-light: url("../assets/images/background-light.webp");
 $head-image-url: url("../assets/images/head-image.jpeg");
 
 @mixin background($url, $color) {
