@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Lucida Handwriting";
+  src: url("/fonts/LHANDW-ASCII.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0020-007E;
+  font-display: swap;
+}
+
+:root,
+body {
+  background-color: var(--theme-color);
+  background-image: var(--background-dark);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+@media (prefers-color-scheme: light) {
+  :root,
+  body {
+    background-image: var(--background-light);
+  }
+}
+
+h1 {
+  color: var(--theme-color);
+  font-size: 24px;
+}
+p {
+  color: #0ff;
+  font-size: 15px;
+  white-space: pre-wrap;
+}
+a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 10px;
+  text-decoration-line: none;
+}
+a:hover {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff;
+}

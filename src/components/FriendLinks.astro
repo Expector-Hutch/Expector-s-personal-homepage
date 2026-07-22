@@ -1,7 +1,152 @@
-<div class="friend-links-ctr">
-  <slot />
-</div>
+<div class="friends">
+  <p style={{ margin: "0 .5em 0 .8em" }}>友链</p>
 
+  <div class="friend-links-ctr">
+    <slot />
+  </div>
+</div>
+<style>
+  .friends {
+    backdrop-filter: blur(20px);
+    text-shadow:
+      0 0 7px #0ff,
+      0 0 10px #0ff,
+      0 0 21px #0ff;
+    background: #ffffff0d;
+    border-radius: 30px;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 5px;
+    display: flex;
+    box-shadow: 0 15px 35px #0003;
+  }
+</style>
+<style is:global>
+  .friend-links-ctr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tip-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    display: none;
+    width: 200px;
+    transition:
+      top 0.2s ease-out,
+      left 0.2s ease-out,
+      height 0.2s ease-out;
+  }
+  .tip-tooltip.visible {
+    display: block;
+  }
+  .tip-tooltip.interactive {
+    pointer-events: auto;
+  }
+
+  .tip-box {
+    position: relative;
+    background-color: var(--tip-bg, #333);
+    color: var(--text-color, #fff);
+    border-radius: 7px;
+    padding: 11px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-shadow: none;
+
+    transform: scale(0);
+    opacity: 0.25;
+
+    transition:
+      transform 0.5s cubic-bezier(0.54, 1.8, 0.38, 1.11),
+      opacity 0.5s cubic-bezier(0.54, 1.8, 0.38, 1.11);
+  }
+
+  .tip-tooltip.visible .tip-box {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .tip-box[data-placement="top"] {
+    transform-origin: bottom;
+  }
+  .tip-box[data-placement="bottom"] {
+    transform-origin: top;
+  }
+
+  .tip-arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: inherit;
+    z-index: -1;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .tip-box[data-placement="top"] .tip-arrow {
+    bottom: -6px;
+    left: 50%;
+  }
+  .tip-box[data-placement="bottom"] .tip-arrow {
+    top: -6px;
+    left: 50%;
+  }
+
+  .tip-content .friend-card-header {
+    display: flex;
+    align-items: center;
+  }
+  .tip-content img {
+    height: 1.6em;
+    width: 1.6em;
+    border-radius: 50%;
+    display: block;
+  }
+  .tip-content h3 {
+    font-size: 17px;
+    color: #66ccff;
+    margin: 0;
+    padding-left: 0.5em;
+  }
+  .tip-content hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid aqua;
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+  .tip-content p {
+    color: white;
+    margin: 0;
+    margin-top: 0.5em;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .tip-box {
+      --tip-bg: #fff;
+      --text-color: #26323d;
+      box-shadow:
+        0 0 20px 4px rgba(154, 161, 177, 0.15),
+        0 4px 80px -8px rgba(36, 40, 47, 0.25),
+        0 4px 4px -2px rgba(91, 94, 105, 0.15);
+    }
+    .tip-content p {
+      color: black;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tip-box {
+      --tip-bg: #333;
+      --text-color: #fff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+</style>
 <script>
   (function () {
     const container = document.querySelector(".friend-links-ctr");
@@ -260,130 +405,3 @@ transition: none;
     window.addEventListener("resize", onScrollResize);
   })();
 </script>
-
-<style is:global>
-  .friend-links-ctr {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .tip-tooltip {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    pointer-events: none;
-    display: none;
-    width: 200px;
-    transition:
-      top 0.2s ease-out,
-      left 0.2s ease-out,
-      height 0.2s ease-out;
-  }
-  .tip-tooltip.visible {
-    display: block;
-  }
-  .tip-tooltip.interactive {
-    pointer-events: auto;
-  }
-
-  .tip-box {
-    position: relative;
-    background-color: var(--tip-bg, #333);
-    color: var(--text-color, #fff);
-    border-radius: 7px;
-    padding: 11px;
-    font-size: 14px;
-    line-height: 1.4;
-    text-shadow: none;
-
-    transform: scale(0);
-    opacity: 0.25;
-
-    transition:
-      transform 0.5s cubic-bezier(0.54, 1.8, 0.38, 1.11),
-      opacity 0.5s cubic-bezier(0.54, 1.8, 0.38, 1.11);
-  }
-
-  .tip-tooltip.visible .tip-box {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  .tip-box[data-placement="top"] {
-    transform-origin: bottom;
-  }
-  .tip-box[data-placement="bottom"] {
-    transform-origin: top;
-  }
-
-  .tip-arrow {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: inherit;
-    z-index: -1;
-    transform: translateX(-50%) rotate(45deg);
-  }
-  .tip-box[data-placement="top"] .tip-arrow {
-    bottom: -6px;
-    left: 50%;
-  }
-  .tip-box[data-placement="bottom"] .tip-arrow {
-    top: -6px;
-    left: 50%;
-  }
-
-  .tip-content .friend-card-header {
-    display: flex;
-    align-items: center;
-  }
-  .tip-content img {
-    height: 1.6em;
-    width: 1.6em;
-    border-radius: 50%;
-    display: block;
-  }
-  .tip-content h3 {
-    font-size: 17px;
-    color: #66ccff;
-    margin: 0;
-    padding-left: 0.5em;
-  }
-  .tip-content hr {
-    width: 100%;
-    border: none;
-    border-top: 1px solid aqua;
-    margin: 0;
-    margin-bottom: 0.5em;
-  }
-  .tip-content p {
-    color: white;
-    margin: 0;
-    margin-top: 0.5em;
-  }
-
-  @media (prefers-color-scheme: light) {
-    .tip-box {
-      --tip-bg: #fff;
-      --text-color: #26323d;
-      box-shadow:
-        0 0 20px 4px rgba(154, 161, 177, 0.15),
-        0 4px 80px -8px rgba(36, 40, 47, 0.25),
-        0 4px 4px -2px rgba(91, 94, 105, 0.15);
-    }
-    .tip-content p {
-      color: black;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .tip-box {
-      --tip-bg: #333;
-      --text-color: #fff;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-  }
-</style>

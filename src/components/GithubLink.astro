@@ -2,12 +2,17 @@
 const { href } = Astro.props;
 ---
 
-<a class="gh-link" href={href} aria-label="View source on GitHub">
+<a
+  class="gh-link"
+  href={href}
+  aria-label="View source on GitHub"
+  style={{ display: "block", position: "relative", height: 0, width: 0, left: "100%" }}
+>
   <svg
     width="80"
     height="80"
     viewBox="0 0 250 250"
-    style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
+    style={{ fill: "#151513", color: "#fff", "margin-left": "-80px" }}
     aria-hidden="true"
   >
     <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -47,15 +52,13 @@ const { href } = Astro.props;
       filter: invert(1);
     }
   }
-  @media (max-width: 959px) {
-    .gh-link:hover .octo-arm {
-      animation: none;
-    }
-    .gh-link .octo-arm {
-      animation: octocat-wave 560ms ease-in-out;
-    }
-    .gh-link svg {
-      border-top-right-radius: 0px;
-    }
+  .gh-link:hover .octo-arm {
+    animation: none;
+  }
+  .gh-link .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+  .gh-link svg {
+    border-top-right-radius: 0px;
   }
 </style>

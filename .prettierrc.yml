@@ -12,10 +12,6 @@ plugins:
   - prettier-plugin-astro
 
 overrides:
-  - files: "*.scss"
-    options:
-      singleQuote: false
-
   - files: "*.tsx"
     options:
       parser: typescript
