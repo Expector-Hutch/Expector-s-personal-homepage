@@ -5,25 +5,18 @@
 ## 技术栈
 
 ![VSCode](https://img.shields.io/badge/vscodium-2F80ED?style=for-the-badge&logo=vscodium&logoColor=white)
-![Git](https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Github](https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Netlify](https://img.shields.io/badge/netlify-149cab?style=for-the-badge&logo=netlify&logoColor=white)
 
 ![Node.js](https://img.shields.io/badge/nodejs-5FA04E?style=for-the-badge&logo=node.js&logoColor=white)
 ![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
-![vite](https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-
-![HTML5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![SASS](https://img.shields.io/badge/SASS-cc6699?style=for-the-badge&logo=sass&logoColor=white)
+![Astro](https://img.shields.io/badge/astro-E93DC7?style=for-the-badge&logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Markdown](https://img.shields.io/badge/markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
-
-![APlayer.ts](https://user-images.githubusercontent.com/105506585/209420486-d56689af-ea02-441a-bd8f-2a98d662fe98.svg)
-![Tippy.js](https://img.shields.io/badge/TIPPY.js-5b89f3?style=for-the-badge&logo=tippy.js&logoColor=white)
 
 ## 基础修改
 
 只需修改 `src/data/data.yaml` 即可个性化自己的主页！
+
+警告：作者懒得做亮色以及其他颜色主题的适配，要改配色最好去修改代码。
 
 ## 构建 & 运行
 
