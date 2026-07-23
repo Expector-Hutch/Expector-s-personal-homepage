@@ -27,5 +27,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build project
-        run: pnpm lint
+      - name: Lint
+        run: pnpm lint && pnpm check-format
