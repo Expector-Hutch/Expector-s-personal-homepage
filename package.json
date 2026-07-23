@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:inline": "astro build --inline",
     "preview": "astro build && astro preview",
     "format": "prettier --write .",
     "check-format": "prettier --check .",

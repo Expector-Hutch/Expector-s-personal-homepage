@@ -11,11 +11,6 @@ declare module "*/data.yaml" {
   const content: {
     name: string;
     introduction: string;
-    background: {
-      light: string;
-      dark: string;
-    };
-    head_image: string;
     friends: [
       {
         name: string;

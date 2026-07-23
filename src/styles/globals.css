@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Lucida Handwriting";
-  src: url("/fonts/LHANDW-ASCII.woff2") format("woff2");
+  src: url("@/assets/fonts/LHANDW-ASCII.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   unicode-range: U+0020-007E;
@@ -10,7 +10,7 @@
 :root,
 body {
   background-color: var(--theme-color);
-  background-image: var(--background-dark);
+  background-image: url("@/assets/images/background-dark.webp");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@ body {
 @media (prefers-color-scheme: light) {
   :root,
   body {
-    background-image: var(--background-light);
+    background-image: url("@/assets/images/background-dark.webp");
   }
 }
 

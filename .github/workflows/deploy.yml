@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Build project
-        run: pnpm build
+        run: pnpm build:inline
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

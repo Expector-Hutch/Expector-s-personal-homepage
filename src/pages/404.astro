@@ -1,21 +1,14 @@
 ---
-import "../styles/globals.css";
-import data from "../data/data.yaml";
+import "@/styles/globals.css";
+import icon from "@/assets/icon.svg?raw";
 ---
 
-<html
-  lang="en"
-  style={{
-    "--theme-color": "#66ccff",
-    "--background-dark": `url(${data.background.dark})`,
-    "--background-light": `url(${data.background.light})`,
-  }}
->
+<html lang="en" style={{ "--theme-color": "#66ccff" }}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 Page Not Found</title>
-    <link rel="icon" href="/icon.svg" />
+    <link rel="icon" href=`data:image/svg+xml,${encodeURIComponent(icon)}` />
   </head>
 
   <body>

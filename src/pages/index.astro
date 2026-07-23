@@ -1,27 +1,21 @@
 ---
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
-import Hitokoto from "../components/Hitokoto.astro";
-import GithubLink from "../components/GithubLink.astro";
-import LightButton from "../components/LightButton.astro";
-import IconLinks from "../components/IconLinks.astro";
-import MusicPlayer from "../components/MusicPlayer.astro";
-import FriendLinks from "../components/FriendLinks.astro";
-import FriendLink from "../components/FriendLink.astro";
-import Footer from "../components/Footer.astro";
+import icon from "@/assets/icon.svg?raw";
 
-import data from "../data/data.yaml";
+import Hitokoto from "@/components/Hitokoto.astro";
+import GithubLink from "@/components/GithubLink.astro";
+import LightButton from "@/components/LightButton.astro";
+import IconLinks from "@/components/IconLinks.astro";
+import MusicPlayer from "@/components/MusicPlayer.astro";
+import FriendLinks from "@/components/FriendLinks.astro";
+import FriendLink from "@/components/FriendLink.astro";
+import Footer from "@/components/Footer.astro";
+
+import data from "@/data/data.yaml";
 ---
 
-<html
-  lang="zh-cn"
-  style={{
-    "--theme-color": "#66ccff",
-    "--background-dark": `url(${data.background.dark})`,
-    "--background-light": `url(${data.background.light})`,
-    "--head-image": `url(${data.head_image})`,
-  }}
->
+<html lang="zh-cn" style={{ "--theme-color": "#66ccff" }}>
   <head>
     <meta charset="utf-8" />
     <meta
@@ -29,7 +23,7 @@ import data from "../data/data.yaml";
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <title>{data.name} 的主页</title>
-    <link rel="icon" href="/icon.svg" />
+    <link rel="icon" href=`data:image/svg+xml,${encodeURIComponent(icon)}` />
   </head>
 
   <body>
@@ -103,7 +97,7 @@ import data from "../data/data.yaml";
       }
       aside {
         background-color: var(--theme-color);
-        background-image: var(--head-image);
+        background-image: url("@/assets/images/head-image.jpeg");
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: cover;
