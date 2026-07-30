@@ -1,10 +1,20 @@
-<p class="hitokoto">&emsp;&emsp;『<span>我思故我在…</span>』</p>
+---
+import CopyIcon from "~icons/lucide/clipboard-copy?color=%2366ccff";
+---
+
+<blockquote>
+  <q>我思故我在…</q>
+  <div set:html={CopyIcon} class="copy" />
+</blockquote>
 <style>
-  .hitokoto {
-    font-family: serif;
-    transition: 0.5s;
+  blockquote {
+    margin: 0.5em 0;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .hitokoto:hover {
+  blockquote:hover {
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
@@ -14,10 +24,41 @@
       0 0 10px #0ff,
       0 0 21px #0ff;
     user-select: text;
-    transition: 0.5s;
+    transition: 0.3s;
+  }
+  blockquote .copy {
+    padding: 1px;
+    margin: 2px;
+    margin-right: 1em;
+    border-radius: 3px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  blockquote:hover .copy {
+    opacity: 1;
+    transition: 0.3s;
+  }
+  .copy:hover {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  q {
+    margin: 0;
+    margin-left: 2em;
+    font-family: serif;
+  }
+  q::before {
+    content: "『";
+  }
+  q::after {
+    content: "』";
   }
 </style>
 <script>
+  const q = document.querySelector("blockquote>q");
+
   (async () => {
     try {
       const response = await fetch(
@@ -84,8 +125,20 @@
     }
   })()
     .then(hitokoto => {
-      const e = document.querySelector("p.hitokoto>span");
-      if (e) e.innerHTML = hitokoto;
+      if (q) q.innerHTML = hitokoto;
     })
     .catch(error => console.log(error));
+
+  import CopyOkIcon from "~icons/lucide/clipboard-check?color=%2366ccff";
+
+  const c = document.querySelector("blockquote>div.copy");
+  c?.addEventListener("click", async () => {
+    const x = c.innerHTML;
+    if (q)
+      navigator.clipboard.writeText(q.innerHTML).then(() => {
+        c.innerHTML = CopyOkIcon;
+      });
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    c.innerHTML = x;
+  });
 </script>

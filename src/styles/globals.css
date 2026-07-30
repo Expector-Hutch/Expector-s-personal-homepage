@@ -22,7 +22,7 @@ body {
 @media (prefers-color-scheme: light) {
   :root,
   body {
-    background-image: url("@/assets/images/background-dark.webp");
+    background-image: url("@/assets/images/background-light.webp");
   }
 }
 
@@ -35,13 +35,15 @@ h1 {
     color: #0ff;
   }
 }
-p {
+p,
+q {
   color: #0ff;
   font-size: 15px;
   white-space: pre-wrap;
 }
 @media (prefers-color-scheme: light) {
-  p {
+  p,
+  q {
     color: #008e8e;
   }
 }
