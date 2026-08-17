@@ -88,7 +88,7 @@ const data = {
     max-height: 90px;
     min-width: 90px;
     max-width: 1000px;
-    width: 100%;
+    width: calc(100% - 10px);
     user-select: none;
     backdrop-filter: blur(20px);
     background: #ffffff0d;
@@ -278,7 +278,8 @@ const data = {
     cursor: pointer;
     flex-shrink: 0;
   }
-  .vol-icon {
+  .vol-icon,
+  .vol-icon div {
     width: 15px;
     height: 15px;
     display: flex;
