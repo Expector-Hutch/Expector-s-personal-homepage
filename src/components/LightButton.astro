@@ -46,7 +46,7 @@ const { color, href } = Astro.props;
       0 0 60px var(--btn-color);
   }
 
-  @media (min-width: 960px) {
+  @media (width >= 920px) {
     .light-btn {
       width: 100%;
       height: 33px;
@@ -111,7 +111,7 @@ const { color, href } = Astro.props;
     }
   }
 
-  @media (max-width: 959px) {
+  @media not (width >= 920px) {
     .light-btn {
       height: 50px;
     }

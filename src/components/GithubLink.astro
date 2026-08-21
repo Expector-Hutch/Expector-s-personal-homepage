@@ -46,19 +46,8 @@ const { href } = Astro.props;
     }
   }
   .gh-link svg {
-    border-top-right-radius: 11px;
-
     @media (prefers-color-scheme: light) {
       filter: invert(1);
     }
-  }
-  .gh-link:hover .octo-arm {
-    animation: none;
-  }
-  .gh-link .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-  .gh-link svg {
-    border-top-right-radius: 0px;
   }
 </style>
