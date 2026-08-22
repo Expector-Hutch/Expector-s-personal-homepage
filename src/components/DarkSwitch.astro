@@ -1,0 +1,68 @@
+---
+import Sun from "~icons/lucide/sun?height=1.7em";
+import Moon from "~icons/lucide/moon?height=1.7em";
+---
+
+<div class="dark-switch card">
+  <div set:html={Sun} class="light-icon" />
+  <div set:html={Moon} class="dark-icon" />
+</div>
+<style>
+  div {
+    display: flex;
+  }
+  .dark-switch {
+    border-radius: 50%;
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    padding: 4px;
+    z-index: 1;
+  }
+  .light-icon {
+    display: none;
+  }
+  .dark-icon {
+    color: white;
+  }
+  :global(.light) .light-icon {
+    display: flex;
+  }
+  :global(.light) .dark-icon {
+    display: none;
+  }
+</style>
+<script>
+  let followSystem = true;
+  const root = document.documentElement;
+
+  function applyTheme(theme: string) {
+    root.classList.toggle("light", theme === "light");
+  }
+
+  function applySystemTheme() {
+    if (!followSystem) return;
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(isDark ? "dark" : "light");
+  }
+
+  function toggleManual() {
+    followSystem = false;
+    const isLight = root.classList.contains("light");
+    applyTheme(isLight ? "dark" : "light");
+    localStorage.setItem("theme", isLight ? "dark" : "light");
+  }
+
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  media.addEventListener("change", applySystemTheme);
+
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    followSystem = false;
+    applyTheme(saved);
+  } else {
+    applySystemTheme();
+  }
+
+  document.querySelector(".dark-switch")?.addEventListener("click", toggleManual);
+</script>

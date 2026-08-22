@@ -61,3 +61,9 @@ pnpm lint:fix
 ```
 
 可自动修复部分错误。
+
+## 使用的开源代码/致谢
+
+- [KZHomePage](https://github.com/kaygb/KZHomePage) 主要设计灵感来源
+- [APlayer](https://github.com/DIYgod/APlayer) 音乐播放器设计灵感来源
+- [GitHub Corners](https://github.com/tholman/github-corners) Copyright (c) 2016 Tim Holman - http://tholman.com

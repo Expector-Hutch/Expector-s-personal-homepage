@@ -19,21 +19,17 @@ body {
   height: 100%;
   margin: 0;
 }
-@media (prefers-color-scheme: light) {
-  :root,
-  body {
-    background-image: url("@/assets/images/background-light.webp");
-  }
+.light :root,
+.light body {
+  background-image: url("@/assets/images/background-light.webp");
 }
 
 h1 {
   color: var(--theme-color);
   font-size: 24px;
 }
-@media (prefers-color-scheme: light) {
-  h1 {
-    color: #0ff;
-  }
+.light h1 {
+  color: #0ff;
 }
 p,
 q {
@@ -41,11 +37,9 @@ q {
   font-size: 15px;
   white-space: pre-wrap;
 }
-@media (prefers-color-scheme: light) {
-  p,
-  q {
-    color: #008e8e;
-  }
+.light p,
+.light q {
+  color: #008e8e;
 }
 a {
   color: #fff;
@@ -68,12 +62,10 @@ a:hover {
   border: 2px solid #28282859;
   border-top-color: #0006;
 }
-@media (prefers-color-scheme: light) {
-  .card {
-    background-color: rgba(224, 224, 224, 0.55);
-    border-width: 2px 2px 2px medium;
-    border-style: solid solid solid none;
-    border-color: rgba(255, 255, 255, 0.4) rgba(224, 224, 224, 0.35) rgba(224, 224, 224, 0.35)
-      currentcolor;
-  }
+.light .card {
+  background-color: rgba(224, 224, 224, 0.55);
+  border-width: 2px 2px 2px medium;
+  border-style: solid solid solid none;
+  border-color: rgba(255, 255, 255, 0.4) rgba(224, 224, 224, 0.35) rgba(224, 224, 224, 0.35)
+    currentcolor;
 }

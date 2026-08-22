@@ -24,9 +24,7 @@ const { href, icon } = Astro.props as Props;
     align-items: center;
     color: #fff;
   }
-  @media (prefers-color-scheme: light) {
-    .icon-link {
-      color: #000;
-    }
+  :global(.light) .icon-link {
+    color: #000;
   }
 </style>

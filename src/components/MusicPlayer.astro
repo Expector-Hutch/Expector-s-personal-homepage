@@ -97,12 +97,10 @@ const data = {
     box-shadow: 0 15px 35px #0003;
     margin: 5px;
 
-    --text-color: #000;
+    --text-color: #fff;
   }
-  @media (prefers-color-scheme: dark) {
-    .player {
-      --text-color: #fff;
-    }
+  :global(.light) .player {
+    --text-color: #000;
   }
   .pic {
     background-color: var(--color);

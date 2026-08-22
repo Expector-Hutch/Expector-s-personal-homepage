@@ -11,6 +11,7 @@ import MusicPlayer from "@/components/MusicPlayer.astro";
 import FriendLinks from "@/components/FriendLinks.astro";
 import FriendLink from "@/components/FriendLink.astro";
 import Footer from "@/components/Footer.astro";
+import DarkSwitch from "@/components/DarkSwitch.astro";
 
 import data from "@/data/data.yaml";
 ---
@@ -27,6 +28,7 @@ import data from "@/data/data.yaml";
   </head>
 
   <body>
+    <DarkSwitch />
     <div class="main-card card">
       <aside id="head-image"></aside>
       <div class="main-ctr">
@@ -94,6 +96,7 @@ import data from "@/data/data.yaml";
           flex-direction: column;
           justify-content: flex-start;
           overflow: auto;
+          width: auto;
         }
       }
       aside {
@@ -110,6 +113,7 @@ import data from "@/data/data.yaml";
           height: 0;
           padding-top: 100%;
           position: relative;
+          flex: 1;
         }
       }
       .main-ctr {
