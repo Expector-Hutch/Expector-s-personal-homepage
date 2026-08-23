@@ -64,8 +64,6 @@ a:hover {
 }
 .light .card {
   background-color: rgba(224, 224, 224, 0.55);
-  border-width: 2px 2px 2px medium;
-  border-style: solid solid solid none;
-  border-color: rgba(255, 255, 255, 0.4) rgba(224, 224, 224, 0.35) rgba(224, 224, 224, 0.35)
-    currentcolor;
+  border: 2px solid #ffffff59;
+  border-top-color: #fff6;
 }
